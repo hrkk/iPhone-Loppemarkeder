@@ -46,7 +46,6 @@
 								<string key="NSFrame">{{46, 14}, {188, 21}}</string>
 								<reference key="NSSuperview" ref="120861873"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -75,13 +74,17 @@
 							<object class="IBUIImageView" id="817394962">
 								<reference key="NSNextResponder" ref="120861873"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 12}, {30, 25}}</string>
+								<string key="NSFrame">{{10, 12}, {30, 30}}</string>
 								<reference key="NSSuperview" ref="120861873"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="255955263"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">ic_launcher.png</string>
+								</object>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 50}</string>
@@ -91,7 +94,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDAAA</bytes>
+							<bytes key="NSRGB">MSAwLjUgMAA</bytes>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -203,6 +206,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">ic_launcher.png</string>
+			<string key="NS.object.0">{60, 60}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

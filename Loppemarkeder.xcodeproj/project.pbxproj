@@ -19,11 +19,11 @@
 		62BC11331740FE8E0083FF05 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC111B1740FE8E0083FF05 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC11341740FE8E0083FF05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC111D1740FE8E0083FF05 /* AppDelegate.m */; };
 		62BC11351740FE8E0083FF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62BC111F1740FE8E0083FF05 /* InfoPlist.strings */; };
-		62BC11361740FE8E0083FF05 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62BC11211740FE8E0083FF05 /* ViewController.xib */; };
 		62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 62BC11241740FE8E0083FF05 /* ic_launcher.png */; };
 		62BC11381740FE8E0083FF05 /* Loppemarkeder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62BC11261740FE8E0083FF05 /* Loppemarkeder.plist */; };
 		62BC11391740FE8E0083FF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11271740FE8E0083FF05 /* main.m */; };
 		62BC113A1740FE8E0083FF05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11291740FE8E0083FF05 /* ViewController.m */; };
+		62BD45E01741016200E73895 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62BD45DF1741016200E73895 /* ViewController.xib */; };
 		8382D681155AE229001541B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D680155AE229001541B2 /* UIKit.framework */; };
 		8382D683155AE229001541B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D682155AE229001541B2 /* Foundation.framework */; };
 		8382D685155AE229001541B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D684155AE229001541B2 /* CoreGraphics.framework */; };
@@ -54,13 +54,13 @@
 		62BC111C1740FE8E0083FF05 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Loppemarkeder/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		62BC111D1740FE8E0083FF05 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Loppemarkeder/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		62BC11201740FE8E0083FF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		62BC11221740FE8E0083FF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ViewController.xib; sourceTree = "<group>"; };
 		62BC11241740FE8E0083FF05 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		62BC11251740FE8E0083FF05 /* Loppemarkeder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Loppemarkeder-Prefix.pch"; path = "Loppemarkeder/Loppemarkeder-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		62BC11261740FE8E0083FF05 /* Loppemarkeder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Loppemarkeder.plist; path = Loppemarkeder/Loppemarkeder.plist; sourceTree = SOURCE_ROOT; };
 		62BC11271740FE8E0083FF05 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Loppemarkeder/main.m; sourceTree = SOURCE_ROOT; };
 		62BC11281740FE8E0083FF05 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Loppemarkeder/ViewController.h; sourceTree = SOURCE_ROOT; };
 		62BC11291740FE8E0083FF05 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Loppemarkeder/ViewController.m; sourceTree = SOURCE_ROOT; };
+		62BD45DF1741016200E73895 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Loppemarkeder/ViewController.xib; sourceTree = SOURCE_ROOT; };
 		8382D67C155AE229001541B2 /* Loppemarkeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loppemarkeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8382D680155AE229001541B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8382D682155AE229001541B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				62BC111F1740FE8E0083FF05 /* InfoPlist.strings */,
-				62BC11211740FE8E0083FF05 /* ViewController.xib */,
 			);
 			name = en.lproj;
 			path = Loppemarkeder/en.lproj;
@@ -159,6 +158,7 @@
 		8382D686155AE229001541B2 /* Loppemarkeder */ = {
 			isa = PBXGroup;
 			children = (
+				62BD45DF1741016200E73895 /* ViewController.xib */,
 				62BC11061740FE8E0083FF05 /* AFNetworking */,
 				62BC111C1740FE8E0083FF05 /* AppDelegate.h */,
 				62BC111D1740FE8E0083FF05 /* AppDelegate.m */,
@@ -233,9 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				62BC11351740FE8E0083FF05 /* InfoPlist.strings in Resources */,
-				62BC11361740FE8E0083FF05 /* ViewController.xib in Resources */,
 				62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */,
 				62BC11381740FE8E0083FF05 /* Loppemarkeder.plist in Resources */,
+				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,14 +271,6 @@
 				62BC11201740FE8E0083FF05 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		62BC11211740FE8E0083FF05 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62BC11221740FE8E0083FF05 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
