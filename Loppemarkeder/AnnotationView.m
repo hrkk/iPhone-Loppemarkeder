@@ -13,8 +13,8 @@
 @synthesize endCoordinate;
 @synthesize startCoordinate;
 
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
-
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+{
 		if (self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier]) {
 			self.frame= CGRectMake(0, 0,55, 15);
 			self.enabled=NO;
@@ -51,36 +51,18 @@
     return self;
 }
 
-- (void)drawRect:(CGRect)rect{
+- (void)drawRect:(CGRect)rect
+{
 	if(background){
-//		self.frame =CGRectMake(0,0,57,17);
-	//	self.price.backgroundColor = [UIColor blueColor];
-	//	self.price.textColor = [UIColor whiteColor];
-	//	self.price.shadowColor = [UIColor blackColor];
 		self.backgroundImage.backgroundColor = [UIColor blueColor];
 	}
 	else {
-//		self.frame =CGRectMake(0,0,55,15);
-		self.backgroundColor = [UIColor clearColor];		
+		self.backgroundColor = [UIColor clearColor];
 	}	
-	
 }
 
-
-
-/*- (NSString *)title {
-	ServiceStation *station = [self annotation];
-	return station.address1;
-}
-
-- (NSString *)subtitle {
-	ServiceStation *station = [self annotation];
-	return [NSString stringWithFormat:@"%@ %@", station.zip,station.city];
-}
-*/
-
-
-- (void) navigate:(id)sender {
+- (void) navigate:(id)sender
+{
 	self.startCoordinate = [MyCLController sharedInstance].theLocation.coordinate;
 
 	NSString *theUrl = [[NSString stringWithFormat:@"maps:maps.google.com/maps?f=d&saddr=%f,%f&daddr=%f,%f",startCoordinate.latitude,startCoordinate.longitude,endCoordinate.latitude,endCoordinate.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

@@ -1,7 +1,4 @@
 //
-//  viewMarketMap.m
-//  Loppemarkeder
-//
 //  Created by Thomas H. Sandvik on 5/13/13.
 //
 //
@@ -11,7 +8,7 @@
 #import "AnnotationView.h"
 
 @implementation ViewMarketMap
-@synthesize pengeAutomaterArray;
+@synthesize marketsArray;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -21,6 +18,38 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)setmarketsArray:(NSMutableArray *)dataArray{
+	NSArray *ann = [myMapView annotations];
+	if(ann != nil)
+		[myMapView removeAnnotations:ann];
+	if (dataArray != marketsArray) {
+		marketsArray = dataArray;
+	}
+	
+	CLLocation *cur = [MyCLController sharedInstance].theLocation;
+	for(MarketPlace *eachSRPengeAutomat in marketsArray){
+		eachSRPengeAutomat.distance = [cur distanceFromLocation:eachSRPengeAutomat.currentLocation];
+	}
+	if([marketsArray count]>1){
+		[myMapView addAnnotations:marketsArray];
+		myMapView.centerCoordinate = ((MarketPlace*)[marketsArray objectAtIndex:1]).coordinate;
+		myMapView.region = MKCoordinateRegionMake(((MarketPlace*)[marketsArray objectAtIndex:1]).coordinate, MKCoordinateSpanMake(.009, 0.009));
+	}
+	else{
+		myMapView.centerCoordinate = [MyCLController sharedInstance].theLocation.coordinate;
+		myMapView.region = MKCoordinateRegionMake([MyCLController sharedInstance].theLocation.coordinate, MKCoordinateSpanMake(.009, 0.009));
+		if([marketsArray count] > 0)
+			[myMapView addAnnotations:marketsArray];
+		
+	}
+	myMapView.delegate = self;
+	
+	
+
+    
+	myMapView.showsUserLocation = YES;
 }
 
 

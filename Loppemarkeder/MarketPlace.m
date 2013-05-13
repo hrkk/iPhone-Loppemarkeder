@@ -118,7 +118,7 @@
 }	
 
 - (id) initWithDictionary:(NSDictionary *) dict{
-	
+	NSLog(@"%@",dict);
 	if (self = [super init]) {
 		self.atmId = [dict objectForKey:@"atmId"]; 
 		self.name = [dict objectForKey:@"name"];

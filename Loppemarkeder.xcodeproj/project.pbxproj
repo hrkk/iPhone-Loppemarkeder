@@ -31,6 +31,7 @@
 		62BD45F11741240E00E73895 /* MarketPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BD45F01741240E00E73895 /* MarketPlace.m */; };
 		62BD45F41741243E00E73895 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BD45F31741243E00E73895 /* AnnotationView.m */; };
 		62BD45F61741249500E73895 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BD45F51741249500E73895 /* MapKit.framework */; };
+		62FA971E1741309400ECD7E0 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FA971D1741309400ECD7E0 /* Utilities.m */; };
 		8382D681155AE229001541B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D680155AE229001541B2 /* UIKit.framework */; };
 		8382D683155AE229001541B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D682155AE229001541B2 /* Foundation.framework */; };
 		8382D685155AE229001541B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D684155AE229001541B2 /* CoreGraphics.framework */; };
@@ -79,6 +80,8 @@
 		62BD45F21741243E00E73895 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnotationView.h; path = Loppemarkeder/AnnotationView.h; sourceTree = SOURCE_ROOT; };
 		62BD45F31741243E00E73895 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnotationView.m; path = Loppemarkeder/AnnotationView.m; sourceTree = SOURCE_ROOT; };
 		62BD45F51741249500E73895 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		62FA971C1741309300ECD7E0 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = Loppemarkeder/Utilities.h; sourceTree = SOURCE_ROOT; };
+		62FA971D1741309400ECD7E0 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = Loppemarkeder/Utilities.m; sourceTree = SOURCE_ROOT; };
 		8382D67C155AE229001541B2 /* Loppemarkeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loppemarkeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8382D680155AE229001541B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8382D682155AE229001541B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,11 +166,11 @@
 				62BD45F21741243E00E73895 /* AnnotationView.h */,
 				62BD45F31741243E00E73895 /* AnnotationView.m */,
 				62BD45EF1741240E00E73895 /* MarketPlace.h */,
+				62BD45F01741240E00E73895 /* MarketPlace.m */,
 				62BD45E9174120E100E73895 /* ViewMarketMap.h */,
 				62BD45EA174120E100E73895 /* ViewMarketMap.m */,
 				62BD45E61741206200E73895 /* MyCLController.h */,
 				62BD45E71741206200E73895 /* MyCLController.m */,
-				62BD45F01741240E00E73895 /* MarketPlace.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -213,6 +216,8 @@
 				62BC111C1740FE8E0083FF05 /* AppDelegate.h */,
 				62BC111D1740FE8E0083FF05 /* AppDelegate.m */,
 				8382D687155AE229001541B2 /* Supporting Files */,
+				62FA971C1741309300ECD7E0 /* Utilities.h */,
+				62FA971D1741309400ECD7E0 /* Utilities.m */,
 			);
 			name = Loppemarkeder;
 			path = NetworkingIsFun;
@@ -311,6 +316,7 @@
 				62BD45EB174120E100E73895 /* ViewMarketMap.m in Sources */,
 				62BD45F11741240E00E73895 /* MarketPlace.m in Sources */,
 				62BD45F41741243E00E73895 /* AnnotationView.m in Sources */,
+				62FA971E1741309400ECD7E0 /* Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

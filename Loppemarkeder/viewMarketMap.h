@@ -13,10 +13,10 @@
 
 @interface ViewMarketMap: UIViewController <SRPostionDelegate,MKMapViewDelegate>{
 	IBOutlet MKMapView *myMapView;
-	NSMutableArray *pengeAutomaterArray;
+	NSMutableArray *marketsArray;
 }
 
-@property(nonatomic,strong) NSMutableArray *pengeAutomaterArray;
+@property(nonatomic,strong) NSMutableArray *marketsArray;
 
 - (void)didUpdateHeading:(CLHeading *)newHeading;
 

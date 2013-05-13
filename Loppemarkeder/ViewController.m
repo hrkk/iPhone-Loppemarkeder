@@ -8,6 +8,7 @@
 
 #import "AFNetworking.h"
 #import "ViewMarketMap.h"
+#import "Utilities.h"
 
 @implementation ViewController
 
@@ -40,7 +41,9 @@
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
 		NSLog(@"%@",JSON);
-		self.marketItemsArray = [JSON objectForKey:@"markedItemInstanceList"];
+		//self.marketItemsArray = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
+		self.marketItemsArray =[JSON objectForKey:@"markedItemInstanceList"];
+		
         [self.activityIndicatorView stopAnimating];
         [self.tableView setHidden:NO];
         [self.tableView reloadData];
@@ -85,9 +88,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
-    NSDictionary *movie = [self.marketItemsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [movie objectForKey:@"address"];
-    cell.detailTextLabel.text = [movie objectForKey:@"dateExtraInfo"];
+    NSDictionary *marketplace = [self.marketItemsArray objectAtIndex:indexPath.row];
+	NSLog(@"%@",marketplace);
+    cell.textLabel.text = [marketplace objectForKey:@"address"];
+    cell.detailTextLabel.text = [marketplace objectForKey:@"dateExtraInfo"];
     
     return cell;
 }
