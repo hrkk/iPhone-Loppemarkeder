@@ -158,17 +158,13 @@
 		8382D686155AE229001541B2 /* Loppemarkeder */ = {
 			isa = PBXGroup;
 			children = (
-				62BD45DF1741016200E73895 /* ViewController.xib */,
 				62BC11061740FE8E0083FF05 /* AFNetworking */,
 				62BC111C1740FE8E0083FF05 /* AppDelegate.h */,
 				62BC111D1740FE8E0083FF05 /* AppDelegate.m */,
-				62BC111E1740FE8E0083FF05 /* en.lproj */,
 				62BC11231740FE8E0083FF05 /* images */,
-				62BC11251740FE8E0083FF05 /* Loppemarkeder-Prefix.pch */,
-				62BC11261740FE8E0083FF05 /* Loppemarkeder.plist */,
-				62BC11271740FE8E0083FF05 /* main.m */,
 				62BC11281740FE8E0083FF05 /* ViewController.h */,
 				62BC11291740FE8E0083FF05 /* ViewController.m */,
+				62BD45DF1741016200E73895 /* ViewController.xib */,
 				8382D687155AE229001541B2 /* Supporting Files */,
 			);
 			name = Loppemarkeder;
@@ -178,6 +174,10 @@
 		8382D687155AE229001541B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				62BC111E1740FE8E0083FF05 /* en.lproj */,
+				62BC11251740FE8E0083FF05 /* Loppemarkeder-Prefix.pch */,
+				62BC11261740FE8E0083FF05 /* Loppemarkeder.plist */,
+				62BC11271740FE8E0083FF05 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
