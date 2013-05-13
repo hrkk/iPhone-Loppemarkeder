@@ -1,3 +1,8 @@
+//
+//  Created by Thomas H. Sandvik on 5/13/13.
+//
+//
+
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {

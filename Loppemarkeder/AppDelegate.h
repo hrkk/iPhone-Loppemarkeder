@@ -1,3 +1,8 @@
+//
+//  Created by Thomas H. Sandvik on 5/13/13.
+//
+//
+
 
 #import <UIKit/UIKit.h>
 
@@ -9,4 +14,5 @@
 
 @property (strong, nonatomic) ViewController *viewController;
 
+@property (nonatomic, retain) UINavigationController *navigationController;
 @end

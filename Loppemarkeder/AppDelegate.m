@@ -1,3 +1,7 @@
+//
+//  Created by Thomas H. Sandvik on 5/13/13.
+//
+//
 
 #import "AppDelegate.h"
 
@@ -7,13 +11,16 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize navigationController;;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+	navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+	
+    [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
