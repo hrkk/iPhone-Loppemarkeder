@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8382D67B155AE229001541B2"
-               BuildableName = "loppemarkeder.app"
+               BuildableName = "Loppemarkeder.temp_caseinsensitive_rename.app"
                BlueprintName = "Loppemarkeder.temp_caseinsensitive_rename"
                ReferencedContainer = "container:Loppemarkeder.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8382D67B155AE229001541B2"
-            BuildableName = "loppemarkeder.app"
+            BuildableName = "Loppemarkeder.temp_caseinsensitive_rename.app"
             BlueprintName = "Loppemarkeder.temp_caseinsensitive_rename"
             ReferencedContainer = "container:Loppemarkeder.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8382D67B155AE229001541B2"
-            BuildableName = "loppemarkeder.app"
+            BuildableName = "Loppemarkeder.temp_caseinsensitive_rename.app"
             BlueprintName = "Loppemarkeder.temp_caseinsensitive_rename"
             ReferencedContainer = "container:Loppemarkeder.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8382D67B155AE229001541B2"
-            BuildableName = "loppemarkeder.app"
+            BuildableName = "Loppemarkeder.temp_caseinsensitive_rename.app"
             BlueprintName = "Loppemarkeder.temp_caseinsensitive_rename"
             ReferencedContainer = "container:Loppemarkeder.xcodeproj">
          </BuildableReference>

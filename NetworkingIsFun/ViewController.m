@@ -31,6 +31,7 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+		
 		self.marketItemsArray = [JSON objectForKey:@"markedItemInstanceList"];
         [self.activityIndicatorView stopAnimating];
         [self.tableView setHidden:NO];
