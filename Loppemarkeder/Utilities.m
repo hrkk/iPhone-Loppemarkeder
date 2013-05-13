@@ -8,6 +8,7 @@
 
 #import "Utilities.h"
 #import "MarketPlace.h"
+#import "MyCLController.h"
 
 #define kSimulatorLat			55.766338
 #define kSimulatorlong			12.496262
