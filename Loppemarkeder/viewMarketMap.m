@@ -1,105 +1,243 @@
-//
-//  Created by Thomas H. Sandvik on 5/13/13.
-//
-//
-
 #import "ViewMarketMap.h"
-#import "MarketPlace.h"
-#import "AnnotationView.h"
+#import "DetailViewController.h"
+
+#import "SFAnnotation.h"        // annotation for the city of San Francisco
+#import "BridgeAnnotation.h"    // annotation for the Golden Gate bridge
+
+#import "CustomMapItem.h"
+#import "CustomAnnotationView.h"
+
+typedef enum AnnotationIndex : NSUInteger
+{
+    kCityAnnotationIndex = 0,
+    kBridgeAnnotationIndex,
+    kTeaGardenAnnotationIndex
+} AnnotationIndex;
+
+#pragma mark -
 
 @implementation ViewMarketMap
-@synthesize marketsArray;
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	
++ (CGFloat)annotationPadding;
+{
+    return 10.0f;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self.navigationController setNavigationBarHidden:NO animated:YES];
++ (CGFloat)calloutHeight;
+{
+    return 40.0f;
 }
 
-- (void)setmarketsArray:(NSMutableArray *)dataArray{
-	NSArray *ann = [myMapView annotations];
-	if(ann != nil)
-		[myMapView removeAnnotations:ann];
-	if (dataArray != marketsArray) {
-		marketsArray = dataArray;
-	}
+- (void)gotoLocation
+{
+	locationManager=[[CLLocationManager alloc] init];
+	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation];
 	
-	CLLocation *cur = [MyCLController sharedInstance].theLocation;
-	for(MarketPlace *eachSRPengeAutomat in marketsArray){
-		eachSRPengeAutomat.distance = [cur distanceFromLocation:eachSRPengeAutomat.currentLocation];
-	}
-	if([marketsArray count]>1){
-		[myMapView addAnnotations:marketsArray];
-		myMapView.centerCoordinate = ((MarketPlace*)[marketsArray objectAtIndex:1]).coordinate;
-		myMapView.region = MKCoordinateRegionMake(((MarketPlace*)[marketsArray objectAtIndex:1]).coordinate, MKCoordinateSpanMake(.009, 0.009));
-	}
-	else{
-		myMapView.centerCoordinate = [MyCLController sharedInstance].theLocation.coordinate;
-		myMapView.region = MKCoordinateRegionMake([MyCLController sharedInstance].theLocation.coordinate, MKCoordinateSpanMake(.009, 0.009));
-		if([marketsArray count] > 0)
-			[myMapView addAnnotations:marketsArray];
-		
-	}
-	myMapView.delegate = self;
+	// Create an instance of CLLocation
+	
+	location=[locationManager location];
+	
+	// Set Center Coordinates of MapView
+	
+	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
 	
 	
-
+	
+	// Setting Zoom Level on MapView
+	
+	MKCoordinateRegion coordinateRegion;
+	
+	coordinateRegion.center = self.mapView .centerCoordinate;
+	coordinateRegion.span.latitudeDelta = 1;
+	coordinateRegion.span.longitudeDelta = 1;
+	
+	[self.mapView  setRegion:coordinateRegion animated:YES];
+	
+    // Show userLocation (Blue Circle)
+	
+	self.mapView .showsUserLocation=YES;
+	
+	
+	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
     
-	myMapView.showsUserLocation = YES;
+    [self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:0]];
+//	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kCityAnnotationIndex]];
+//	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kTeaGardenAnnotationIndex]];
 }
 
-
-#pragma mark -
-#pragma mark MyCLController delegates
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (void)viewWillAppear:(BOOL)animated
 {
-	MKAnnotationView* annotationView = nil;
-	
-	if(![annotation isKindOfClass:[MarketPlace class]])
-		return nil;
-	annotationView = (AnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:((MarketPlace *) annotation).name];
-	if(annotationView == nil) {
-		annotationView = [[AnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:((MarketPlace *) annotation).name];//@"priceView"];
-		annotationView.frame = CGRectMake(0,0, 50,50);
-		annotationView.canShowCallout =YES;
-	}
-	
-	[annotationView setEnabled:YES];
-	return annotationView;
+   [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [super viewDidAppear:animated];
 }
 
-#pragma mark -
-#pragma mark location methods
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)viewDidLoad
 {
-	MKCoordinateRegion region;
-	region.center=newLocation.coordinate;
-	//Set Zoom level using Span
-	MKCoordinateSpan span;
+    // create a custom navigation bar button and set it to always says "Back"
+	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+	temporaryBarButtonItem.title = @"Back";
+	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
+    // create out annotations array (in this example only 3)
+    self.mapAnnotations = [[NSMutableArray alloc] init];
+    
+    // annotation for the City of San Francisco
+//    SFAnnotation *sfAnnotation = [[SFAnnotation alloc] init];
+//    [self.mapAnnotations insertObject:sfAnnotation atIndex:kCityAnnotationIndex];
+//    
+    // annotation for Golden Gate Bridge
+//    BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
+//    [self.mapAnnotations insertObject:bridgeAnnotation atIndex:kBridgeAnnotationIndex];
+//	
 	
-	span.latitudeDelta=.002;
-	span.longitudeDelta=.002;
-	region.span = span;
-	
-	[myMapView setRegion:region animated:TRUE];
-	[myMapView regionThatFits:region];
+    [self.mapAnnotations addObject:_marketplace];
+    
+    
+//    // annotation for Japanese Tea Garden
+//    CustomMapItem *item = [[CustomMapItem alloc] init];
+//    item.place = @"Tea Garden";
+//    item.imageName = @"teagarden";
+//    item.latitude = [NSNumber numberWithDouble:37.7700];
+//    item.longitude = [NSNumber numberWithDouble:-122.4701];
+//    [self.mapAnnotations insertObject:item atIndex:kTeaGardenAnnotationIndex];
+    
+    [self gotoLocation];    // finally goto San Francisco
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
+    return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+#endif
+
+
+#pragma mark - MKMapViewDelegate
+
+// user tapped the disclosure button in the callout
+//
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    // here we illustrate how to detect which annotation type was clicked on for its callout
+    id <MKAnnotation> annotation = [view annotation];
+    if ([annotation isKindOfClass:[BridgeAnnotation class]])
+    {
+        NSLog(@"clicked Golden Gate Bridge annotation");
+    }
+    
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
-- (void)didUpdateHeading:(CLHeading *)newHeading
-{	
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // in case it's the user location, we already have an annotation, so just return nil
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+    {
+        return nil;
+    }
+    
+    // handle our three custom annotations
+    //
+    if ([annotation isKindOfClass:[MarketPlace class]]) // for Golden Gate Bridge
+    {
+        // try to dequeue an existing pin view first
+        static NSString *BridgeAnnotationIdentifier = @"bridgeAnnotationIdentifier";
+        
+        MKPinAnnotationView *pinView =
+		(MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:BridgeAnnotationIdentifier];
+        if (pinView == nil)
+        {
+            // if an existing pin view was not available, create one
+            MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
+												  initWithAnnotation:annotation reuseIdentifier:BridgeAnnotationIdentifier];
+            customPinView.pinColor = MKPinAnnotationColorPurple;
+            customPinView.animatesDrop = YES;
+            customPinView.canShowCallout = YES;
+            
+            // add a detail disclosure button to the callout which will open a new view controller page
+            //
+            // note: when the detail disclosure button is tapped, we respond to it via:
+            //       calloutAccessoryControlTapped delegate method
+            //
+            // by using "calloutAccessoryControlTapped", it's a convenient way to find out which annotation was tapped
+            //
+            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+            customPinView.rightCalloutAccessoryView = rightButton;
+			
+            return customPinView;
+        }
+        else
+        {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    else if ([annotation isKindOfClass:[SFAnnotation class]])   // for City of San Francisco
+    {
+        static NSString *SFAnnotationIdentifier = @"SFAnnotationIdentifier";
+        
+        MKAnnotationView *flagAnnotationView =
+		[self.mapView dequeueReusableAnnotationViewWithIdentifier:SFAnnotationIdentifier];
+        if (flagAnnotationView == nil)
+        {
+            MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+																			reuseIdentifier:SFAnnotationIdentifier];
+            annotationView.canShowCallout = YES;
+			
+            UIImage *flagImage = [UIImage imageNamed:@"flag.png"];
+            
+            // size the flag down to the appropriate size
+            CGRect resizeRect;
+            resizeRect.size = flagImage.size;
+            CGSize maxSize = CGRectInset(self.view.bounds,
+                                         [ViewMarketMap annotationPadding],
+                                         [ViewMarketMap annotationPadding]).size;
+            maxSize.height -= self.navigationController.navigationBar.frame.size.height + [ViewMarketMap calloutHeight];
+            if (resizeRect.size.width > maxSize.width)
+                resizeRect.size = CGSizeMake(maxSize.width, resizeRect.size.height / resizeRect.size.width * maxSize.width);
+            if (resizeRect.size.height > maxSize.height)
+                resizeRect.size = CGSizeMake(resizeRect.size.width / resizeRect.size.height * maxSize.height, maxSize.height);
+            
+            resizeRect.origin = CGPointMake(0.0, 0.0);
+            UIGraphicsBeginImageContext(resizeRect.size);
+            [flagImage drawInRect:resizeRect];
+            UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            annotationView.image = resizedImage;
+            annotationView.opaque = NO;
+			
+            UIImageView *sfIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SFIcon.png"]];
+            annotationView.leftCalloutAccessoryView = sfIconView;
+            
+            // offset the flag annotation so that the flag pole rests on the map coordinate
+            annotationView.centerOffset = CGPointMake( annotationView.centerOffset.x + annotationView.image.size.width/2, annotationView.centerOffset.y - annotationView.image.size.height/2 );
+            
+            return annotationView;
+        }
+        else
+        {
+            flagAnnotationView.annotation = annotation;
+        }
+        return flagAnnotationView;
+    }
+    else if ([annotation isKindOfClass:[CustomMapItem class]])  // for Japanese Tea Garden
+    {
+        static NSString *TeaGardenAnnotationIdentifier = @"TeaGardenAnnotationIdentifier";
+        
+        CustomAnnotationView *annotationView =
+        (CustomAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:TeaGardenAnnotationIdentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TeaGardenAnnotationIdentifier];
+        }
+        return annotationView;
+    }
+    
+    return nil;
 }
-
-- (void)newLocationUpdate:(CLLocation *)location
-{	
-}
-
 
 @end

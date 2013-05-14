@@ -24,13 +24,6 @@
 			MarketPlace *station = [self annotation];
 			self.endCoordinate = station.coordinate;
 
-			self.backgroundImage = nil;			
-			UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectZero];
-			bgImage.image =  station.logo;
-			bgImage.frame = CGRectMake(0,0,48,48);
-			self.backgroundImage = bgImage;
-			
-			
 			[self addSubview:backgroundImage];
 			[self addSubview:price];
 

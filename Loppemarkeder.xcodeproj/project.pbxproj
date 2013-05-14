@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624D910D1742469500044005 /* AppDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D910C1742469500044005 /* AppDataCache.m */; };
+		624D911117427D0B00044005 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911017427D0B00044005 /* DetailViewController.m */; };
+		624D911817427E1C00044005 /* BridgeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911317427E1B00044005 /* BridgeAnnotation.m */; };
+		624D911917427E1C00044005 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911517427E1B00044005 /* CustomAnnotationView.m */; };
+		624D911A17427E1C00044005 /* CustomMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911717427E1C00044005 /* CustomMapItem.m */; };
+		624D911D17427E2F00044005 /* SFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911C17427E2F00044005 /* SFAnnotation.m */; };
+		624D912017427E8300044005 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911E17427E8300044005 /* DetailViewController.xib */; };
+		624D912117427E8300044005 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911F17427E8300044005 /* MapViewController.xib */; };
 		62BC112A1740FE8E0083FF05 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11081740FE8E0083FF05 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC112B1740FE8E0083FF05 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC110A1740FE8E0083FF05 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC112C1740FE8E0083FF05 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC110C1740FE8E0083FF05 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -24,7 +32,6 @@
 		62BC11391740FE8E0083FF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11271740FE8E0083FF05 /* main.m */; };
 		62BC113A1740FE8E0083FF05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11291740FE8E0083FF05 /* ViewController.m */; };
 		62BD45E01741016200E73895 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62BD45DF1741016200E73895 /* ViewController.xib */; };
-		62BD45E517411F8600E73895 /* viewMarketMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62BD45E417411F8600E73895 /* viewMarketMap.xib */; };
 		62BD45E81741206200E73895 /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BD45E71741206200E73895 /* MyCLController.m */; };
 		62BD45EB174120E100E73895 /* ViewMarketMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BD45EA174120E100E73895 /* ViewMarketMap.m */; };
 		62BD45EE1741220E00E73895 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BD45ED1741220E00E73895 /* CoreLocation.framework */; };
@@ -38,6 +45,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		624D910B1742469500044005 /* AppDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDataCache.h; path = Loppemarkeder/AppDataCache.h; sourceTree = SOURCE_ROOT; };
+		624D910C1742469500044005 /* AppDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDataCache.m; path = Loppemarkeder/AppDataCache.m; sourceTree = SOURCE_ROOT; };
+		624D910F17427D0B00044005 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Loppemarkeder/DetailViewController.h; sourceTree = SOURCE_ROOT; };
+		624D911017427D0B00044005 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Loppemarkeder/DetailViewController.m; sourceTree = SOURCE_ROOT; };
+		624D911217427E1B00044005 /* BridgeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BridgeAnnotation.h; path = Loppemarkeder/BridgeAnnotation.h; sourceTree = SOURCE_ROOT; };
+		624D911317427E1B00044005 /* BridgeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BridgeAnnotation.m; path = Loppemarkeder/BridgeAnnotation.m; sourceTree = SOURCE_ROOT; };
+		624D911417427E1B00044005 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAnnotationView.h; path = Loppemarkeder/CustomAnnotationView.h; sourceTree = SOURCE_ROOT; };
+		624D911517427E1B00044005 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAnnotationView.m; path = Loppemarkeder/CustomAnnotationView.m; sourceTree = SOURCE_ROOT; };
+		624D911617427E1C00044005 /* CustomMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMapItem.h; path = Loppemarkeder/CustomMapItem.h; sourceTree = SOURCE_ROOT; };
+		624D911717427E1C00044005 /* CustomMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomMapItem.m; path = Loppemarkeder/CustomMapItem.m; sourceTree = SOURCE_ROOT; };
+		624D911B17427E2F00044005 /* SFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFAnnotation.h; path = Loppemarkeder/SFAnnotation.h; sourceTree = SOURCE_ROOT; };
+		624D911C17427E2F00044005 /* SFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFAnnotation.m; path = Loppemarkeder/SFAnnotation.m; sourceTree = SOURCE_ROOT; };
+		624D911E17427E8300044005 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Loppemarkeder/DetailViewController.xib; sourceTree = SOURCE_ROOT; };
+		624D911F17427E8300044005 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Loppemarkeder/MapViewController.xib; sourceTree = SOURCE_ROOT; };
 		62BC11071740FE8E0083FF05 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		62BC11081740FE8E0083FF05 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		62BC11091740FE8E0083FF05 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -69,7 +90,6 @@
 		62BC11281740FE8E0083FF05 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Loppemarkeder/ViewController.h; sourceTree = SOURCE_ROOT; };
 		62BC11291740FE8E0083FF05 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Loppemarkeder/ViewController.m; sourceTree = SOURCE_ROOT; };
 		62BD45DF1741016200E73895 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Loppemarkeder/ViewController.xib; sourceTree = SOURCE_ROOT; };
-		62BD45E417411F8600E73895 /* viewMarketMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = viewMarketMap.xib; sourceTree = SOURCE_ROOT; };
 		62BD45E61741206200E73895 /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCLController.h; path = Loppemarkeder/MyCLController.h; sourceTree = SOURCE_ROOT; };
 		62BD45E71741206200E73895 /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCLController.m; path = Loppemarkeder/MyCLController.m; sourceTree = SOURCE_ROOT; };
 		62BD45E9174120E100E73895 /* ViewMarketMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewMarketMap.h; path = Loppemarkeder/ViewMarketMap.h; sourceTree = SOURCE_ROOT; };
@@ -104,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		624D910E1742509F00044005 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62BD45EF1741240E00E73895 /* MarketPlace.h */,
+				62BD45F01741240E00E73895 /* MarketPlace.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		62BC11061740FE8E0083FF05 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +183,9 @@
 		62BD45EC1741215700E73895 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				624D911E17427E8300044005 /* DetailViewController.xib */,
+				624D911F17427E8300044005 /* MapViewController.xib */,
 				62BD45DF1741016200E73895 /* ViewController.xib */,
-				62BD45E417411F8600E73895 /* viewMarketMap.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -163,10 +193,18 @@
 		62BD45F71741257100E73895 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				624D911B17427E2F00044005 /* SFAnnotation.h */,
+				624D911C17427E2F00044005 /* SFAnnotation.m */,
+				624D911217427E1B00044005 /* BridgeAnnotation.h */,
+				624D911317427E1B00044005 /* BridgeAnnotation.m */,
+				624D911417427E1B00044005 /* CustomAnnotationView.h */,
+				624D911517427E1B00044005 /* CustomAnnotationView.m */,
+				624D911617427E1C00044005 /* CustomMapItem.h */,
+				624D911717427E1C00044005 /* CustomMapItem.m */,
+				624D910F17427D0B00044005 /* DetailViewController.h */,
+				624D911017427D0B00044005 /* DetailViewController.m */,
 				62BD45F21741243E00E73895 /* AnnotationView.h */,
 				62BD45F31741243E00E73895 /* AnnotationView.m */,
-				62BD45EF1741240E00E73895 /* MarketPlace.h */,
-				62BD45F01741240E00E73895 /* MarketPlace.m */,
 				62BD45E9174120E100E73895 /* ViewMarketMap.h */,
 				62BD45EA174120E100E73895 /* ViewMarketMap.m */,
 				62BD45E61741206200E73895 /* MyCLController.h */,
@@ -207,6 +245,9 @@
 		8382D686155AE229001541B2 /* Loppemarkeder */ = {
 			isa = PBXGroup;
 			children = (
+				624D910E1742509F00044005 /* Model */,
+				624D910B1742469500044005 /* AppDataCache.h */,
+				624D910C1742469500044005 /* AppDataCache.m */,
 				62BC11061740FE8E0083FF05 /* AFNetworking */,
 				62BD45F71741257100E73895 /* Map */,
 				62BC11231740FE8E0083FF05 /* images */,
@@ -288,7 +329,8 @@
 				62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */,
 				62BC11381740FE8E0083FF05 /* Loppemarkeder.plist in Resources */,
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
-				62BD45E517411F8600E73895 /* viewMarketMap.xib in Resources */,
+				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
+				624D912117427E8300044005 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +359,12 @@
 				62BD45F11741240E00E73895 /* MarketPlace.m in Sources */,
 				62BD45F41741243E00E73895 /* AnnotationView.m in Sources */,
 				62FA971E1741309400ECD7E0 /* Utilities.m in Sources */,
+				624D910D1742469500044005 /* AppDataCache.m in Sources */,
+				624D911117427D0B00044005 /* DetailViewController.m in Sources */,
+				624D911817427E1C00044005 /* BridgeAnnotation.m in Sources */,
+				624D911917427E1C00044005 /* CustomAnnotationView.m in Sources */,
+				624D911A17427E1C00044005 /* CustomMapItem.m in Sources */,
+				624D911D17427E2F00044005 /* SFAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

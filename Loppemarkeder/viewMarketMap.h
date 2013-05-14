@@ -9,15 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "MyCLController.h"
+#import "DetailViewController.h"
+#import "MarketPlace.h"
 
-@interface ViewMarketMap: UIViewController <SRPostionDelegate,MKMapViewDelegate>{
-	IBOutlet MKMapView *myMapView;
-	NSMutableArray *marketsArray;
+@interface ViewMarketMap: UIViewController <MKMapViewDelegate>
+{
+	MarketPlace *marketplace;
+	
+	CLLocationManager *locationManager;
+	CLLocation *location;
+	float latitude, longitude;
 }
 
-@property(nonatomic,strong) NSMutableArray *marketsArray;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) IBOutlet DetailViewController *detailViewController;
 
-- (void)didUpdateHeading:(CLHeading *)newHeading;
-
+@property (nonatomic, strong) NSMutableArray *mapAnnotations;
+@property (nonatomic, strong) MarketPlace *marketplace;
 @end

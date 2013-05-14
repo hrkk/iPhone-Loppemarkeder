@@ -24,38 +24,20 @@
 	CLLocation *cur = [MyCLController sharedInstance].theLocation;
 #endif
 	
+	NSLog(@"%f %f",cur.coordinate.longitude, cur.coordinate.latitude);
  
     // Iterate all and add distance from current location
 	for(NSDictionary *eachStation in allMarkets) {
-		MarketPlace *eachSRPengeAutomat = [[MarketPlace alloc] initWithDictionary:eachStation];
-		eachSRPengeAutomat.distance = [cur distanceFromLocation:eachSRPengeAutomat.currentLocation];
-		[array addObject:eachSRPengeAutomat];
+		MarketPlace *item = [[MarketPlace alloc] initWithDictionary:eachStation];
+		item.distance = [cur distanceFromLocation:item.currentLocation];
+		[array addObject:item];
 	}
     
     // Sort by distance
 	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
 	[array sortUsingDescriptors:[NSArray arrayWithObject:sorter] ];
+	NSLog(@"%@",array);
 	
-    // Find first item with name Nykredit
-	int nr =0;
-	for (MarketPlace *aut in array) {
-		NSRange range = [[aut.name  lowercaseString] rangeOfString:@"nykredit"];
-		if(range.location!=NSNotFound )
-			break;
-        
-		nr++;
-	}
-    
-	// Did we find one?
-    if(nr != 0 && nr < [array count])
-    {
-        // Yes: move it to first position
-		MarketPlace *aut = [array objectAtIndex:nr];
-		[array removeObjectAtIndex:nr];
-		[array insertObject:aut atIndex:0];
-       
-	}
-    
 	// Return first 100 – or all if there are less than 100 total
     NSRange top100 = NSMakeRange( 0, ([array count] > 100 ? 100 : [array count]) );
     return [[array subarrayWithRange:top100] mutableCopy];
