@@ -19,9 +19,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	// create a custom navigation bar button and set it to always says "Back"
+	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+	temporaryBarButtonItem.title = @"Tilbage";
+	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 
     // Setting Up Table View
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 44, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -57,7 +62,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self.navigationController setNavigationBarHidden:YES animated:YES];
+	[self.navigationController setNavigationBarHidden:NO animated:NO];
+	
+	UINavigationBar *bar = [self.navigationController navigationBar];
+	[bar setTintColor:[UIColor orangeColor]];
+	self.title = @"Loppemarked liste";
 }
 
 - (void)viewDidUnload

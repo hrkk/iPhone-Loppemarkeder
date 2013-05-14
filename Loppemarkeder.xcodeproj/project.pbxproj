@@ -15,6 +15,12 @@
 		624D911D17427E2F00044005 /* SFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911C17427E2F00044005 /* SFAnnotation.m */; };
 		624D912017427E8300044005 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911E17427E8300044005 /* DetailViewController.xib */; };
 		624D912117427E8300044005 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911F17427E8300044005 /* MapViewController.xib */; };
+		624D91691742C34600044005 /* menuNavi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D91681742C34600044005 /* menuNavi.xib */; };
+		624D916E1742C3E300044005 /* ic_i_naerheden.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916A1742C3E300044005 /* ic_i_naerheden.png */; };
+		624D916F1742C3E300044005 /* ic_liste.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916B1742C3E300044005 /* ic_liste.png */; };
+		624D91701742C3E300044005 /* ic_om_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916C1742C3E300044005 /* ic_om_app.png */; };
+		624D91711742C3E300044005 /* ic_om_markeder.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916D1742C3E300044005 /* ic_om_markeder.png */; };
+		624D91741742C56500044005 /* MenuNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D91731742C56400044005 /* MenuNavigationViewController.m */; };
 		62BC112A1740FE8E0083FF05 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11081740FE8E0083FF05 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC112B1740FE8E0083FF05 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC110A1740FE8E0083FF05 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC112C1740FE8E0083FF05 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC110C1740FE8E0083FF05 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -59,6 +65,13 @@
 		624D911C17427E2F00044005 /* SFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFAnnotation.m; path = Loppemarkeder/SFAnnotation.m; sourceTree = SOURCE_ROOT; };
 		624D911E17427E8300044005 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Loppemarkeder/DetailViewController.xib; sourceTree = SOURCE_ROOT; };
 		624D911F17427E8300044005 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Loppemarkeder/MapViewController.xib; sourceTree = SOURCE_ROOT; };
+		624D91681742C34600044005 /* menuNavi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = menuNavi.xib; sourceTree = SOURCE_ROOT; };
+		624D916A1742C3E300044005 /* ic_i_naerheden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_i_naerheden.png; sourceTree = "<group>"; };
+		624D916B1742C3E300044005 /* ic_liste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_liste.png; sourceTree = "<group>"; };
+		624D916C1742C3E300044005 /* ic_om_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_om_app.png; sourceTree = "<group>"; };
+		624D916D1742C3E300044005 /* ic_om_markeder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_om_markeder.png; sourceTree = "<group>"; };
+		624D91721742C56300044005 /* MenuNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuNavigationViewController.h; path = Loppemarkeder/MenuNavigationViewController.h; sourceTree = SOURCE_ROOT; };
+		624D91731742C56400044005 /* MenuNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuNavigationViewController.m; path = Loppemarkeder/MenuNavigationViewController.m; sourceTree = SOURCE_ROOT; };
 		62BC11071740FE8E0083FF05 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		62BC11081740FE8E0083FF05 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		62BC11091740FE8E0083FF05 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -174,6 +187,10 @@
 		62BC11231740FE8E0083FF05 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				624D916A1742C3E300044005 /* ic_i_naerheden.png */,
+				624D916B1742C3E300044005 /* ic_liste.png */,
+				624D916C1742C3E300044005 /* ic_om_app.png */,
+				624D916D1742C3E300044005 /* ic_om_markeder.png */,
 				62BC11241740FE8E0083FF05 /* ic_launcher.png */,
 			);
 			name = images;
@@ -186,6 +203,7 @@
 				624D911E17427E8300044005 /* DetailViewController.xib */,
 				624D911F17427E8300044005 /* MapViewController.xib */,
 				62BD45DF1741016200E73895 /* ViewController.xib */,
+				624D91681742C34600044005 /* menuNavi.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -253,6 +271,8 @@
 				62BC11231740FE8E0083FF05 /* images */,
 				62BD45EC1741215700E73895 /* Xib */,
 				62BC11281740FE8E0083FF05 /* ViewController.h */,
+				624D91721742C56300044005 /* MenuNavigationViewController.h */,
+				624D91731742C56400044005 /* MenuNavigationViewController.m */,
 				62BC11291740FE8E0083FF05 /* ViewController.m */,
 				62BC111C1740FE8E0083FF05 /* AppDelegate.h */,
 				62BC111D1740FE8E0083FF05 /* AppDelegate.m */,
@@ -331,6 +351,11 @@
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
 				624D912117427E8300044005 /* MapViewController.xib in Resources */,
+				624D91691742C34600044005 /* menuNavi.xib in Resources */,
+				624D916E1742C3E300044005 /* ic_i_naerheden.png in Resources */,
+				624D916F1742C3E300044005 /* ic_liste.png in Resources */,
+				624D91701742C3E300044005 /* ic_om_app.png in Resources */,
+				624D91711742C3E300044005 /* ic_om_markeder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +390,7 @@
 				624D911917427E1C00044005 /* CustomAnnotationView.m in Sources */,
 				624D911A17427E1C00044005 /* CustomMapItem.m in Sources */,
 				624D911D17427E2F00044005 /* SFAnnotation.m in Sources */,
+				624D91741742C56500044005 /* MenuNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

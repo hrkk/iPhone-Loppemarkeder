@@ -68,7 +68,7 @@ typedef enum AnnotationIndex : NSUInteger
 
 - (void)viewWillAppear:(BOOL)animated
 {
-   [self.navigationController setNavigationBarHidden:NO animated:YES];
+   [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     [super viewDidAppear:animated];
 }
@@ -77,7 +77,7 @@ typedef enum AnnotationIndex : NSUInteger
 {
     // create a custom navigation bar button and set it to always says "Back"
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-	temporaryBarButtonItem.title = @"Back";
+	temporaryBarButtonItem.title = @"Tilbage";
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
     
     // create out annotations array (in this example only 3)

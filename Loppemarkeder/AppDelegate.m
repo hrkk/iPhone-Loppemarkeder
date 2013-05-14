@@ -5,7 +5,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MenuNavigationViewController.h"
 
 @implementation AppDelegate
 
@@ -17,7 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController = [[MenuNavigationViewController alloc] initWithNibName:@"menuNavi" bundle:nil];
 	navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 	
     [self.window addSubview:navigationController.view];
