@@ -30,9 +30,6 @@
 	// Create an instance of CLLocation
 	
 	location=[locationManager location];
-	
-	
-
     
 #if TARGET_IPHONE_SIMULATOR
 	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
@@ -49,7 +46,7 @@
 	}
     
     // Sort by distance
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:NO];
 	[array sortUsingDescriptors:[NSArray arrayWithObject:sorter] ];
 	NSLog(@"%@",array);
 	
