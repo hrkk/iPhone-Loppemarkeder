@@ -46,7 +46,6 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
 		NSLog(@"%@",JSON);
 		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
-		//[AppDataCache shared].marketList =[JSON objectForKey:@"markedItemInstanceList"];
 		NSLog(@"%@",[AppDataCache shared].marketList);
         [self.activityIndicatorView stopAnimating];
         [self.tableView setHidden:NO];

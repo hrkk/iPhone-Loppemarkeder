@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utilities : NSObject
+
+@interface Utilities : NSObject{
+	
+	
+}
 
 
 + (NSMutableArray*) loadFromJson:(NSArray*)allMarkets;

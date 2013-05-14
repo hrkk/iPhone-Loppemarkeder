@@ -35,7 +35,7 @@
 
 -(NSString*)description
 {
-	return [NSString stringWithFormat:@"%@ %f, %f",self.address1,self.currentLocation.coordinate.longitude, self.currentLocation.coordinate.latitude ];
+	return [NSString stringWithFormat:@"%@ %f, %f distance: %f",self.address1,self.currentLocation.coordinate.longitude, self.currentLocation.coordinate.latitude, self.distance];
 }
 
 -(CGFloat) getDistance
