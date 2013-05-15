@@ -7,14 +7,18 @@
 
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    UITableView *_tableView;
     UIActivityIndicatorView *_activityIndicatorView;
-	
+	IBOutlet UITableView* tableView;	
    
 }
 
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+
+@property (nonatomic, strong) IBOutlet UIButton* sortByDatoButton;
+@property (nonatomic, strong) IBOutlet UIButton* sortByNameButton;
+@property (nonatomic, strong) IBOutlet UIButton* sortByAfstandButton;
+@property (nonatomic, strong) IBOutlet UIView *buttonSubView;
 
 - (IBAction)sortByDato:(id)sender;
 - (IBAction)sortByName:(id)sender;

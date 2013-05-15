@@ -33,26 +33,63 @@
     
 #if TARGET_IPHONE_SIMULATOR
 	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
-
+	
 #endif
 	
 	NSLog(@"%f %f",location.coordinate.longitude, location.coordinate.latitude);
- 
+	
     // Iterate all and add distance from current location
 	for(NSDictionary *eachStation in allMarkets) {
 		MarketPlace *item = [[MarketPlace alloc] initWithDictionary:eachStation];
 		item.distance = [location distanceFromLocation:item.currentLocation];
 		[array addObject:item];
+		NSLog(@"%@",item);
 	}
-    
-    // Sort by distance
-	NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:NO];
-	[array sortUsingDescriptors:[NSArray arrayWithObject:sorter] ];
-	NSLog(@"%@",array);
+ 
+	NSArray *sortedArray = [self sortArrayByDistance:array];
 	
 	// Return first 100 – or all if there are less than 100 total
-    NSRange top100 = NSMakeRange( 0, ([array count] > 100 ? 100 : [array count]) );
-    return [[array subarrayWithRange:top100] mutableCopy];
+    NSRange top100 = NSMakeRange( 0, ([sortedArray count] > 100 ? 100 : [sortedArray count]) );
+    return [[sortedArray subarrayWithRange:top100] mutableCopy];
+}
+
++(NSArray*)sortArrayByDistance:(NSArray*)nonSortedArr
+{
+	NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
+		if (obj1.distance > obj2.distance)
+			return NSOrderedDescending;
+		else if (obj1.distance < obj2.distance)
+			return NSOrderedAscending;
+		return NSOrderedSame;
+	}];
+	
+	return sortedArray;
+}
+
++(NSArray*)sortArrayByDate:(NSArray*)nonSortedArr
+{
+	NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
+		if (obj1.fromDate > obj2.fromDate)
+			return NSOrderedDescending;
+		else if (obj1.fromDate < obj2.fromDate)
+			return NSOrderedAscending;
+		return NSOrderedSame;
+	}];
+	
+	return sortedArray;
+}
+
++(NSArray*)sortArrayByName:(NSArray*)nonSortedArr
+{
+	NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
+		if (obj1.name > obj2.name)
+			return NSOrderedDescending;
+		else if (obj1.name < obj2.name)
+			return NSOrderedAscending;
+		return NSOrderedSame;
+	}];
+	
+	return sortedArray;
 }
 
 @end

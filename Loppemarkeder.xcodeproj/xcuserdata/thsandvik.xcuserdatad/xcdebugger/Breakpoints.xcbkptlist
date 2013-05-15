@@ -7,52 +7,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "390250980.492495"
+         filePath = "Loppemarkeder/ViewController.m"
+         timestampString = "390318366.184945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
-         landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
+         landmarkName = "-sortByName:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Loppemarkeder/BridgeAnnotation.m"
-         timestampString = "390251172.563177"
+         filePath = "Loppemarkeder/ViewController.m"
+         timestampString = "390318598.403988"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
-         landmarkName = "-title"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Loppemarkeder/Utilities.m"
-         timestampString = "390254753.824283"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "+loadFromJson:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Loppemarkeder/Utilities.m"
-         timestampString = "390254706.777362"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "+loadFromJson:"
+         startingLineNumber = "150"
+         endingLineNumber = "150"
+         landmarkName = "-sortByAfstand:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

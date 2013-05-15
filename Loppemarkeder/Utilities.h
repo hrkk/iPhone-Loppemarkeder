@@ -14,7 +14,9 @@
 	
 }
 
-
++(NSArray*)sortArrayByDistance:(NSArray*)nonSortedArr;
++(NSArray*)sortArrayByDate:(NSArray*)nonSortedArr;
++(NSArray*)sortArrayByName:(NSArray*)nonSortedArr;
 + (NSMutableArray*) loadFromJson:(NSArray*)allMarkets;
 
 @end

@@ -30,13 +30,17 @@
 	self.title = @"Loppemarked liste";
 
     // Setting Up Table View
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 44, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+   
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.hidden = YES;
-    [self.view addSubview:self.tableView];
-    
+   
+	
+	[self.view addSubview:_buttonSubView];
+	
+	
+   
     // Setting Up Activity Indicator View
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicatorView.hidesWhenStopped = YES;
@@ -60,6 +64,11 @@
     }];
     
     [operation start];
+	
+	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
+	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,11 +98,11 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"Cell Identifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    UITableViewCell *cell = [tableView1 dequeueReusableCellWithIdentifier:cellID];
     
     if (!cell)
 	{
@@ -102,7 +111,7 @@
     
     MarketPlace *marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
 	NSLog(@"%@",marketplace);
-    cell.textLabel.text =marketplace.address1;
+    cell.textLabel.text =marketplace.name;
     cell.detailTextLabel.text = marketplace.markedInformation;
     
     return cell;
@@ -117,17 +126,30 @@
 
 - (IBAction)sortByDato:(id)sender
 {
-	
+	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByDatoButton.titleLabel.textColor = [UIColor blackColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
 }
 
 - (IBAction)sortByName:(id)sender
 {
+    [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+	[self.tableView reloadData];
+	
+	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
 	
 }
 
 - (IBAction)sortByAfstand:(id)sender
 {
+	[AppDataCache shared].marketList = [Utilities sortArrayByDistance:[AppDataCache shared].marketList];
+	[self.tableView reloadData];
 	
+	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
+	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
 }
 
 @end
