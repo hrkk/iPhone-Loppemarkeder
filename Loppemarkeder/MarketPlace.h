@@ -21,10 +21,12 @@
 	CLLocation *currentLocation;
 	CGFloat distance;
 	BOOL selectedInList;
+	NSInteger marketID;
 }
 @property (nonatomic) BOOL selectedInList;
 @property (nonatomic,copy) NSString *dateXtraInfo;
 @property (nonatomic,assign) CGFloat distance;
+@property (nonatomic,assign) NSInteger marketID;
 @property (nonatomic,copy) NSString *toDate;
 @property (nonatomic,copy) NSString *entreInfo;
 @property (nonatomic,copy) NSString *address1;

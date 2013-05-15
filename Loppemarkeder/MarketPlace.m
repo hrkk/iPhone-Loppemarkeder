@@ -28,7 +28,8 @@
 		self.markedInformation = [dict objectForKey:@"markedInformation"];	
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];		
-		self.toDate = [dict objectForKey:@"toDate"];		
+		self.toDate = [dict objectForKey:@"toDate"];
+		self.marketID = [[dict objectForKey:@"toDate"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];		
 	}
 	return self;

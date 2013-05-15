@@ -121,11 +121,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	ViewMarketMap *marketMap = [[ViewMarketMap alloc]initWithNibName:@"MapViewController" bundle:nil];
-	MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
-	tmpMarket.selectedInList = YES;
 	
-	[[AppDataCache shared].marketList removeObjectAtIndex:indexPath.row];
-	[[AppDataCache shared].marketList insertObject:tmpMarket atIndex:indexPath.row];
+	MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+	for(MarketPlace *tmp in [AppDataCache shared].marketList){
+		if (tmp.marketID == tmpMarket.marketID ) {
+			tmpMarket.selectedInList = YES;
+		}
+	}
 	
 	marketMap.marketplace = tmpMarket;
 	[self.navigationController pushViewController:marketMap animated:YES];	
