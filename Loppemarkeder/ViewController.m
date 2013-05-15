@@ -24,6 +24,10 @@
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
 	temporaryBarButtonItem.title = @"Tilbage";
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+	
+	UINavigationBar *bar = [self.navigationController navigationBar];
+	[bar setTintColor:[UIColor orangeColor]];
+	self.title = @"Loppemarked liste";
 
     // Setting Up Table View
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 44, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
@@ -61,11 +65,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self.navigationController setNavigationBarHidden:NO animated:NO];
-	
-	UINavigationBar *bar = [self.navigationController navigationBar];
-	[bar setTintColor:[UIColor orangeColor]];
-	self.title = @"Loppemarked liste";
+	[self.navigationController setNavigationBarHidden:NO animated:NO];	
 }
 
 - (void)viewDidUnload
@@ -78,20 +78,25 @@
 }
 
 // Table View Data Source Methods
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([AppDataCache shared].marketList && [AppDataCache shared].marketList.count) {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if ([AppDataCache shared].marketList && [AppDataCache shared].marketList.count)
+	{
         return [AppDataCache shared].marketList.count;
-    } else {
+    }
+	else {
         return 0;
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *cellID = @"Cell Identifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    if (!cell) {
+    if (!cell)
+	{
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
@@ -103,11 +108,26 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	ViewMarketMap *marketMap = [[ViewMarketMap alloc]initWithNibName:@"MapViewController" bundle:nil];
 	marketMap.marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
 	[self.navigationController pushViewController:marketMap animated:YES];	
+}
+
+- (IBAction)sortByDato:(id)sender
+{
+	
+}
+
+- (IBAction)sortByName:(id)sender
+{
+	
+}
+
+- (IBAction)sortByAfstand:(id)sender
+{
+	
 }
 
 @end

@@ -18,14 +18,12 @@
 	NSString *markedInformation;
 	NSString *markedRules;
 	NSString *toDate;
-	CLLocationCoordinate2D coordinate;
 	CLLocation *currentLocation;
 	CGFloat distance;
 }
 @property (nonatomic,copy) NSString *dateXtraInfo;
 @property (nonatomic,assign) CGFloat distance;
 @property (nonatomic,copy) NSString *toDate;
-@property (nonatomic,assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic,copy) NSString *entreInfo;
 @property (nonatomic,copy) NSString *address1;
 @property (nonatomic,copy) NSString *fromDate;

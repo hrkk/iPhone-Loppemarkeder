@@ -16,4 +16,8 @@
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 
+- (IBAction)sortByDato:(id)sender;
+- (IBAction)sortByName:(id)sender;
+- (IBAction)sortByAfstand:(id)sender;
+
 @end

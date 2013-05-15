@@ -4,7 +4,7 @@
 //
 
 #import "MarketPlace.h"
-#import "MyCLController.h"
+
 
 @implementation MarketPlace
 
@@ -40,8 +40,19 @@
 
 -(CGFloat) getDistance
 {
-	CLLocation *cur = [MyCLController sharedInstance].theLocation;
-	return [cur distanceFromLocation:self.currentLocation];
+	CLLocationManager *locationManager;
+	CLLocation *location;
+	//float latitude, longitude;
+	
+	locationManager=[[CLLocationManager alloc] init];
+	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation];
+	
+	// Create an instance of CLLocation
+	
+	location=[locationManager location];
+	
+	return [location distanceFromLocation:self.currentLocation];
 }
 
 
