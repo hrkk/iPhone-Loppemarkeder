@@ -20,7 +20,7 @@
 	if( self = [super init] ){
         
       
-        _marketList = [[NSArray alloc] init];
+        _marketList = [[NSMutableArray alloc] init];
 	}
 	return self;
 }

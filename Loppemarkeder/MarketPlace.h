@@ -20,7 +20,9 @@
 	NSString *toDate;
 	CLLocation *currentLocation;
 	CGFloat distance;
+	BOOL selectedInList;
 }
+@property (nonatomic) BOOL selectedInList;
 @property (nonatomic,copy) NSString *dateXtraInfo;
 @property (nonatomic,assign) CGFloat distance;
 @property (nonatomic,copy) NSString *toDate;
@@ -35,4 +37,5 @@
 - (id) initWithDictionary:(NSDictionary *) dict;
 
 -(CGFloat) getDistance;
+- (void)setSelected;
 @end

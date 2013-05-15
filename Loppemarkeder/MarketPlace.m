@@ -15,6 +15,7 @@
 @synthesize dateXtraInfo;
 
 
+
 - (id) initWithDictionary:(NSDictionary *) dict{
 	NSLog(@"%@",dict);
 	if (self = [super init]) {
@@ -72,7 +73,7 @@
 // optional
 - (NSString *)subtitle
 {
-    return self.markedInformation;
+    selectedInList = YES;
+	return self.markedInformation;
 }
-
 @end

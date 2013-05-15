@@ -6,6 +6,7 @@
 
 #import "CustomMapItem.h"
 #import "CustomAnnotationView.h"
+#import "AppDataCache.h"
 
 typedef enum AnnotationIndex : NSUInteger
 {
@@ -39,11 +40,8 @@ typedef enum AnnotationIndex : NSUInteger
 	location=[locationManager location];
 	
 	// Set Center Coordinates of MapView
-	
 	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-	
-	
-	
+		
 	// Setting Zoom Level on MapView
 	
 	MKCoordinateRegion coordinateRegion;
@@ -54,14 +52,14 @@ typedef enum AnnotationIndex : NSUInteger
 	
 	[self.mapView  setRegion:coordinateRegion animated:YES];
 	
-    // Show userLocation (Blue Circle)
-	
+    // Show userLocation (Blue Circle)	
 	self.mapView .showsUserLocation=YES;
-	
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
     
-    [self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:0]];
+    //[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:0]];
+	
+	[self.mapView addAnnotations:self.mapAnnotations];
 //	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kCityAnnotationIndex]];
 //	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kTeaGardenAnnotationIndex]];
 }
@@ -82,28 +80,11 @@ typedef enum AnnotationIndex : NSUInteger
     
     // create out annotations array (in this example only 3)
     self.mapAnnotations = [[NSMutableArray alloc] init];
-    
-    // annotation for the City of San Francisco
-//    SFAnnotation *sfAnnotation = [[SFAnnotation alloc] init];
-//    [self.mapAnnotations insertObject:sfAnnotation atIndex:kCityAnnotationIndex];
-//    
-    // annotation for Golden Gate Bridge
-//    BridgeAnnotation *bridgeAnnotation = [[BridgeAnnotation alloc] init];
-//    [self.mapAnnotations insertObject:bridgeAnnotation atIndex:kBridgeAnnotationIndex];
-//	
+    //[self.mapAnnotations addObject:_marketplace];
+	[self.mapAnnotations addObjectsFromArray:[AppDataCache shared].marketList];
 	
-    [self.mapAnnotations addObject:_marketplace];
-    
-    
-//    // annotation for Japanese Tea Garden
-//    CustomMapItem *item = [[CustomMapItem alloc] init];
-//    item.place = @"Tea Garden";
-//    item.imageName = @"teagarden";
-//    item.latitude = [NSNumber numberWithDouble:37.7700];
-//    item.longitude = [NSNumber numberWithDouble:-122.4701];
-//    [self.mapAnnotations insertObject:item atIndex:kTeaGardenAnnotationIndex];
-    
-    [self gotoLocation];    // finally goto San Francisco
+	
+    [self gotoLocation];
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
@@ -132,7 +113,8 @@ typedef enum AnnotationIndex : NSUInteger
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    // in case it's the user location, we already have an annotation, so just return nil
+    
+	// in case it's the user location, we already have an annotation, so just return nil
     if ([annotation isKindOfClass:[MKUserLocation class]])
     {
         return nil;
@@ -152,10 +134,21 @@ typedef enum AnnotationIndex : NSUInteger
             // if an existing pin view was not available, create one
             MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
 												  initWithAnnotation:annotation reuseIdentifier:BridgeAnnotationIdentifier];
-            customPinView.pinColor = MKPinAnnotationColorPurple;
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-            
+            MarketPlace *marketTmp = (MarketPlace *)annotation;
+			if (marketTmp.selectedInList) {
+				NSLog(@"sdsd");
+				customPinView.pinColor = MKPinAnnotationColorGreen;
+				customPinView.animatesDrop = YES;
+				customPinView.canShowCallout = YES;
+				
+			}else
+			{
+				customPinView.pinColor = MKPinAnnotationColorPurple;
+				customPinView.animatesDrop = YES;
+				customPinView.canShowCallout = YES;
+				
+			}
+			
             // add a detail disclosure button to the callout which will open a new view controller page
             //
             // note: when the detail disclosure button is tapped, we respond to it via:

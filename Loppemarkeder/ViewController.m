@@ -113,6 +113,7 @@
 	NSLog(@"%@",marketplace);
     cell.textLabel.text =marketplace.name;
     cell.detailTextLabel.text = marketplace.markedInformation;
+	cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -120,7 +121,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	ViewMarketMap *marketMap = [[ViewMarketMap alloc]initWithNibName:@"MapViewController" bundle:nil];
-	marketMap.marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+	MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+	tmpMarket.selectedInList = YES;
+	
+	[[AppDataCache shared].marketList removeObjectAtIndex:indexPath.row];
+	[[AppDataCache shared].marketList insertObject:tmpMarket atIndex:indexPath.row];
+	
+	marketMap.marketplace = tmpMarket;
 	[self.navigationController pushViewController:marketMap animated:YES];	
 }
 
