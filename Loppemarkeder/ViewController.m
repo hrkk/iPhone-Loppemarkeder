@@ -3,9 +3,7 @@
 //  Created by Thomas H. Sandvik on 5/13/13.
 //
 //
-
 #import "ViewController.h"
-
 #import "AFNetworking.h"
 #import "ViewMarketMap.h"
 #import "Utilities.h"
@@ -48,7 +46,7 @@
     [self.view addSubview:self.activityIndicatorView];
     [self.activityIndicatorView startAnimating];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://roninit.dk/LoppemarkederAdminApp/markedItem/listJSON"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSONiPhone"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
