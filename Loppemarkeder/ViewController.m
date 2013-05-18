@@ -10,6 +10,8 @@
 #import "MarketPlace.h"
 #import "AppDataCache.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
+
 @implementation ViewController
 
 @synthesize tableView = _tableView, activityIndicatorView = _activityIndicatorView;
@@ -24,19 +26,25 @@
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 	
 	UINavigationBar *bar = [self.navigationController navigationBar];
-	[bar setTintColor:[UIColor orangeColor]];
+    
+    NSString *blue = @"FFCD05";
+    int b =0;
+    sscanf([blue UTF8String],"%x",&b);
+    UIColor* btnColor = UIColorFromRGB(b);
+    
+	[bar setTintColor:btnColor];
+    
 	self.title = @"Loppemarked liste";
 
     // Setting Up Table View
    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.hidden = YES;
    
 	
-	[self.view addSubview:_buttonSubView];
-	
+	//[self.view addSubview:_buttonSubView];
 	
    
     // Setting Up Activity Indicator View
@@ -123,10 +131,9 @@
 	MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
 	for(MarketPlace *tmp in [AppDataCache shared].marketList){
 		if (tmp.marketID == tmpMarket.marketID ) {
-			tmpMarket.selectedInList = YES;
+			tmp.selectedInList = YES;
 		}
-	}
-	
+	}	
 	marketMap.marketplace = tmpMarket;
 	[self.navigationController pushViewController:marketMap animated:YES];	
 }

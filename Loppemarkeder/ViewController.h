@@ -18,7 +18,7 @@
 @property (nonatomic, strong) IBOutlet UIButton* sortByDatoButton;
 @property (nonatomic, strong) IBOutlet UIButton* sortByNameButton;
 @property (nonatomic, strong) IBOutlet UIButton* sortByAfstandButton;
-@property (nonatomic, strong) IBOutlet UIView *buttonSubView;
+//@property (nonatomic, strong) IBOutlet UIView *buttonSubView;
 
 - (IBAction)sortByDato:(id)sender;
 - (IBAction)sortByName:(id)sender;

@@ -96,7 +96,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAwLjUgMAA</bytes>
+							<bytes key="NSRGB">MSAwLjgwMzkyMTU2ODYgMC4wMTk2MDc4NDMxNAA</bytes>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -169,7 +169,6 @@
 						<string key="NSFrame">{{172, 274}, {120, 120}}</string>
 						<reference key="NSSuperview" ref="730797976"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

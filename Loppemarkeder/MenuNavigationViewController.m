@@ -38,6 +38,7 @@
 	
 	[self.navigationController pushViewController:vc animated:NO];
 }
+
 - (IBAction)nearBy:(id)sender
 {
 	ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
@@ -51,6 +52,7 @@
 	
 	[self.navigationController pushViewController:vc animated:NO];
 }
+
 - (IBAction)omApp:(id)sender
 {
 	ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];

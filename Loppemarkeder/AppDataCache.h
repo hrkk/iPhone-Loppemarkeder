@@ -2,7 +2,7 @@
 
 @interface AppDataCache : NSObject
 
-@property (nonatomic,strong) NSMutableArray *marketList;
+@property (nonatomic,strong) NSArray *marketList;
 
 + (AppDataCache *)shared;
 
