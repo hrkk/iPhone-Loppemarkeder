@@ -56,12 +56,8 @@ typedef enum AnnotationIndex : NSUInteger
 	self.mapView .showsUserLocation=YES;
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
-    
-    //[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:0]];
-	
-	[self.mapView addAnnotations:self.mapAnnotations];
-//	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kCityAnnotationIndex]];
-//	[self.mapView addAnnotation:[self.mapAnnotations objectAtIndex:kTeaGardenAnnotationIndex]];
+ 	[self.mapView addAnnotations:self.mapAnnotations];
+   
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -109,12 +105,8 @@ typedef enum AnnotationIndex : NSUInteger
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // here we illustrate how to detect which annotation type was clicked on for its callout
-    id <MKAnnotation> annotation = [view annotation];
-    if ([annotation isKindOfClass:[BridgeAnnotation class]])
-    {
-        NSLog(@"clicked Golden Gate Bridge annotation");
-    }
-    
+    //id <MKAnnotation> annotation = [view annotation];
+     
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
@@ -134,8 +126,7 @@ typedef enum AnnotationIndex : NSUInteger
         // try to dequeue an existing pin view first
         static NSString *BridgeAnnotationIdentifier = @"bridgeAnnotationIdentifier";
         
-        MKPinAnnotationView *pinView =
-		(MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:BridgeAnnotationIdentifier];
+        MKPinAnnotationView *pinView = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:BridgeAnnotationIdentifier];
         if (pinView == nil)
         {
             // if an existing pin view was not available, create one
