@@ -1,16 +1,20 @@
 
-#import "DetailViewController.h"
+#import "AboutLoppeMarkedViewController.h"
 
-@implementation DetailViewController
+@implementation AboutLoppeMarkedViewController
 
 - (void)viewDidLoad
 {
-    NSLog(@"%@",_marketplace);
+    [super viewDidLoad];
+	self.title = @"Om Loppemarked";
+        
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];	
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0

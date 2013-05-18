@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AboutLoppeMarkedViewController.h"
+#import "AboutAppViewController.h"
 
 @interface MenuNavigationViewController : UIViewController
+{
+    UIActivityIndicatorView *_activityIndicatorView;
+	
+    
+}
+
+
+
+@property (nonatomic, strong) IBOutlet AboutLoppeMarkedViewController *aboutLoppeMarkedViewController;
+@property (nonatomic, strong) IBOutlet AboutAppViewController *aboutAppViewController;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+
 - (IBAction)alleMarkeder:(id)sender;
 - (IBAction)nearBy:(id)sender;
 - (IBAction)omMarkeder:(id)sender;

@@ -9,8 +9,10 @@
 #import "Utilities.h"
 #import "MarketPlace.h"
 #import "AppDataCache.h"
+#import "DetailViewController.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
+
 
 @implementation ViewController
 
@@ -23,18 +25,21 @@
 	// create a custom navigation bar button and set it to always says "Back"
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
 	temporaryBarButtonItem.title = @"Tilbage";
+    
+    
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 	
-	UINavigationBar *bar = [self.navigationController navigationBar];
-    
-    NSString *blue = @"FFCD05";
-    int b =0;
-    sscanf([blue UTF8String],"%x",&b);
-    UIColor* btnColor = UIColorFromRGB(b);
-    
-	[bar setTintColor:btnColor];
-    
+//	UINavigationBar *bar = [self.navigationController navigationBar];
+//    
+//    NSString *blue = @"FFCD05";
+//    int b =0;
+//    sscanf([blue UTF8String],"%x",&b);
+//    UIColor* btnColor = UIColorFromRGB(b);
+//    
+//	[bar setTintColor:btnColor];
+//    
 	self.title = @"Loppemarked liste";
+    
 
     // Setting Up Table View
    
@@ -44,32 +49,11 @@
     self.tableView.hidden = YES;
    
 	
-	//[self.view addSubview:_buttonSubView];
 	
    
-    // Setting Up Activity Indicator View
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicatorView.hidesWhenStopped = YES;
-    self.activityIndicatorView.center = self.view.center;
-    [self.view addSubview:self.activityIndicatorView];
-    [self.activityIndicatorView startAnimating];
-    
-    NSURL *url = [[NSURL alloc] initWithString:@"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSONiPhone"];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		NSLog(@"%@",JSON);
-		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
-		NSLog(@"%@",[AppDataCache shared].marketList);
-        [self.activityIndicatorView stopAnimating];
-        [self.tableView setHidden:NO];
+       [self.tableView setHidden:NO];
         [self.tableView reloadData];
         
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-    }];
-    
-    [operation start];
 	
 	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
@@ -126,16 +110,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ViewMarketMap *marketMap = [[ViewMarketMap alloc]initWithNibName:@"MapViewController" bundle:nil];
-	
-	MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
-	for(MarketPlace *tmp in [AppDataCache shared].marketList){
-		if (tmp.marketID == tmpMarket.marketID ) {
-			tmp.selectedInList = YES;
-		}
-	}	
-	marketMap.marketplace = tmpMarket;
-	[self.navigationController pushViewController:marketMap animated:YES];	
+//	ViewMarketMap *marketMap = [[ViewMarketMap alloc]initWithNibName:@"MapViewController" bundle:nil];
+//	
+    MarketPlace *tmpMarket = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+//	for(MarketPlace *tmp in [AppDataCache shared].marketList){
+//		if (tmp.marketID == tmpMarket.marketID ) {
+//			tmp.selectedInList = YES;
+//		}
+//	}	
+//	marketMap.marketplace = tmpMarket;
+//	//[self.navigationController pushViewController:marketMap animated:YES];
+    
+    self.detailViewController.marketplace = tmpMarket;
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 - (IBAction)sortByDato:(id)sender

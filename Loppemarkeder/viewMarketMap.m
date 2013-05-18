@@ -17,6 +17,9 @@ typedef enum AnnotationIndex : NSUInteger
 
 #pragma mark -
 
+#define kSimulatorLat			55.766338
+#define kSimulatorlong			12.496262
+
 @implementation ViewMarketMap
 
 + (CGFloat)annotationPadding;
@@ -38,6 +41,11 @@ typedef enum AnnotationIndex : NSUInteger
 	// Create an instance of CLLocation
 	
 	location=[locationManager location];
+    
+#if TARGET_IPHONE_SIMULATOR
+	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
+	
+#endif
 	
 	// Set Center Coordinates of MapView
 	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
@@ -83,11 +91,8 @@ typedef enum AnnotationIndex : NSUInteger
     
     // create out annotations array (in this example only 3)
     self.mapAnnotations = [[NSMutableArray alloc] init];
-    //[self.mapAnnotations addObject:_marketplace];
-	[self.mapAnnotations addObjectsFromArray:[AppDataCache shared].marketList];
-	
-	
-    [self gotoLocation];
+    [self.mapAnnotations addObjectsFromArray:[AppDataCache shared].marketList];
+	[self gotoLocation];
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0

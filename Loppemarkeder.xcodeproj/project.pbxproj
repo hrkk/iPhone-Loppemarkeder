@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */; };
+		0B5E122B174813E900BBD2F6 /* AboutLoppeMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */; };
+		0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E122C174818B800BBD2F6 /* AboutApp.xib */; };
+		0B5E12301748199900BBD2F6 /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */; };
 		621796A2174353FA0075DC93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621796A1174353FA0075DC93 /* Default-568h@2x.png */; };
 		624D910D1742469500044005 /* AppDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D910C1742469500044005 /* AppDataCache.m */; };
 		624D911117427D0B00044005 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911017427D0B00044005 /* DetailViewController.m */; };
@@ -50,6 +54,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutLoppeMarked.xib; path = Loppemarkeder/AboutLoppeMarked.xib; sourceTree = SOURCE_ROOT; };
+		0B5E1229174813E900BBD2F6 /* AboutLoppeMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutLoppeMarkedViewController.h; path = Loppemarkeder/AboutLoppeMarkedViewController.h; sourceTree = SOURCE_ROOT; };
+		0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutLoppeMarkedViewController.m; path = Loppemarkeder/AboutLoppeMarkedViewController.m; sourceTree = SOURCE_ROOT; };
+		0B5E122C174818B800BBD2F6 /* AboutApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutApp.xib; path = Loppemarkeder/AboutApp.xib; sourceTree = SOURCE_ROOT; };
+		0B5E122E1748199900BBD2F6 /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutAppViewController.h; path = Loppemarkeder/AboutAppViewController.h; sourceTree = SOURCE_ROOT; };
+		0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutAppViewController.m; path = Loppemarkeder/AboutAppViewController.m; sourceTree = SOURCE_ROOT; };
 		621796A1174353FA0075DC93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		624D910B1742469500044005 /* AppDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDataCache.h; path = Loppemarkeder/AppDataCache.h; sourceTree = SOURCE_ROOT; };
 		624D910C1742469500044005 /* AppDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDataCache.m; path = Loppemarkeder/AppDataCache.m; sourceTree = SOURCE_ROOT; };
@@ -196,6 +206,8 @@
 		62BD45EC1741215700E73895 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				0B5E122C174818B800BBD2F6 /* AboutApp.xib */,
+				0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */,
 				624D911E17427E8300044005 /* DetailViewController.xib */,
 				624D911F17427E8300044005 /* MapViewController.xib */,
 				62BD45DF1741016200E73895 /* ViewController.xib */,
@@ -256,6 +268,10 @@
 		8382D686155AE229001541B2 /* Loppemarkeder */ = {
 			isa = PBXGroup;
 			children = (
+				0B5E122E1748199900BBD2F6 /* AboutAppViewController.h */,
+				0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */,
+				0B5E1229174813E900BBD2F6 /* AboutLoppeMarkedViewController.h */,
+				0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */,
 				62BC11061740FE8E0083FF05 /* AFNetworking */,
 				624D910E1742509F00044005 /* Model */,
 				62BD45F71741257100E73895 /* Map */,
@@ -350,6 +366,8 @@
 				624D91701742C3E300044005 /* ic_om_app.png in Resources */,
 				624D91711742C3E300044005 /* ic_om_markeder.png in Resources */,
 				621796A2174353FA0075DC93 /* Default-568h@2x.png in Resources */,
+				0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */,
+				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +401,8 @@
 				624D911A17427E1C00044005 /* CustomMapItem.m in Sources */,
 				624D911D17427E2F00044005 /* SFAnnotation.m in Sources */,
 				624D91741742C56500044005 /* MenuNavigationViewController.m in Sources */,
+				0B5E122B174813E900BBD2F6 /* AboutLoppeMarkedViewController.m in Sources */,
+				0B5E12301748199900BBD2F6 /* AboutAppViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

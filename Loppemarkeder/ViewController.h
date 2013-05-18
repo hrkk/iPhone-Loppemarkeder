@@ -4,14 +4,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DetailViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UIActivityIndicatorView *_activityIndicatorView;
 	IBOutlet UITableView* tableView;	
    
 }
-
+@property (nonatomic, strong) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 

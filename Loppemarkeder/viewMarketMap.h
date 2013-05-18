@@ -14,8 +14,6 @@
 
 @interface ViewMarketMap: UIViewController <MKMapViewDelegate>
 {
-	MarketPlace *marketplace;
-	
 	CLLocationManager *locationManager;
 	CLLocation *location;
 	float latitude, longitude;

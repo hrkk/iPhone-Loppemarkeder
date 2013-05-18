@@ -7,6 +7,8 @@
 
 #import "MenuNavigationViewController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -15,15 +17,46 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[MenuNavigationViewController alloc] initWithNibName:@"menuNavi" bundle:nil];
 	navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 	
     [self.window addSubview:navigationController.view];
+    UINavigationBar *bar = [navigationController navigationBar];
+    
+    NSString *blue = @"FFCD05";
+    int b =0;
+    sscanf([blue UTF8String],"%x",&b);
+    UIColor* btnColor = UIColorFromRGB(b);
+    
+    [bar setTintColor:btnColor];
+    
+    // Navbar
+	[[UINavigationBar appearance] setTitleTextAttributes:@{ UITextAttributeFont: [UIFont systemFontOfSize:17],
+								UITextAttributeTextColor: [UIColor blackColor],
+						 UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake( 1, 0 )],
+						  UITextAttributeTextShadowColor: [UIColor grayColor] }];
+    
+
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+#pragma mark - Utility methods
+
+//- (void)setAppearance
+//{
+//    NSString *blue = @"FFCD05";
+//    int b =0;
+//    sscanf([blue UTF8String],"%x",&b);
+//    UIColor* btnColor = UIColorFromRGB(b);
+//    
+//	
+//   	[navigationController.navigationBar setTintColor:btnColor];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
