@@ -20,8 +20,7 @@
 	NSString *toDate;
 	CLLocation *currentLocation;
 	CGFloat distance;
-	BOOL selectedInList;
-	NSInteger marketID;
+	
 }
 @property (nonatomic) BOOL selectedInList;
 @property (nonatomic,copy) NSString *dateXtraInfo;
@@ -39,5 +38,5 @@
 - (id) initWithDictionary:(NSDictionary *) dict;
 
 -(CGFloat) getDistance;
-- (void)setSelected;
+
 @end

@@ -29,7 +29,7 @@
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];		
 		self.toDate = [dict objectForKey:@"toDate"];
-		self.marketID = [[dict objectForKey:@"id"] integerValue];
+		_marketID = [[dict objectForKey:@"id"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];		
 	}
 	return self;
@@ -74,7 +74,7 @@
 // optional
 - (NSString *)subtitle
 {
-    selectedInList = YES;
+    _selectedInList = YES;
 	return self.markedInformation;
 }
 @end
