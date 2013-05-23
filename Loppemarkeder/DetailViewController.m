@@ -5,7 +5,13 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"%@",_marketplace);
+    self.title = _marketplace.name;
+    _addressLabel.text = _marketplace.address1;
+    _dateLabel.text = _marketplace.getDate;
+    _entranceLabel.text = _marketplace.entreInfo;
+    _rulesLabel.text = _marketplace.markedRules;
+    _marketInfo.text = _marketplace.markedInformation;
+    NSLog(@"DetailViewController %@",_marketplace);
 }
 
 - (void)viewWillAppear:(BOOL)animated

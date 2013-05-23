@@ -39,5 +39,6 @@
 - (id) initWithDictionary:(NSDictionary *) dict;
 
 -(CGFloat) getDistance;
+-(NSString*)getDate;
 - (void)setSelected;
 @end
