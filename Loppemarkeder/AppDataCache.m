@@ -17,9 +17,7 @@
 }
 
 - (id) init{
-	if( self = [super init] ){
-        
-      
+	if( self = [super init] ){      
         _marketList = [[NSMutableArray alloc] init];
 	}
 	return self;
