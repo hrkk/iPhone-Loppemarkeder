@@ -61,7 +61,7 @@ typedef enum AnnotationIndex : NSUInteger
 	[self.mapView  setRegion:coordinateRegion animated:YES];
 	
     // Show userLocation (Blue Circle)	
-	self.mapView .showsUserLocation=YES;
+	self.mapView.showsUserLocation=YES;
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
  	[self.mapView addAnnotations:self.mapAnnotations];
