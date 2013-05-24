@@ -39,4 +39,7 @@
 
 -(CGFloat) getDistance;
 
+-(NSString*)getDate;
+- (void)setSelected;
+
 @end

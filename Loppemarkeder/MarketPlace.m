@@ -34,6 +34,16 @@
 	}
 	return self;
 }
+-(NSString*)getDate {
+    NSString *value = [fromDate substringWithRange:NSMakeRange(0, 3)];
+    return value;
+}
+
+-(NSString *) getYear:(NSString * ) fullDate {
+    // TODO build formatted date
+    NSString *value = [fullDate substringWithRange:NSMakeRange(0, 4)];
+    return value;
+}
 
 -(NSString*)description
 {
