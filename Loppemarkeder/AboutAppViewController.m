@@ -24,4 +24,11 @@
 }
 #endif
 
+- (IBAction)openAipopsWWW:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.aipops.com"]];
+}
+
+- (IBAction)openRoninItWWW:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.roninit.dk"]];
+}
 @end

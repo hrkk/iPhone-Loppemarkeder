@@ -11,7 +11,8 @@
 		0B5E122B174813E900BBD2F6 /* AboutLoppeMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */; };
 		0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E122C174818B800BBD2F6 /* AboutApp.xib */; };
 		0B5E12301748199900BBD2F6 /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */; };
-		621796A2174353FA0075DC93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 621796A1174353FA0075DC93 /* Default-568h@2x.png */; };
+		0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF43E57174FFCC60099A343 /* Default-568h@2x.png */; };
+		0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF43E58174FFCC60099A343 /* menuNavi.xib */; };
 		624D910D1742469500044005 /* AppDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D910C1742469500044005 /* AppDataCache.m */; };
 		624D911117427D0B00044005 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911017427D0B00044005 /* DetailViewController.m */; };
 		624D911817427E1C00044005 /* BridgeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911317427E1B00044005 /* BridgeAnnotation.m */; };
@@ -20,7 +21,6 @@
 		624D911D17427E2F00044005 /* SFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D911C17427E2F00044005 /* SFAnnotation.m */; };
 		624D912017427E8300044005 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911E17427E8300044005 /* DetailViewController.xib */; };
 		624D912117427E8300044005 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D911F17427E8300044005 /* MapViewController.xib */; };
-		624D91691742C34600044005 /* menuNavi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D91681742C34600044005 /* menuNavi.xib */; };
 		624D916E1742C3E300044005 /* ic_i_naerheden.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916A1742C3E300044005 /* ic_i_naerheden.png */; };
 		624D916F1742C3E300044005 /* ic_liste.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916B1742C3E300044005 /* ic_liste.png */; };
 		624D91701742C3E300044005 /* ic_om_app.png in Resources */ = {isa = PBXBuildFile; fileRef = 624D916C1742C3E300044005 /* ic_om_app.png */; };
@@ -60,7 +60,8 @@
 		0B5E122C174818B800BBD2F6 /* AboutApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutApp.xib; path = Loppemarkeder/AboutApp.xib; sourceTree = SOURCE_ROOT; };
 		0B5E122E1748199900BBD2F6 /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutAppViewController.h; path = Loppemarkeder/AboutAppViewController.h; sourceTree = SOURCE_ROOT; };
 		0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutAppViewController.m; path = Loppemarkeder/AboutAppViewController.m; sourceTree = SOURCE_ROOT; };
-		621796A1174353FA0075DC93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0BF43E57174FFCC60099A343 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Loppemarkeder/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		0BF43E58174FFCC60099A343 /* menuNavi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi.xib; path = Loppemarkeder/menuNavi.xib; sourceTree = SOURCE_ROOT; };
 		624D910B1742469500044005 /* AppDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDataCache.h; path = Loppemarkeder/AppDataCache.h; sourceTree = SOURCE_ROOT; };
 		624D910C1742469500044005 /* AppDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDataCache.m; path = Loppemarkeder/AppDataCache.m; sourceTree = SOURCE_ROOT; };
 		624D910F17427D0B00044005 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Loppemarkeder/DetailViewController.h; sourceTree = SOURCE_ROOT; };
@@ -75,7 +76,6 @@
 		624D911C17427E2F00044005 /* SFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFAnnotation.m; path = Loppemarkeder/SFAnnotation.m; sourceTree = SOURCE_ROOT; };
 		624D911E17427E8300044005 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Loppemarkeder/DetailViewController.xib; sourceTree = SOURCE_ROOT; };
 		624D911F17427E8300044005 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Loppemarkeder/MapViewController.xib; sourceTree = SOURCE_ROOT; };
-		624D91681742C34600044005 /* menuNavi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = menuNavi.xib; sourceTree = SOURCE_ROOT; };
 		624D916A1742C3E300044005 /* ic_i_naerheden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_i_naerheden.png; sourceTree = "<group>"; };
 		624D916B1742C3E300044005 /* ic_liste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_liste.png; sourceTree = "<group>"; };
 		624D916C1742C3E300044005 /* ic_om_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_om_app.png; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				624D916A1742C3E300044005 /* ic_i_naerheden.png */,
+				0BF43E57174FFCC60099A343 /* Default-568h@2x.png */,
 				624D916B1742C3E300044005 /* ic_liste.png */,
 				624D916C1742C3E300044005 /* ic_om_app.png */,
 				624D916D1742C3E300044005 /* ic_om_markeder.png */,
@@ -206,12 +207,12 @@
 		62BD45EC1741215700E73895 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				0BF43E58174FFCC60099A343 /* menuNavi.xib */,
 				0B5E122C174818B800BBD2F6 /* AboutApp.xib */,
 				0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */,
 				624D911E17427E8300044005 /* DetailViewController.xib */,
 				624D911F17427E8300044005 /* MapViewController.xib */,
 				62BD45DF1741016200E73895 /* ViewController.xib */,
-				624D91681742C34600044005 /* menuNavi.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -238,7 +239,6 @@
 		8382D671155AE229001541B2 = {
 			isa = PBXGroup;
 			children = (
-				621796A1174353FA0075DC93 /* Default-568h@2x.png */,
 				62BD45F51741249500E73895 /* MapKit.framework */,
 				62BD45ED1741220E00E73895 /* CoreLocation.framework */,
 				8382D686155AE229001541B2 /* Loppemarkeder */,
@@ -360,14 +360,14 @@
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
 				624D912117427E8300044005 /* MapViewController.xib in Resources */,
-				624D91691742C34600044005 /* menuNavi.xib in Resources */,
 				624D916E1742C3E300044005 /* ic_i_naerheden.png in Resources */,
 				624D916F1742C3E300044005 /* ic_liste.png in Resources */,
 				624D91701742C3E300044005 /* ic_om_app.png in Resources */,
 				624D91711742C3E300044005 /* ic_om_markeder.png in Resources */,
-				621796A2174353FA0075DC93 /* Default-568h@2x.png in Resources */,
 				0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */,
 				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
+				0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */,
+				0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
