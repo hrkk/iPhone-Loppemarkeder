@@ -1,4 +1,4 @@
-//
+ //
 //  Created by Thomas H. Sandvik on 5/13/13.
 //
 //
@@ -8,16 +8,13 @@
 
 @implementation MarketPlace
 
-@synthesize  entreInfo,address1, fromDate, markedInformation, markedRules;
+@synthesize entreInfo,address1, fromDate, markedInformation, markedRules;
 @synthesize name,subtitle,currentLocation;
 @synthesize distance;
 @synthesize toDate;
 @synthesize dateXtraInfo;
 
-
-
 - (id) initWithDictionary:(NSDictionary *) dict{
-	NSLog(@"%@",dict);
 	if (self = [super init]) {
         NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
         [dateFormatx setDateFormat:@"yyyy-MM-dd"];
@@ -40,15 +37,29 @@
 }
 
 
--(NSString *) getYear:(NSString * ) fullDate {
-    // TODO build formatted date
-    NSString *value = [fullDate substringWithRange:NSMakeRange(0, 4)];
-    return value;
-}
+-(NSString*)getFormattedDate {
+   // NSDate *fromDateDate;
+   //  NSDate *toDateDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+   // [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    // create date types from json string dates
+   // fromDateDate = [formatter dateFromString:fromDate];
+    //toDateDate = [formatter dateFromString:toDate];
 
--(NSString*)description
-{
-	return [NSString stringWithFormat:@"%@ %f, %f distance: %f",self.address1,self.currentLocation.coordinate.longitude, self.currentLocation.coordinate.latitude, self.distance];
+    // change formatting format to the display format
+    [formatter setDateFormat:@"dd MMM yyyy"];
+    NSString *formattedDateString = nil;
+    
+    if (toDate != nil && ![fromDate isEqualToDate:toDate]) {
+        formattedDateString = [formatter stringFromDate:toDate];
+        [formatter setDateFormat:@"dd"];
+        NSString *fromDay = [formatter stringFromDate:fromDate];
+        return [NSString stringWithFormat:@"%@-%@", fromDay, formattedDateString];
+    } else {
+        formattedDateString = [formatter stringFromDate:fromDate];
+        return formattedDateString;
+    }
+    
 }
 
 -(CGFloat) getDistance
@@ -88,4 +99,10 @@
     _selectedInList = YES;
 	return self.markedInformation;
 }
+
+/* Overriding description (equivalent to toString in JAVA) */
+- (NSString*)description {
+    return [NSString stringWithFormat:@"<MarketPlace> name : %@, address1 : %@, fromDate : %@, toDate : %@", name, address1, fromDate, toDate];
+}
+
 @end

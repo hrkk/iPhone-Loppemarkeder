@@ -46,7 +46,7 @@
 		NSLog(@"%@",item);
 	}
  
-	NSArray *sortedArray = [self sortArrayByDistance:array];
+	NSArray *sortedArray = [self sortArrayByName:array];
 	
 	// Return first 100 – or all if there are less than 100 total
     NSRange top100 = NSMakeRange( 0, ([sortedArray count] > 100 ? 100 : [sortedArray count]) );
