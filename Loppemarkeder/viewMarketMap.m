@@ -50,7 +50,7 @@ typedef enum AnnotationIndex : NSUInteger
 	
 	// Set Center Coordinates of MapView
 	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-		
+    
 	// Setting Zoom Level on MapView
 	
 	MKCoordinateRegion coordinateRegion;
@@ -61,26 +61,27 @@ typedef enum AnnotationIndex : NSUInteger
 	
 	[self.mapView  setRegion:coordinateRegion animated:YES];
 	
-    // Show userLocation (Blue Circle)	
+    // Show userLocation (Blue Circle)
 	self.mapView.showsUserLocation=YES;
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
  	[self.mapView addAnnotations:self.mapAnnotations];
-   
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-   [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	for(MarketPlace *tmpMarket in [AppDataCache shared].marketList){
+	for(MarketPlace *tmpMarket in [AppDataCache shared].marketList)
+    {
 		tmpMarket.selectedInList = NO;
-	}	
+	}
 }
 
 - (void)viewDidLoad
@@ -109,24 +110,21 @@ typedef enum AnnotationIndex : NSUInteger
     
     NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
     
-    for(MarketPlace *tmp in [AppDataCache shared].marketList){
-        for(int i=0;i<[array count];i++){
+    for(MarketPlace *tmp in [AppDataCache shared].marketList)
+    {
+        for(int i=0;i<[array count];i++)
+        {
             MarketPlace *tmp2 =[array objectAtIndex:i];
             if ([tmp.name isEqualToString:tmp2.name])
             {
                 NSComparisonResult result = [tmp.fromDate compare:tmp2.fromDate];
                 if(result == NSOrderedDescending)
-                {
                     [array removeObjectAtIndex:i];
-                }               
+                
             }
         }
-        
     }
-    NSLog(@"%@",array);
-    
     return [NSArray arrayWithArray:array];
-
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
@@ -145,7 +143,7 @@ typedef enum AnnotationIndex : NSUInteger
 {
     // here we illustrate how to detect which annotation type was clicked on for its callout
     //id <MKAnnotation> annotation = [view annotation];
-     
+    
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
@@ -172,8 +170,8 @@ typedef enum AnnotationIndex : NSUInteger
             MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
 												  initWithAnnotation:annotation reuseIdentifier:BridgeAnnotationIdentifier];
             MarketPlace *marketTmp = (MarketPlace *)annotation;
-			if (marketTmp.selectedInList) {
-				NSLog(@"%@", marketTmp);
+			if (marketTmp.selectedInList)
+            {
 				customPinView.pinColor = MKPinAnnotationColorGreen;
 				customPinView.animatesDrop = YES;
 				customPinView.canShowCallout = YES;
@@ -205,7 +203,7 @@ typedef enum AnnotationIndex : NSUInteger
         }
         return pinView;
     }
-
+    
     
     return nil;
 }
