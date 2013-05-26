@@ -7,6 +7,7 @@
 #import "CustomMapItem.h"
 #import "CustomAnnotationView.h"
 #import "AppDataCache.h"
+#import "Utilities.h"
 
 typedef enum AnnotationIndex : NSUInteger
 {
@@ -91,8 +92,41 @@ typedef enum AnnotationIndex : NSUInteger
     
     // create out annotations array (in this example only 3)
     self.mapAnnotations = [[NSMutableArray alloc] init];
-    [self.mapAnnotations addObjectsFromArray:[AppDataCache shared].marketList];
+    
+    // Hvis der er flere loppemarkeder med samme navn skal kun 1 vises og kun den som er den kommende (udfra fromDate)
+    // Endvidere skal der via et billed angives at der er flere forekomster på samme lokation
+    
+    [self.mapAnnotations addObjectsFromArray:[self unikkeForekomsterArray]];
 	[self gotoLocation];
+}
+
+// Hvis der er flere loppemarkeder med samme navn skal kun 1 vises og kun den som er den kommende (udfra fromDate)
+// Endvidere skal der via et billed angives at der er flere forekomster på samme lokation
+-(NSArray*)unikkeForekomsterArray
+{
+    //Sorter efter navn
+    [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+    
+    NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
+    
+    for(MarketPlace *tmp in [AppDataCache shared].marketList){
+        for(int i=0;i<[array count];i++){
+            MarketPlace *tmp2 =[array objectAtIndex:i];
+            if ([tmp.name isEqualToString:tmp2.name])
+            {
+                NSComparisonResult result = [tmp.fromDate compare:tmp2.fromDate];
+                if(result == NSOrderedDescending)
+                {
+                    [array removeObjectAtIndex:i];
+                }               
+            }
+        }
+        
+    }
+    NSLog(@"%@",array);
+    
+    return [NSArray arrayWithArray:array];
+
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
@@ -171,67 +205,7 @@ typedef enum AnnotationIndex : NSUInteger
         }
         return pinView;
     }
-//    else if ([annotation isKindOfClass:[SFAnnotation class]])   // for City of San Francisco
-//    {
-//        static NSString *SFAnnotationIdentifier = @"SFAnnotationIdentifier";
-//        
-//        MKAnnotationView *flagAnnotationView =
-//		[self.mapView dequeueReusableAnnotationViewWithIdentifier:SFAnnotationIdentifier];
-//        if (flagAnnotationView == nil)
-//        {
-//            MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-//																			reuseIdentifier:SFAnnotationIdentifier];
-//            annotationView.canShowCallout = YES;
-//			
-//            UIImage *flagImage = [UIImage imageNamed:@"flag.png"];
-//            
-//            // size the flag down to the appropriate size
-//            CGRect resizeRect;
-//            resizeRect.size = flagImage.size;
-//            CGSize maxSize = CGRectInset(self.view.bounds,
-//                                         [ViewMarketMap annotationPadding],
-//                                         [ViewMarketMap annotationPadding]).size;
-//            maxSize.height -= self.navigationController.navigationBar.frame.size.height + [ViewMarketMap calloutHeight];
-//            if (resizeRect.size.width > maxSize.width)
-//                resizeRect.size = CGSizeMake(maxSize.width, resizeRect.size.height / resizeRect.size.width * maxSize.width);
-//            if (resizeRect.size.height > maxSize.height)
-//                resizeRect.size = CGSizeMake(resizeRect.size.width / resizeRect.size.height * maxSize.height, maxSize.height);
-//            
-//            resizeRect.origin = CGPointMake(0.0, 0.0);
-//            UIGraphicsBeginImageContext(resizeRect.size);
-//            [flagImage drawInRect:resizeRect];
-//            UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-//            UIGraphicsEndImageContext();
-//            
-//            annotationView.image = resizedImage;
-//            annotationView.opaque = NO;
-//			
-//            UIImageView *sfIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SFIcon.png"]];
-//            annotationView.leftCalloutAccessoryView = sfIconView;
-//            
-//            // offset the flag annotation so that the flag pole rests on the map coordinate
-//            annotationView.centerOffset = CGPointMake( annotationView.centerOffset.x + annotationView.image.size.width/2, annotationView.centerOffset.y - annotationView.image.size.height/2 );
-//            
-//            return annotationView;
-//        }
-//        else
-//        {
-//            flagAnnotationView.annotation = annotation;
-//        }
-//        return flagAnnotationView;
-//    }
-//    else if ([annotation isKindOfClass:[CustomMapItem class]])  // for Japanese Tea Garden
-//    {
-//        static NSString *TeaGardenAnnotationIdentifier = @"TeaGardenAnnotationIdentifier";
-//        
-//        CustomAnnotationView *annotationView =
-//        (CustomAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:TeaGardenAnnotationIdentifier];
-//        if (annotationView == nil)
-//        {
-//            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TeaGardenAnnotationIdentifier];
-//        }
-//        return annotationView;
-//    }
+
     
     return nil;
 }
