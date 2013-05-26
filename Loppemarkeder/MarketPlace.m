@@ -16,16 +16,20 @@
 
 - (id) initWithDictionary:(NSDictionary *) dict{
 	if (self = [super init]) {
-		self.address1 = [dict objectForKey:@"address"];		
+        NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
+        [dateFormatx setDateFormat:@"yyyy-MM-dd"];
+        
+		self.address1 = [dict objectForKey:@"address"];
 		self.dateXtraInfo = [dict objectForKey:@"dateExtraInfo"];
 		self.entreInfo = [dict objectForKey:@"entreInfo"];
-		self.fromDate = [dict objectForKey:@"fromDate"];
+		self.fromDate = [dateFormatx dateFromString:[dict objectForKey:@"stringFromDate"]];
+        NSLog(@"%@",[dict objectForKey:@"fromDate"]);
 		CGFloat latitude = [[dict objectForKey:@"latitude"] floatValue];
 		CGFloat longitude = [[dict objectForKey:@"longitude"] floatValue];
 		self.markedInformation = [dict objectForKey:@"markedInformation"];	
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];		
-		self.toDate = [dict objectForKey:@"toDate"];
+		self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"stringToDate"]];
 		_marketID = [[dict objectForKey:@"id"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];		
 	}
@@ -34,24 +38,25 @@
 
 
 -(NSString*)getFormattedDate {
-    NSDate *fromDateDate;
-    NSDate *toDateDate;
+   // NSDate *fromDateDate;
+   //  NSDate *toDateDate;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+   // [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     // create date types from json string dates
-    fromDateDate = [formatter dateFromString:fromDate];
-    toDateDate = [formatter dateFromString:toDate];
+   // fromDateDate = [formatter dateFromString:fromDate];
+    //toDateDate = [formatter dateFromString:toDate];
 
     // change formatting format to the display format
     [formatter setDateFormat:@"dd MMM yyyy"];
     NSString *formattedDateString = nil;
     
-    if (toDate != nil && ![fromDate isEqualToString:toDate]) {
-        formattedDateString = [formatter stringFromDate:toDateDate];
-        NSString *fromDay = [fromDate substringWithRange:NSMakeRange(8, 2)];
+    if (toDate != nil && ![fromDate isEqualToDate:toDate]) {
+        formattedDateString = [formatter stringFromDate:toDate];
+        [formatter setDateFormat:@"dd"];
+        NSString *fromDay = [formatter stringFromDate:fromDate];
         return [NSString stringWithFormat:@"%@-%@", fromDay, formattedDateString];
     } else {
-        formattedDateString = [formatter stringFromDate:fromDateDate];
+        formattedDateString = [formatter stringFromDate:fromDate];
         return formattedDateString;
     }
     
