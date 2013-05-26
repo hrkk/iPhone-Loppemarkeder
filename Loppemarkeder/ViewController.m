@@ -101,12 +101,15 @@
     
     MarketPlace *marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
 	NSLog(@"%@",marketplace);
+    
     cell.textLabel.text =marketplace.name;
-    cell.detailTextLabel.text = marketplace.markedInformation;
+    cell.detailTextLabel.text = marketplace.getFormattedDate;
 	cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

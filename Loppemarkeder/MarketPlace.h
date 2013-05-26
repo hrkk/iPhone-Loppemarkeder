@@ -12,7 +12,6 @@
 
 	NSString *dateXtraInfo;	
 	NSString *entreInfo;
-	
 	NSString *address1;
 	NSString *fromDate;
 	NSString *markedInformation;
@@ -20,7 +19,6 @@
 	NSString *toDate;
 	CLLocation *currentLocation;
 	CGFloat distance;
-	
 }
 @property (nonatomic) BOOL selectedInList;
 @property (nonatomic,copy) NSString *dateXtraInfo;
@@ -34,12 +32,9 @@
 @property (nonatomic,copy) NSString *markedRules;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,strong) CLLocation *currentLocation;
-
+// Constructor
 - (id) initWithDictionary:(NSDictionary *) dict;
-
--(CGFloat) getDistance;
-
--(NSString*)getDate;
-- (void)setSelected;
-
+//Instance (-) method
+- (CGFloat) getDistance;
+- (NSString*)getFormattedDate;
 @end
