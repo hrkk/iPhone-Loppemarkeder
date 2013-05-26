@@ -68,15 +68,24 @@
 
 +(NSArray*)sortArrayByDate:(NSArray*)nonSortedArr
 {
-	NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
-		if (obj1.fromDate > obj2.fromDate)
-			return NSOrderedDescending;
-		else if (obj1.fromDate < obj2.fromDate)
-			return NSOrderedAscending;
-		return NSOrderedSame;
-	}];
+	NSMutableArray *arr  = [NSMutableArray arrayWithArray:nonSortedArr];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"fromDate" ascending:YES];
+    [arr sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+    
+    nonSortedArr = [NSArray arrayWithArray:arr];
+    
+    return nonSortedArr;
+    
+    
+//    NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
+//		if (obj1.fromDate > obj2.fromDate)
+//			return NSOrderedDescending;
+//		else if (obj1.fromDate < obj2.fromDate)
+//			return NSOrderedAscending;
+//		return NSOrderedSame;
+//	}];
 	
-	return sortedArray;
+	//return sortedArray;
 }
 
 +(NSArray*)sortArrayByName:(NSArray*)nonSortedArr

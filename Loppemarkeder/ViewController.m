@@ -127,7 +127,9 @@
 
 - (IBAction)sortByDato:(id)sender
 {
-	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
+	[AppDataCache shared].marketList = [Utilities sortArrayByDate:[AppDataCache shared].marketList];
+	[self.tableView reloadData];
+    _sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
 }

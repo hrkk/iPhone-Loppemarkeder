@@ -14,10 +14,10 @@
 	NSString *entreInfo;
 	
 	NSString *address1;
-	NSString *fromDate;
+	NSDate *fromDate;
 	NSString *markedInformation;
 	NSString *markedRules;
-	NSString *toDate;
+	NSDate *toDate;
 	CLLocation *currentLocation;
 	CGFloat distance;
 	
@@ -26,10 +26,10 @@
 @property (nonatomic,copy) NSString *dateXtraInfo;
 @property (nonatomic,assign) CGFloat distance;
 @property (nonatomic,assign) NSInteger marketID;
-@property (nonatomic,copy) NSString *toDate;
+@property (nonatomic,copy) NSDate *toDate;
 @property (nonatomic,copy) NSString *entreInfo;
 @property (nonatomic,copy) NSString *address1;
-@property (nonatomic,copy) NSString *fromDate;
+@property (nonatomic,copy) NSDate *fromDate;
 @property (nonatomic,copy) NSString *markedInformation;
 @property (nonatomic,copy) NSString *markedRules;
 @property (nonatomic,copy) NSString *name;
@@ -39,7 +39,6 @@
 
 -(CGFloat) getDistance;
 
--(NSString*)getDate;
-- (void)setSelected;
+//- (void)setSelected;
 
 @end

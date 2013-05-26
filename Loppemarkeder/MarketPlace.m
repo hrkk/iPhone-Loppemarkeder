@@ -19,25 +19,26 @@
 - (id) initWithDictionary:(NSDictionary *) dict{
 	NSLog(@"%@",dict);
 	if (self = [super init]) {
-		self.address1 = [dict objectForKey:@"address"];		
+        NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
+        [dateFormatx setDateFormat:@"yyyy-MM-dd"];
+        
+		self.address1 = [dict objectForKey:@"address"];
 		self.dateXtraInfo = [dict objectForKey:@"dateExtraInfo"];
 		self.entreInfo = [dict objectForKey:@"entreInfo"];
-		self.fromDate = [dict objectForKey:@"fromDate"];
+		self.fromDate = [dateFormatx dateFromString:[dict objectForKey:@"stringFromDate"]];
+        NSLog(@"%@",[dict objectForKey:@"fromDate"]);
 		CGFloat latitude = [[dict objectForKey:@"latitude"] floatValue];
 		CGFloat longitude = [[dict objectForKey:@"longitude"] floatValue];
 		self.markedInformation = [dict objectForKey:@"markedInformation"];	
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];		
-		self.toDate = [dict objectForKey:@"toDate"];
+		self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"stringToDate"]];
 		_marketID = [[dict objectForKey:@"id"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];		
 	}
 	return self;
 }
--(NSString*)getDate {
-    NSString *value = [fromDate substringWithRange:NSMakeRange(0, 3)];
-    return value;
-}
+
 
 -(NSString *) getYear:(NSString * ) fullDate {
     // TODO build formatted date
