@@ -11,6 +11,8 @@
 		0B5E122B174813E900BBD2F6 /* AboutLoppeMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */; };
 		0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E122C174818B800BBD2F6 /* AboutApp.xib */; };
 		0B5E12301748199900BBD2F6 /* AboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */; };
+		0B9EF2A1175374450021D414 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B9EF29F175374450021D414 /* btn.png */; };
+		0B9EF2A2175374450021D414 /* btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B9EF2A0175374450021D414 /* btn@2x.png */; };
 		0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF43E57174FFCC60099A343 /* Default-568h@2x.png */; };
 		0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF43E58174FFCC60099A343 /* menuNavi.xib */; };
 		624D910D1742469500044005 /* AppDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 624D910C1742469500044005 /* AppDataCache.m */; };
@@ -58,6 +60,8 @@
 		0B5E122C174818B800BBD2F6 /* AboutApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutApp.xib; path = Loppemarkeder/AboutApp.xib; sourceTree = SOURCE_ROOT; };
 		0B5E122E1748199900BBD2F6 /* AboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutAppViewController.h; path = Loppemarkeder/AboutAppViewController.h; sourceTree = SOURCE_ROOT; };
 		0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutAppViewController.m; path = Loppemarkeder/AboutAppViewController.m; sourceTree = SOURCE_ROOT; };
+		0B9EF29F175374450021D414 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		0B9EF2A0175374450021D414 /* btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn@2x.png"; sourceTree = "<group>"; };
 		0BF43E57174FFCC60099A343 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Loppemarkeder/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		0BF43E58174FFCC60099A343 /* menuNavi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi.xib; path = Loppemarkeder/menuNavi.xib; sourceTree = SOURCE_ROOT; };
 		624D910B1742469500044005 /* AppDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDataCache.h; path = Loppemarkeder/AppDataCache.h; sourceTree = SOURCE_ROOT; };
@@ -193,6 +197,8 @@
 			children = (
 				624D916A1742C3E300044005 /* ic_i_naerheden.png */,
 				0BF43E57174FFCC60099A343 /* Default-568h@2x.png */,
+				0B9EF29F175374450021D414 /* btn.png */,
+				0B9EF2A0175374450021D414 /* btn@2x.png */,
 				624D916B1742C3E300044005 /* ic_liste.png */,
 				624D916C1742C3E300044005 /* ic_om_app.png */,
 				624D916D1742C3E300044005 /* ic_om_markeder.png */,
@@ -364,6 +370,8 @@
 				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
 				0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */,
 				0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */,
+				0B9EF2A1175374450021D414 /* btn.png in Resources */,
+				0B9EF2A2175374450021D414 /* btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
