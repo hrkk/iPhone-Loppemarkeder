@@ -90,15 +90,24 @@
 
 +(NSArray*)sortArrayByName:(NSArray*)nonSortedArr
 {
-	NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
-		if (obj1.name > obj2.name)
-			return NSOrderedDescending;
-		else if (obj1.name < obj2.name)
-			return NSOrderedAscending;
-		return NSOrderedSame;
-	}];
-	
-	return sortedArray;
+    NSMutableArray *arr  = [NSMutableArray arrayWithArray:nonSortedArr];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [arr sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+    
+    nonSortedArr = [NSArray arrayWithArray:arr];
+    
+    return nonSortedArr;
+    
+    
+//    NSArray *sortedArray = [nonSortedArr sortedArrayUsingComparator:^NSComparisonResult(MarketPlace *obj1, MarketPlace *obj2) {
+//		if (obj1.name > obj2.name)
+//			return NSOrderedDescending;
+//		else if (obj1.name < obj2.name)
+//			return NSOrderedAscending;
+//		return NSOrderedSame;
+//	}];
+//	
+//	return sortedArray;
 }
 
 @end

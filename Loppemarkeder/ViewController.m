@@ -55,9 +55,9 @@
         [self.tableView reloadData];
         
 	
-	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
+	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
-	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
 	
 }
 
@@ -83,6 +83,10 @@
     }
     
     [AppDataCache shared].marketList = [NSArray arrayWithArray:array]; //Updater vores cache
+    
+    [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+	[self.tableView reloadData];
+    
 }
 
 - (void)viewDidUnload

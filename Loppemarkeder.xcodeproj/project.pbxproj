@@ -37,9 +37,7 @@
 		62BC11321740FE8E0083FF05 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11191740FE8E0083FF05 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC11331740FE8E0083FF05 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC111B1740FE8E0083FF05 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		62BC11341740FE8E0083FF05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC111D1740FE8E0083FF05 /* AppDelegate.m */; };
-		62BC11351740FE8E0083FF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62BC111F1740FE8E0083FF05 /* InfoPlist.strings */; };
 		62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 62BC11241740FE8E0083FF05 /* ic_launcher.png */; };
-		62BC11381740FE8E0083FF05 /* Loppemarkeder.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62BC11261740FE8E0083FF05 /* Loppemarkeder.plist */; };
 		62BC11391740FE8E0083FF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11271740FE8E0083FF05 /* main.m */; };
 		62BC113A1740FE8E0083FF05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BC11291740FE8E0083FF05 /* ViewController.m */; };
 		62BD45E01741016200E73895 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62BD45DF1741016200E73895 /* ViewController.xib */; };
@@ -354,9 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BC11351740FE8E0083FF05 /* InfoPlist.strings in Resources */,
 				62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */,
-				62BC11381740FE8E0083FF05 /* Loppemarkeder.plist in Resources */,
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
 				624D912117427E8300044005 /* MapViewController.xib in Resources */,
