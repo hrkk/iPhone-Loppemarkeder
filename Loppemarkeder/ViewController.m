@@ -64,7 +64,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self.navigationController setNavigationBarHidden:NO animated:NO];	
+	[self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self sorterGamleLoppemarkederFra];
+}
+
+-(void)sorterGamleLoppemarkederFra
+{
+    NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
+    NSDate *now = [NSDate date];
+    
+    for(int i=0;i<[array count];i++)
+    {
+        MarketPlace *tmp2 =[array objectAtIndex:i];
+        NSComparisonResult result = [now compare:tmp2.fromDate];
+        if(result == NSOrderedDescending)
+            [array removeObjectAtIndex:i]; // Fjerner item hvis det ældre end idag                    
+        
+    }
+    
+    [AppDataCache shared].marketList = [NSArray arrayWithArray:array]; //Updater vores cache
 }
 
 - (void)viewDidUnload

@@ -112,15 +112,23 @@ typedef enum AnnotationIndex : NSUInteger
     
     for(MarketPlace *tmp in [AppDataCache shared].marketList)
     {
+        int antal = 0;
         for(int i=0;i<[array count];i++)
         {
             MarketPlace *tmp2 =[array objectAtIndex:i];
             if ([tmp.name isEqualToString:tmp2.name])
             {
+                antal +=1;
+                if (antal > 1) { // Hvis mere end et loppemarkede med det navn
+                    tmp2.selectedInList =YES;
+                }
                 NSComparisonResult result = [tmp.fromDate compare:tmp2.fromDate];
                 if(result == NSOrderedDescending)
-                    [array removeObjectAtIndex:i];
-                
+                {
+                   [array removeObjectAtIndex:i];
+                    
+                }
+            
             }
         }
     }
@@ -142,8 +150,9 @@ typedef enum AnnotationIndex : NSUInteger
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     // here we illustrate how to detect which annotation type was clicked on for its callout
-    //id <MKAnnotation> annotation = [view annotation];
-    
+    id <MKAnnotation> annotation = [view annotation];
+    MarketPlace *marketTmp = (MarketPlace *)annotation;
+    self.detailViewController.marketplace = marketTmp;
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
