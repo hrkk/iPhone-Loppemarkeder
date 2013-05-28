@@ -11,9 +11,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
-    [dateFormatx setDateFormat:@"yyyy-MM-dd"];
     self.title = _marketplace.name;
     _addressLabel.text = _marketplace.address1;
 
