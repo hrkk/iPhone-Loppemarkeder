@@ -105,11 +105,14 @@ typedef enum AnnotationIndex : NSUInteger
 // Endvidere skal der via et billed angives at der er flere forekomster på samme lokation
 -(NSArray*)unikkeForekomsterArray
 {
-    //Sorter efter navn
-    [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+    //Sorter efter dato
+    [AppDataCache shared].marketList = [Utilities sortArrayByDate:[AppDataCache shared].marketList];
     
     NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
+       
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
+
     for(MarketPlace *tmp in [AppDataCache shared].marketList)
     {
         int antal = 0;
@@ -118,21 +121,30 @@ typedef enum AnnotationIndex : NSUInteger
             MarketPlace *tmp2 =[array objectAtIndex:i];
             if ([tmp.name isEqualToString:tmp2.name])
             {
+               // NSLog(@"tmp with name %@ is equal to %@",tmp.name, tmp2.name);
                 antal +=1;
+                
+                // build a new list
+                if(antal == 1) {
+                    if(![dict objectForKey:tmp.name]) {
+                        [dict setValue:tmp forKey:tmp.name];
+                        NSLog(@"destinctArray adding %@",tmp.name);
+                    }
+                }
+                
                 if (antal > 1) { // Hvis mere end et loppemarkede med det navn
-                    tmp2.selectedInList =YES;
-                }
-                NSComparisonResult result = [tmp.fromDate compare:tmp2.fromDate];
-                if(result == NSOrderedDescending)
-                {
-                   [array removeObjectAtIndex:i];
-                    
-                }
-            
+                    if([dict objectForKey:tmp.name]) {
+                        tmp.selectedInList =YES;
+                    }
+                }         
             }
         }
     }
-    return [NSArray arrayWithArray:array];
+    
+    // build a new list 
+   NSMutableArray *arrayOfVariables = [NSMutableArray arrayWithArray:[dict allValues]];
+   
+    return [NSArray arrayWithArray:arrayOfVariables];
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
