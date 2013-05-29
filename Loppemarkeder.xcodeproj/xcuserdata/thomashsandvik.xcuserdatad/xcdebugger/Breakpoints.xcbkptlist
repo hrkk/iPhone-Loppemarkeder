@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/DetailViewController.m"
-         timestampString = "391502036.442511"
+         timestampString = "391535354.716716"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-showRoute:"
          landmarkType = "5">
       </FileBreakpoint>

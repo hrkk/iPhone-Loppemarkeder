@@ -30,6 +30,15 @@
     [self adjustLabelsPosition];
 }
 
+// Vi skal check om man skal kunne booke
+-(void)checkIfLinkShow
+{
+    if (true) {
+        _bookingInfo.hidden = YES;
+        _bookingHeadline.hidden = YES;
+    }
+}
+
 -(void)adjustLabelsPosition
 {
     //Calculate the expected size based on the font and linebreak mode of your label
@@ -39,14 +48,13 @@
     CGRect newFrame;
     
     //AdressInfo
-    maximumLabelSize = CGSizeMake(185, FLT_MAX);
+    maximumLabelSize = CGSizeMake(185, FLT_MAX); // Være kortere da der ligger ruteknap
     expectedLabelSize = [_addressLabel.text sizeWithFont:_addressLabel.font constrainedToSize:maximumLabelSize lineBreakMode:_addressLabel.lineBreakMode];
     newFrame = _addressLabel.frame;
     newFrame.size.height = expectedLabelSize.height;
     _addressLabel.frame = newFrame;
     
-    
-     maximumLabelSize = CGSizeMake(296, FLT_MAX);
+    maximumLabelSize = CGSizeMake(296, FLT_MAX);
     
     //Datoheadling
     newFrame = _dateHeadline.frame;
@@ -90,15 +98,12 @@
     newFrame.origin.y = _rulesHeadline.frame.origin.y +   _rulesHeadline.frame.size.height;
     _rulesLabel.frame = newFrame;
     
-    NSLog(@"%@",_rulesLabel.text);
-  
     //MarketHeadling
     newFrame = _marketHeadline.frame;
     newFrame.origin.x = 20;
     newFrame.origin.y = _rulesLabel.frame.origin.y +   _rulesLabel.frame.size.height + 5;
     _marketHeadline.frame = newFrame;
     
-   
     //Markedsinfomation
     expectedLabelSize = [_marketInfo.text sizeWithFont:_marketInfo.font constrainedToSize:maximumLabelSize lineBreakMode:_marketInfo.lineBreakMode];
     newFrame = _marketInfo.frame;
