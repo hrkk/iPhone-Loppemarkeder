@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.SystemVersion">11G63b</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.37</string>
-		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -108,7 +108,7 @@
 					<object class="IBUIButton" id="329311743">
 						<reference key="NSNextResponder" ref="730797976"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{25, 129}, {120, 120}}</string>
+						<string key="NSFrame">{{20, 129}, {140, 140}}</string>
 						<reference key="NSSuperview" ref="730797976"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="153820642"/>
@@ -146,7 +146,7 @@
 					<object class="IBUIButton" id="257009038">
 						<reference key="NSNextResponder" ref="730797976"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{25, 274}, {120, 120}}</string>
+						<string key="NSFrame">{{20, 274}, {140, 140}}</string>
 						<reference key="NSSuperview" ref="730797976"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="526139510"/>
@@ -171,9 +171,10 @@
 					<object class="IBUIButton" id="526139510">
 						<reference key="NSNextResponder" ref="730797976"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{172, 274}, {120, 120}}</string>
+						<string key="NSFrame">{{168, 274}, {140, 140}}</string>
 						<reference key="NSSuperview" ref="730797976"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -195,7 +196,7 @@
 					<object class="IBUIButton" id="153820642">
 						<reference key="NSNextResponder" ref="730797976"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{172, 129}, {120, 120}}</string>
+						<string key="NSFrame">{{168, 129}, {140, 140}}</string>
 						<reference key="NSSuperview" ref="730797976"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="257009038"/>
@@ -341,8 +342,8 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="958328555"/>
 							<reference ref="329311743"/>
-							<reference ref="153820642"/>
 							<reference ref="257009038"/>
+							<reference ref="153820642"/>
 							<reference ref="526139510"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -435,6 +436,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AboutAppViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="openAipopsWWW:">id</string>
+						<string key="openRoninItWWW:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="openAipopsWWW:">
+							<string key="name">openAipopsWWW:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openRoninItWWW:">
+							<string key="name">openRoninItWWW:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/AboutAppViewController.h</string>
@@ -501,11 +516,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="ic_i_naerheden.png">{214, 214}</string>
+			<string key="ic_i_naerheden.png">{114, 114}</string>
 			<string key="ic_launcher.png">{60, 60}</string>
-			<string key="ic_liste.png">{214, 214}</string>
-			<string key="ic_om_app.png">{214, 214}</string>
-			<string key="ic_om_markeder.png">{214, 214}</string>
+			<string key="ic_liste.png">{114, 114}</string>
+			<string key="ic_om_app.png">{114, 114}</string>
+			<string key="ic_om_markeder.png">{114, 114}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
