@@ -16,19 +16,19 @@
 
 - (id) initWithDictionary:(NSDictionary *) dict{
 	if (self = [super init]) {
-        NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
-        [dateFormatx setDateFormat:@"yyyy-MM-dd"];
         
+        NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
+        [dateFormatx setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
 		self.address1 = [dict objectForKey:@"address"];
 		self.dateXtraInfo = [dict objectForKey:@"dateExtraInfo"];
 		self.entreInfo = [dict objectForKey:@"entreInfo"];
-		self.fromDate = [dateFormatx dateFromString:[dict objectForKey:@"stringFromDate"]];
+		self.fromDate = [dateFormatx dateFromString:[dict objectForKey:@"fromDate"]];
      	CGFloat latitude = [[dict objectForKey:@"latitude"] floatValue];
 		CGFloat longitude = [[dict objectForKey:@"longitude"] floatValue];
 		self.markedInformation = [dict objectForKey:@"markedInformation"];
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];
-		self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"stringToDate"]];
+		self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"toDate"]];
 		_marketID = [[dict objectForKey:@"id"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
 	}
