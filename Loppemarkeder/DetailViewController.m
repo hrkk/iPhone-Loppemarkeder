@@ -14,7 +14,7 @@
     self.title = _marketplace.name;
     _addressLabel.text = _marketplace.address1;
 
-    _dateLabel.text = _marketplace.getFormattedDate;
+    _dateLabel.text = _marketplace.getFormattedDateXtraInfo;
     _entranceLabel.text = _marketplace.entreInfo;
     _rulesLabel.text = _marketplace.markedRules;
     _marketInfo.text = _marketplace.markedInformation;

@@ -38,6 +38,7 @@
 //Instance (-) method
 - (CGFloat) getDistance;
 - (NSString*)getFormattedDate;
+- (NSString*)getFormattedDateXtraInfo;
 -(CGFloat) getDistance;
 
 @end

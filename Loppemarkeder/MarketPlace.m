@@ -53,6 +53,13 @@
         return [formatter stringFromDate:fromDate];
 }
 
+- (NSString*)getFormattedDateXtraInfo {
+    if (dateXtraInfo!= nil) {
+       return [NSString stringWithFormat:@"%@, %@", self.getFormattedDate, dateXtraInfo];
+    }
+    return self.getFormattedDate;
+}
+
 -(CGFloat) getDistance
 {
 	CLLocationManager *locationManager;
