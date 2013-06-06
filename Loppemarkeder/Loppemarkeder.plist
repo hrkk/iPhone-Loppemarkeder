@@ -15,6 +15,7 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>App_icon_57x57.png</string>
+				<string>action_all_114x114.png</string>
 			</array>
 		</dict>
 	</dict>
