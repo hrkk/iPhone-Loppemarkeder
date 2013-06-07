@@ -36,7 +36,7 @@
     // Navbar
 	[[UINavigationBar appearance] setTitleTextAttributes:@{ UITextAttributeFont: [UIFont systemFontOfSize:17],
 								UITextAttributeTextColor: [UIColor blackColor],
-						 UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake( 1, 0 )],
+						  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake( 1, 0 )],
 						  UITextAttributeTextShadowColor: [UIColor grayColor] }];
     
 
