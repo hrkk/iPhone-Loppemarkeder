@@ -85,12 +85,10 @@ typedef enum AnnotationIndex : NSUInteger
 }
 
 - (void)viewDidLoad
-{
-    // create a custom navigation bar button and set it to always says "Back"
-	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-	temporaryBarButtonItem.title = @"Tilbage";
-	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+{ 
+    self.title = @"I nærheden";
     
+
     // create out annotations array (in this example only 3)
     self.mapAnnotations = [[NSMutableArray alloc] init];
     
