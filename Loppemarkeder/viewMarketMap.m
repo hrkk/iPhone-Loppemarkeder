@@ -18,6 +18,8 @@ typedef enum AnnotationIndex : NSUInteger
 #define kSimulatorLat			55.766338
 #define kSimulatorlong			12.496262
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
+
 @implementation ViewMarketMap
 
 + (CGFloat)annotationPadding;
@@ -82,7 +84,29 @@ typedef enum AnnotationIndex : NSUInteger
 }
 
 - (void)viewDidLoad
-{ 
+{
+    // this is used by the detailview, but the setup is done here
+    
+    // Do any additional setup after loading the view.
+	// create a custom navigation bar button and set it to always says "Back"
+	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+	
+    temporaryBarButtonItem.title = @"Tilbage";
+    temporaryBarButtonItem.tintColor = [UIColor blackColor];
+    
+    NSString *customYellow = @"FFCD05";
+    int b =0;
+    sscanf([customYellow UTF8String],"%x",&b);
+    UIColor* btnColor = UIColorFromRGB(b);
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                btnColor,UITextAttributeTextColor,
+                                nil];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
+                                                forState:UIControlStateNormal];
+    
+	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
     self.title = @"I nærheden";
     
 
