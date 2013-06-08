@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewController.m"
-         timestampString = "392390488.770542"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "125"
-         endingLineNumber = "125"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewController.m"
-         timestampString = "392390488.770542"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392381102.212376"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392381102.212376"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
+         startingLineNumber = "141"
+         endingLineNumber = "141"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392381102.212376"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "145"
+         endingLineNumber = "145"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392381102.212376"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392381102.212376"
+         timestampString = "392391020.442085"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
