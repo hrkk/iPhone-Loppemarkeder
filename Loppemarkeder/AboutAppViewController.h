@@ -4,5 +4,6 @@
 - (IBAction)openAipopsWWW:(id)sender;
 
 - (IBAction)openRoninItWWW:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 
 @end

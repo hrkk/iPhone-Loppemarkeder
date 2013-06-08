@@ -7,7 +7,8 @@
 {
     [super viewDidLoad];
 	self.title = @"Om App";
-        
+    [_scroller setScrollEnabled:YES];
+    [_scroller setContentSize:(CGSizeMake(300, 820))];
 }
 
 
@@ -30,5 +31,9 @@
 
 - (IBAction)openRoninItWWW:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.roninit.dk"]];
+}
+- (void)viewDidUnload {
+    [self setScroller:nil];
+    [super viewDidUnload];
 }
 @end
