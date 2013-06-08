@@ -1,9 +1,6 @@
 #import "ViewMarketMap.h"
 #import "DetailViewController.h"
 
-#import "SFAnnotation.h"        // annotation for the city of San Francisco
-#import "BridgeAnnotation.h"    // annotation for the Golden Gate bridge
-
 #import "CustomMapItem.h"
 #import "CustomAnnotationView.h"
 #import "AppDataCache.h"
