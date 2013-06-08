@@ -22,39 +22,40 @@
 {
     [super viewDidLoad];
 	
+    // this is used by the detailview, but the setup is done here
+    
+    // Do any additional setup after loading the view.
 	// create a custom navigation bar button and set it to always says "Back"
 	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-	temporaryBarButtonItem.title = @"Tilbage";
+	
+    temporaryBarButtonItem.title = @"Tilbage";
+    temporaryBarButtonItem.tintColor = [UIColor blackColor];
     
+    NSString *customYellow = @"FFCD05";
+    int b =0;
+    sscanf([customYellow UTF8String],"%x",&b);
+    UIColor* btnColor = UIColorFromRGB(b);
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                btnColor,UITextAttributeTextColor,
+                                nil];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
+                                                forState:UIControlStateNormal];
     
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-	
-//	UINavigationBar *bar = [self.navigationController navigationBar];
-//    
-//    NSString *blue = @"FFCD05";
-//    int b =0;
-//    sscanf([blue UTF8String],"%x",&b);
-//    UIColor* btnColor = UIColorFromRGB(b);
-//    
-//	[bar setTintColor:btnColor];
-//    
-	self.title = @"Loppemarked liste";
     
+	self.title = @"Loppemarked liste";
 
     // Setting Up Table View
-   
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     //self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.hidden = YES;
-   
 	
-	
-   
-       [self.tableView setHidden:NO];
-        [self.tableView reloadData];
-        
-	
+    [self.tableView setHidden:NO];
+    [self.tableView reloadData];
+    
 	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
