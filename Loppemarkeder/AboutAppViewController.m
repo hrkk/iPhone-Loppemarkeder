@@ -32,6 +32,11 @@
 - (IBAction)openRoninItWWW:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.roninit.dk"]];
 }
+
+- (IBAction)openMeDesignWWW:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.medesign.dk"]];
+}
+
 - (void)viewDidUnload {
     [self setScroller:nil];
     [super viewDidUnload];
