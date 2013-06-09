@@ -20,6 +20,8 @@
 @property (nonatomic, strong) IBOutlet UIButton* sortByAfstandButton;
 //@property (nonatomic, strong) IBOutlet UIView *buttonSubView;
 
+@property (nonatomic,copy) NSString *currentSort;
+
 - (IBAction)sortByDato:(id)sender;
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByAfstand:(id)sender;

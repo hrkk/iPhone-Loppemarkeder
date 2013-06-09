@@ -17,6 +17,7 @@
 @implementation ViewController
 
 @synthesize tableView = _tableView, activityIndicatorView = _activityIndicatorView;
+@synthesize currentSort;
 
 - (void)viewDidLoad
 {
@@ -59,6 +60,7 @@
 	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
+    currentSort = @"sortByName";
 	
 }
 
@@ -85,7 +87,14 @@
     
     [AppDataCache shared].marketList = [NSArray arrayWithArray:array]; //Updater vores cache
     
-    [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+    NSLog(@"currentSort: %@",currentSort);
+    if ([@"sortByDato" isEqualToString:currentSort]) {
+        [AppDataCache shared].marketList = [Utilities sortArrayByDate:[AppDataCache shared].marketList];
+    } else if ([@"sortByName" isEqualToString:currentSort]) {
+        [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
+    } else if ([@"sortByAfstand" isEqualToString:currentSort]) {
+        [AppDataCache shared].marketList = [Utilities sortArrayByDistance:[AppDataCache shared].marketList];
+    }
 	[self.tableView reloadData];
     
 }
@@ -158,6 +167,7 @@
     _sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
+     currentSort = @"sortByDato";
 }
 
 - (IBAction)sortByName:(id)sender
@@ -168,6 +178,7 @@
 	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
+     currentSort = @"sortByName";
 	
 }
 
@@ -179,6 +190,7 @@
 	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
+    currentSort = @"sortByAfstand";
 }
 
 @end
