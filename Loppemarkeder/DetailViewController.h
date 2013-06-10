@@ -22,4 +22,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *bookingHeadline;
 @property (strong, nonatomic) IBOutlet UILabel *bookingInfo;
 - (IBAction)showRoute:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *bookingTextViewInfo;
 @end

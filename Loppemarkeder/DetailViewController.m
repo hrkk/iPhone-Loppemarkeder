@@ -119,10 +119,10 @@
     _bookingHeadline.frame = newFrame;
 
     //BookingINfo
-    newFrame = _bookingInfo.frame;
-    newFrame.origin.x = 20;
-    newFrame.origin.y = _bookingHeadline.frame.origin.y +   _bookingHeadline.frame.size.height;
-    _bookingInfo.frame = newFrame;
+    newFrame = _bookingTextViewInfo.frame;
+    newFrame.origin.x = 12;
+    newFrame.origin.y = _bookingHeadline.frame.origin.y +   _bookingHeadline.frame.size.height -8;
+    _bookingTextViewInfo.frame = newFrame;
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
@@ -156,5 +156,9 @@
         
         [endingItem openInMapsWithLaunchOptions:launchOptions];
     }
+}
+- (void)viewDidUnload {
+    [self setBookingTextViewInfo:nil];
+    [super viewDidUnload];
 }
 @end
