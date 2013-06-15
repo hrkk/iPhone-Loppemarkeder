@@ -68,6 +68,7 @@ typedef enum AnnotationIndex : NSUInteger
     
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
