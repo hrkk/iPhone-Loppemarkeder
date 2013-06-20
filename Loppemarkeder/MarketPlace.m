@@ -28,7 +28,10 @@
 		self.markedInformation = [dict objectForKey:@"markedInformation"];
 		self.markedRules = [dict objectForKey:@"markedRules"];
 		self.name = [dict objectForKey:@"name"];
-		self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"toDate"]];
+        NSString *emptyString = [dict objectForKey:@"toDate"];
+        if (![emptyString isKindOfClass:[NSNull class]]) {
+            self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"toDate"]];
+        }
 		_marketID = [[dict objectForKey:@"id"] integerValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
 	}
