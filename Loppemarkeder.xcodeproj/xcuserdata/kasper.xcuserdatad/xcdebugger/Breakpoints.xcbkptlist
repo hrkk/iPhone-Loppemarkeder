@@ -138,12 +138,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/MarketPlace.m"
-         timestampString = "391985417.079359"
+         timestampString = "393449017.357576"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
-         landmarkName = "-getFormattedDateXtraInfo"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "-getDistance"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
