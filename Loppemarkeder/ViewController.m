@@ -58,9 +58,9 @@
     [self.tableView reloadData];
     
 	_sortByAfstandButton.titleLabel.textColor = [UIColor darkGrayColor];
-	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];
-	_sortByNameButton.titleLabel.textColor = [UIColor blackColor];
-    currentSort = @"sortByName";
+	_sortByDatoButton.titleLabel.textColor = [UIColor blackColor];
+	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
+    currentSort = @"sortByDato";
 	
 }
 

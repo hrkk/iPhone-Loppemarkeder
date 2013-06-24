@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.SystemVersion">11G63b</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.37</string>
-		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -54,7 +54,7 @@
 					<object class="IBUIButton" id="796729309">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{115, 0}, {70, 44}}</string>
+						<string key="NSFrame">{{20, 0}, {70, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="911206636"/>
@@ -86,7 +86,7 @@
 					<object class="IBUIButton" id="911206636">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 0}, {73, 44}}</string>
+						<string key="NSFrame">{{113, 0}, {73, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="529175216"/>
@@ -127,7 +127,6 @@
 						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="439565698"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -268,9 +267,9 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="530981496"/>
 							<reference ref="529175216"/>
-							<reference ref="911206636"/>
-							<reference ref="796729309"/>
 							<reference ref="416616128"/>
+							<reference ref="796729309"/>
+							<reference ref="911206636"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -347,9 +346,17 @@
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addressLabel">UILabel</string>
+						<string key="bookingHeadline">UILabel</string>
+						<string key="bookingInfo">UILabel</string>
+						<string key="bookingTextViewInfo">UITextView</string>
+						<string key="dateHeadline">UILabel</string>
 						<string key="dateLabel">UILabel</string>
+						<string key="entranceHeadline">UILabel</string>
 						<string key="entranceLabel">UILabel</string>
+						<string key="itemsContainerScroll">UIScrollView</string>
+						<string key="marketHeadline">UILabel</string>
 						<string key="marketInfo">UILabel</string>
+						<string key="rulesHeadline">UILabel</string>
 						<string key="rulesLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -357,16 +364,48 @@
 							<string key="name">addressLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="bookingHeadline">
+							<string key="name">bookingHeadline</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="bookingInfo">
+							<string key="name">bookingInfo</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="bookingTextViewInfo">
+							<string key="name">bookingTextViewInfo</string>
+							<string key="candidateClassName">UITextView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dateHeadline">
+							<string key="name">dateHeadline</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="dateLabel">
 							<string key="name">dateLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="entranceHeadline">
+							<string key="name">entranceHeadline</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="entranceLabel">
 							<string key="name">entranceLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="itemsContainerScroll">
+							<string key="name">itemsContainerScroll</string>
+							<string key="candidateClassName">UIScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="marketHeadline">
+							<string key="name">marketHeadline</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="marketInfo">
 							<string key="name">marketInfo</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rulesHeadline">
+							<string key="name">rulesHeadline</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="rulesLabel">
