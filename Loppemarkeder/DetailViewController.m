@@ -26,16 +26,19 @@
 	
 	// Create an instance of CLLocation
 	location=[locationManager location];
-    
+           
     [self adjustLabelsPosition];
+    [self checkIfLinkShow];
+
 }
 
 // Vi skal check om man skal kunne booke
 -(void)checkIfLinkShow
 {
     if (true) {
-        _bookingInfo.hidden = YES;
         _bookingHeadline.hidden = YES;
+        _bookingTextViewInfo.hidden = YES;
+
     }
 }
 
