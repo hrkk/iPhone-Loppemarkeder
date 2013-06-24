@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AboutLoppeMarkedViewController.h"
 #import "AboutAppViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface MenuNavigationViewController : UIViewController
+@interface MenuNavigationViewController : UIViewController <CLLocationManagerDelegate>
 {
     UIActivityIndicatorView *_activityIndicatorView;
+    CLLocationManager *locationManager;
 	
     
 }

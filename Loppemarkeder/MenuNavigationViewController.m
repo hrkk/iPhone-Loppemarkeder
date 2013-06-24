@@ -75,8 +75,27 @@
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
     }];
     
+    locationManager=[[CLLocationManager alloc] init];
+	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    
     [operation start];
     
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    // Handle location updates
+    NSLog(@"MenuNavigationViewController oldLocation latitude %f",oldLocation.coordinate.latitude);
+    NSLog(@"MenuNavigationViewController oldLocation longitude %f",oldLocation.coordinate.longitude);
+    
+    NSLog(@"MenuNavigationViewController newLocation latitude %f",newLocation.coordinate.latitude);
+    NSLog(@"MenuNavigationViewController newLocation longitude %f",newLocation.coordinate.longitude);
+    [locationManager stopUpdatingLocation];
+
 }
 
 - (IBAction)alleMarkeder:(id)sender

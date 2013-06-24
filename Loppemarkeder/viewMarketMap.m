@@ -38,21 +38,6 @@ typedef enum AnnotationIndex : NSUInteger
 	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
-	
-	    
-}
-
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation
-{
-    // Handle location updates
-    NSLog(@"didUpdateToLocation oldLocation latitude %f",oldLocation.coordinate.latitude);
-    NSLog(@"didUpdateToLocation oldLocation longitude %f",oldLocation.coordinate.longitude);
-
-    NSLog(@"didUpdateToLocation newLocation latitude %f",newLocation.coordinate.latitude);
-    NSLog(@"didUpdateToLocation newLocation longitude %f",newLocation.coordinate.longitude);
-    [locationManager stopUpdatingLocation];
     
     // Create an instance of CLLocation
 	
@@ -81,13 +66,6 @@ typedef enum AnnotationIndex : NSUInteger
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
  	[self.mapView addAnnotations:self.mapAnnotations];
-
-
-}
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    // Handle error
 }
 
 
