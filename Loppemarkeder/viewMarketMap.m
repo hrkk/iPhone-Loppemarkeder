@@ -36,16 +36,32 @@ typedef enum AnnotationIndex : NSUInteger
 {
 	locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-	[locationManager startUpdatingLocation];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
 	
-	// Create an instance of CLLocation
+	    
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    // Handle location updates
+    NSLog(@"didUpdateToLocation oldLocation latitude %f",oldLocation.coordinate.latitude);
+    NSLog(@"didUpdateToLocation oldLocation longitude %f",oldLocation.coordinate.longitude);
+
+    NSLog(@"didUpdateToLocation newLocation latitude %f",newLocation.coordinate.latitude);
+    NSLog(@"didUpdateToLocation newLocation longitude %f",newLocation.coordinate.longitude);
+    [locationManager stopUpdatingLocation];
+    
+    // Create an instance of CLLocation
 	
 	location=[locationManager location];
     
-#if TARGET_IPHONE_SIMULATOR
-	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
+    //#if TARGET_IPHONE_SIMULATOR
+    //	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
 	
-#endif
+    //#endif
 	
 	// Set Center Coordinates of MapView
 	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
@@ -65,7 +81,13 @@ typedef enum AnnotationIndex : NSUInteger
 	
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
  	[self.mapView addAnnotations:self.mapAnnotations];
-    
+
+
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    // Handle error
 }
 
 

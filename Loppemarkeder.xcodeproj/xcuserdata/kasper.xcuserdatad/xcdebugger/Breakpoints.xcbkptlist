@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392391020.442085"
+         timestampString = "393791745.22233"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "159"
+         endingLineNumber = "159"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392391020.442085"
+         timestampString = "393791745.22233"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392391020.442085"
+         timestampString = "393791745.22233"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392391020.442085"
+         timestampString = "393791745.22233"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewMarketMap.m"
-         timestampString = "392391020.442085"
+         timestampString = "393791745.22233"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
          landmarkName = "-unikkeForekomsterArray"
          landmarkType = "5">
       </FileBreakpoint>

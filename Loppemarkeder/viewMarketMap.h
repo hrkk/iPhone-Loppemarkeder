@@ -11,8 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DetailViewController.h"
 #import "MarketPlace.h"
-
-@interface ViewMarketMap: UIViewController <MKMapViewDelegate>
+@interface ViewMarketMap: UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
 	CLLocationManager *locationManager;
 	CLLocation *location;
