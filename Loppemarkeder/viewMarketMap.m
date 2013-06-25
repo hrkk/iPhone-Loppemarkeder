@@ -42,28 +42,35 @@ typedef enum AnnotationIndex : NSUInteger
     // Create an instance of CLLocation
 	
 	location=[locationManager location];
-    
+    NSLog(@"MenuNavigationViewController location latitude %f",location.coordinate.latitude);
+    NSLog(@"MenuNavigationViewController location longitude %f",location.coordinate.longitude);
+
     //#if TARGET_IPHONE_SIMULATOR
-    //	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
-	
+  //  	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
     //#endif
 	
 	// Set Center Coordinates of MapView
-	self.mapView .centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+	self.mapView.centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
     
 	// Setting Zoom Level on MapView
 	
-	MKCoordinateRegion coordinateRegion;
+    //	MKCoordinateRegion coordinateRegion;
 	
-	coordinateRegion.center = self.mapView .centerCoordinate;
-	coordinateRegion.span.latitudeDelta = 1;
-	coordinateRegion.span.longitudeDelta = 1;
+    //	coordinateRegion.center = self.mapView.centerCoordinate;
+    //	coordinateRegion.span.latitudeDelta = 1;
+    //	coordinateRegion.span.longitudeDelta = 1;
 	
-	[self.mapView  setRegion:coordinateRegion animated:YES];
+    //	[self.mapView setRegion:coordinateRegion animated:YES];
 	
     // Show userLocation (Blue Circle)
 	self.mapView.showsUserLocation=YES;
 	
+    MKCoordinateRegion region = {{0,0},{.25,.25}};
+    region.center.latitude = location.coordinate.latitude;
+    region.center.longitude = location.coordinate.longitude;
+    [self.mapView setRegion:region animated:YES];
+    
+    
 	[self.mapView removeAnnotations:self.mapView.annotations];  // remove any annotations that exist
  	[self.mapView addAnnotations:self.mapAnnotations];
 }
