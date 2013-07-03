@@ -216,13 +216,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Loppemarkeder/ViewController.m"
-         timestampString = "392476722.032014"
+         timestampString = "394488534.419204"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
-         landmarkName = "-sortByAfstand:"
-         landmarkType = "5">
+         startingLineNumber = "195"
+         endingLineNumber = "195"
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -313,6 +313,19 @@
          startingLineNumber = "57"
          endingLineNumber = "57"
          landmarkName = "-gotoLocation"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Loppemarkeder/Utilities.m"
+         timestampString = "394488967.251536"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "+loadFromJson:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

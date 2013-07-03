@@ -184,7 +184,7 @@
 
 - (IBAction)sortByAfstand:(id)sender
 {
-	[AppDataCache shared].marketList = [Utilities sortArrayByDistance:[AppDataCache shared].marketList];
+	[AppDataCache shared].marketList = [self unikkeForekomsterArray];
 	[self.tableView reloadData];
 	
 	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
@@ -192,5 +192,48 @@
 	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
     currentSort = @"sortByAfstand";
 }
+
+// Hvis der er flere loppemarkeder med samme navn skal kun 1 vises og kun den som er den kommende (udfra fromDate)
+// Endvidere skal der via et billed angives at der er flere forekomster på samme lokation
+-(NSArray*)unikkeForekomsterArray
+{
+    //Sorter efter distance
+    [AppDataCache shared].marketList = [Utilities sortArrayByDistance:[AppDataCache shared].marketList];
+    
+    NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    
+    for(MarketPlace *tmp in [AppDataCache shared].marketList)
+    {
+        int antal = 0;
+        for(int i=0;i<[array count];i++)
+        {
+            MarketPlace *tmp2 =[array objectAtIndex:i];
+            if ([tmp.name isEqualToString:tmp2.name])
+            {
+                // NSLog(@"tmp with name %@ is equal to %@",tmp.name, tmp2.name);
+                antal +=1;
+                
+                // build a new list
+                if(antal == 1) {
+                    if(![dict objectForKey:tmp.name]) {
+                        [dict setValue:tmp forKey:tmp.name];
+                        NSLog(@"destinctDistanceArray adding %@ with distance %f",tmp.name, tmp.distance);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    // build a new list
+    NSMutableArray *arrayOfVariables = [NSMutableArray arrayWithArray:[dict allValues]];
+    
+    return [Utilities sortArrayByDistance:[NSArray arrayWithArray:arrayOfVariables]];
+    
+}
+
 
 @end

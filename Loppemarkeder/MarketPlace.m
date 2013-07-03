@@ -103,7 +103,7 @@
 
 /* Overriding description (equivalent to toString in JAVA) */
 - (NSString*)description {
-    return [NSString stringWithFormat:@"<MarketPlace> name : %@, address1 : %@, fromDate : %@, toDate : %@", name, address1, fromDate, toDate];
+    return [NSString stringWithFormat:@"<MarketPlace> name : %@, address1 : %@, fromDate : %@, toDate : %@, distance : %f", name, address1, fromDate, toDate, [self getDistance]];
 }
 
 @end
