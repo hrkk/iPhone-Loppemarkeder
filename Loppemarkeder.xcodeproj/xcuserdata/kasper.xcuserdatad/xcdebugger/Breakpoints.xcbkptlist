@@ -182,7 +182,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "94"
          endingLineNumber = "94"
-         landmarkName = "-sorterGamleLoppemarkederFra"
+         landmarkName = "-sorterBySelection"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -234,7 +234,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "91"
          endingLineNumber = "91"
-         landmarkName = "-sorterGamleLoppemarkederFra"
+         landmarkName = "-sorterBySelection"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

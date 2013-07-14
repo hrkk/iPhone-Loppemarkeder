@@ -59,7 +59,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Version 0.9.0</string>
+								<string key="IBUIText">Version 1.3</string>
 								<object class="NSColor" key="IBUITextColor" id="873541571">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -387,21 +387,27 @@ aG9uZSBvZwpJcGFkLg</string>
 							<object class="IBUILabel" id="102240490">
 								<reference key="NSNextResponder" ref="853414507"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 480}, {278, 143}}</string>
+								<string key="NSFrame">{{20, 499}, {278, 143}}</string>
 								<reference key="NSSuperview" ref="853414507"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Version 1.0 -  Inital app igansat.  Version 1.1 - Default sortering af markeds listen ændret til dato orden.                                    Version 1.2 - Bugfix i centering af kort samt liste sorteret ud fra afstand indeholder kun førstkommende marked</string>
+								<object class="NSMutableString" key="IBUIText">
+									<bytes key="NS.bytes">VmVyc2lvbiAxLjAgLSDigKhJbml0YWwgYXBwIGlnYW5zYXQu4oCo4oCoVmVyc2lvbiAxLjEgLSBEZWZh
+dWx0IHNvcnRlcmluZyBhZiBtYXJrZWRzIGxpc3RlbiDDpm5kcmV0IHRpbCBkYXRvIG9yZGVuLiDigKgg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVmVyc2lvbiAxLjIgLSBCdWdmaXggaSBjZW50
+ZXJpbmcgYWYga29ydCBzYW10IGxpc3RlIHNvcnRlcmV0IHVkIGZyYSBhZnN0YW5kIGluZGVob2xkZXIg
+a3VuIGbDuHJzdGtvbW1lbmRlIG1hcmtlZOKAqOKAqFZlcnNpb24gMS4zIC0gQnVnZml4IHPDpWxlZGVz
+IGRhZ2VucyBtYXJrZWRlciBvZ3PDpSBibGl2ZXIgdmlzdC4</bytes>
+								</object>
 								<reference key="IBUITextColor" ref="873541571"/>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUINumberOfLines">7</int>
+								<int key="IBUINumberOfLines">9</int>
 								<reference key="IBUIFontDescription" ref="321481882"/>
 								<reference key="IBUIFont" ref="389703433"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
