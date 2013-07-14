@@ -68,11 +68,12 @@
 {
 	[super viewWillAppear:animated];
 	[self.navigationController setNavigationBarHidden:NO animated:NO];
-    [self sorterGamleLoppemarkederFra];
+    [self sorterBySelection];
 }
 
--(void)sorterGamleLoppemarkederFra
+-(void)sorterBySelection
 {
+    /*
     NSMutableArray *array = [[AppDataCache shared].marketList mutableCopy];
     NSDate *now = [NSDate date];
     
@@ -86,7 +87,7 @@
     }
     
     [AppDataCache shared].marketList = [NSArray arrayWithArray:array]; //Updater vores cache
-    
+    */
     NSLog(@"currentSort: %@",currentSort);
     if ([@"sortByDato" isEqualToString:currentSort]) {
         [AppDataCache shared].marketList = [Utilities sortArrayByDate:[AppDataCache shared].marketList];
