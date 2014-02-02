@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>77A95897-615E-4281-A059-799D04F7F650</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Loppemarkeder</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D2339FA1-EAE4-4B65-B2B8-EB446CA6BBA9</key>
+		<string>https://github.com/hrkk/iPhone-Loppemarkeder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Loppemarkeder.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D2339FA1-EAE4-4B65-B2B8-EB446CA6BBA9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hrkk/iPhone-Loppemarkeder.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D2339FA1-EAE4-4B65-B2B8-EB446CA6BBA9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D2339FA1-EAE4-4B65-B2B8-EB446CA6BBA9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iPhone-Loppemarkeder</string>
+		</dict>
+	</array>
+</dict>
+</plist>

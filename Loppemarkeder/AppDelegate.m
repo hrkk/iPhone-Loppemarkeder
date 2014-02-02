@@ -20,7 +20,11 @@
      
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[MenuNavigationViewController alloc] initWithNibName:@"menuNavi" bundle:nil];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+         self.viewController = [[MenuNavigationViewController alloc] initWithNibName:@"menuNavi7" bundle:nil];
+    } else {
+         self.viewController = [[MenuNavigationViewController alloc] initWithNibName:@"menuNavi" bundle:nil];
+    }
 	navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 	
     [self.window addSubview:navigationController.view];
@@ -31,16 +35,37 @@
     sscanf([blue UTF8String],"%x",&b);
     UIColor* btnColor = UIColorFromRGB(b);
     
+    // sætter baggrundsfarven på navBar - ios6
     [bar setTintColor:btnColor];
     
-    // Navbar
-	[[UINavigationBar appearance] setTitleTextAttributes:@{ UITextAttributeFont: [UIFont systemFontOfSize:17],
+    // Navbar --styrer min egen menu på undersiderne -- til ios6
+        [[UINavigationBar appearance] setTitleTextAttributes:@{ UITextAttributeFont: [UIFont systemFontOfSize:17],
 								UITextAttributeTextColor: [UIColor blackColor],
 						  UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake( 1, 0 )],
 						  UITextAttributeTextShadowColor: [UIColor grayColor] }];
+   
+   
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        // giver plads til sorteringsknapperne
+        self.navigationController.navigationBar.translucent = NO;
+        // sætter farven på navBar pil tilbage
+        [bar setTintColor:[UIColor blackColor]];
+        // sætter baggrundsfarven på navBar
+        [[UINavigationBar appearance] setBarTintColor:btnColor];
+        
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowColor = [UIColor grayColor];
+        shadow.shadowOffset = CGSizeMake(0, 1);
+        [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor blackColor], NSForegroundColorAttributeName,
+                                                               shadow, NSShadowAttributeName,
+                                                               [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+    }
+
 
     
+   
     [self.window makeKeyAndVisible];
     return YES;
 }

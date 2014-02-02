@@ -50,6 +50,7 @@
 		8382D683155AE229001541B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D682155AE229001541B2 /* Foundation.framework */; };
 		8382D685155AE229001541B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382D684155AE229001541B2 /* CoreGraphics.framework */; };
 		A7198F931761146E0004617E /* action_all_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = A7198F921761146E0004617E /* action_all_114x114.png */; };
+		A73AEB95189DB1D100196695 /* menuNavi7.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AEB94189DB1D100196695 /* menuNavi7.xib */; };
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		8382D682155AE229001541B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8382D684155AE229001541B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A7198F921761146E0004617E /* action_all_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_all_114x114.png; sourceTree = "<group>"; };
+		A73AEB94189DB1D100196695 /* menuNavi7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi7.xib; path = Loppemarkeder/menuNavi7.xib; sourceTree = SOURCE_ROOT; };
 		A7D8812F175A83AB00CC363A /* App_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_57x57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF43E58174FFCC60099A343 /* menuNavi.xib */,
+				A73AEB94189DB1D100196695 /* menuNavi7.xib */,
 				0B5E122C174818B800BBD2F6 /* AboutApp.xib */,
 				0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */,
 				624D911E17427E8300044005 /* DetailViewController.xib */,
@@ -357,6 +360,7 @@
 				62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */,
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
+				A73AEB95189DB1D100196695 /* menuNavi7.xib in Resources */,
 				624D912117427E8300044005 /* MapViewController.xib in Resources */,
 				624D916E1742C3E300044005 /* ic_i_naerheden.png in Resources */,
 				624D916F1742C3E300044005 /* ic_liste.png in Resources */,

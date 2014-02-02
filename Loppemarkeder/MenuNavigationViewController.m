@@ -42,9 +42,14 @@
     temporaryBarButtonItem.tintColor = [UIColor blackColor];
     
     NSString *customYellow = @"FFCD05";
+    // ios sætter backBtn text til sort
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        customYellow = @"000000";
+    }
     int b =0;
     sscanf([customYellow UTF8String],"%x",&b);
     UIColor* btnColor = UIColorFromRGB(b);
+    
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                btnColor,UITextAttributeTextColor,
@@ -52,9 +57,9 @@
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
                                                 forState:UIControlStateNormal];
-       
-	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
     
+	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+        
     // Setting Up Activity Indicator View
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicatorView.hidesWhenStopped = YES;
@@ -102,7 +107,7 @@
 {
 	ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
 	
-	[self.navigationController pushViewController:vc animated:NO];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)nearBy:(id)sender
