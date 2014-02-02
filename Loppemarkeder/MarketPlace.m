@@ -13,6 +13,7 @@
 @synthesize distance;
 @synthesize toDate;
 @synthesize dateXtraInfo;
+@synthesize enableBooking;
 
 - (id) initWithDictionary:(NSDictionary *) dict{
 	if (self = [super init]) {
@@ -32,7 +33,8 @@
         if (![emptyString isKindOfClass:[NSNull class]]) {
             self.toDate = [dateFormatx dateFromString:[dict objectForKey:@"toDate"]];
         }
-		_marketID = [[dict objectForKey:@"id"] integerValue];
+		[dict objectForKey:@"id"];
+        self.enableBooking = [[dict objectForKey:@"enableBooking"] boolValue];
 		self.currentLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
 	}
 	return self;

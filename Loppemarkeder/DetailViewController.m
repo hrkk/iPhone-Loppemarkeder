@@ -19,7 +19,6 @@
     _rulesLabel.text = _marketplace.markedRules;
     _marketInfo.text = _marketplace.markedInformation;
     NSLog(@"DetailViewController %@",_marketplace);
-    
     locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
 	[locationManager startUpdatingLocation];
@@ -35,10 +34,11 @@
 // Vi skal check om man skal kunne booke
 -(void)checkIfLinkShow
 {
-    if (true) {
-        _bookingHeadline.hidden = YES;
-        _bookingTextViewInfo.hidden = YES;
-
+    _bookingHeadline.hidden = YES;
+    _bookingTextViewInfo.hidden = YES;
+    if (_marketplace.enableBooking) {
+        _bookingHeadline.hidden = NO;
+        _bookingTextViewInfo.hidden = NO;
     }
 }
 

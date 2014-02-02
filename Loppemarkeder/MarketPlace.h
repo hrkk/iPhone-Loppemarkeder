@@ -32,6 +32,7 @@
 @property (nonatomic,copy) NSString *markedRules;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,strong) CLLocation *currentLocation;
+@property (nonatomic) BOOL enableBooking;
 // Constructor
 - (id) initWithDictionary:(NSDictionary *) dict;
 
