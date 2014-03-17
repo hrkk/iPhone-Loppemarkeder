@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "AppDataCache.h"
 #import "AboutLoppeMarkedViewController.h"
+#import "OpretMarkedViewController.h"
 #import "AFNetworking.h"
 #import "ViewMarketMap.h"
 #import "Utilities.h"
@@ -127,6 +128,13 @@
     [self.navigationController pushViewController:self.aboutAppViewController animated:YES];
 
 }
+
+- (IBAction)opretMarked:(id)sender
+{
+    [self.navigationController pushViewController:self.opretMarkedViewController animated:YES];
+    
+}
+
 
 
 

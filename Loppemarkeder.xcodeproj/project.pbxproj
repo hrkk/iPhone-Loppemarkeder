@@ -52,6 +52,14 @@
 		A7198F931761146E0004617E /* action_all_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = A7198F921761146E0004617E /* action_all_114x114.png */; };
 		A73399AF18A2177F009CEA03 /* App_icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = A73399AE18A2177F009CEA03 /* App_icon_120x120.png */; };
 		A73AEB95189DB1D100196695 /* menuNavi7.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AEB94189DB1D100196695 /* menuNavi7.xib */; };
+		A745266418A74CBA0003D4A9 /* OpretMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */; };
+		A745266618A755000003D4A9 /* CreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266518A755000003D4A9 /* CreateMarkedXIB.xib */; };
+		A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266718A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib */; };
+		A745266B18A779180003D4A9 /* ConfirmCreateMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266A18A779180003D4A9 /* ConfirmCreateMarkedViewController.m */; };
+		A745266D18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */; };
+		A745267018A7881C0003D4A9 /* LastStepCreateMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */; };
+		A7AF9ADA18D78C940066B4B2 /* ic_opret_marked.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */; };
+		A7AF9ADE18D792230066B4B2 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9ADD18D792230066B4B2 /* information.png */; };
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +136,17 @@
 		A7198F921761146E0004617E /* action_all_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_all_114x114.png; sourceTree = "<group>"; };
 		A73399AE18A2177F009CEA03 /* App_icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_120x120.png; sourceTree = "<group>"; };
 		A73AEB94189DB1D100196695 /* menuNavi7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi7.xib; path = Loppemarkeder/menuNavi7.xib; sourceTree = SOURCE_ROOT; };
+		A745266218A74CBA0003D4A9 /* OpretMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpretMarkedViewController.h; sourceTree = SOURCE_ROOT; };
+		A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpretMarkedViewController.m; sourceTree = SOURCE_ROOT; };
+		A745266518A755000003D4A9 /* CreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateMarkedXIB.xib; path = Loppemarkeder/CreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
+		A745266718A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConfirmCreateMarkedXIB.xib; path = Loppemarkeder/ConfirmCreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
+		A745266918A779180003D4A9 /* ConfirmCreateMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmCreateMarkedViewController.h; sourceTree = SOURCE_ROOT; };
+		A745266A18A779180003D4A9 /* ConfirmCreateMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmCreateMarkedViewController.m; sourceTree = SOURCE_ROOT; };
+		A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LastStepCreateMarkedXIB.xib; path = Loppemarkeder/LastStepCreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
+		A745266E18A7881C0003D4A9 /* LastStepCreateMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastStepCreateMarkedViewController.h; sourceTree = SOURCE_ROOT; };
+		A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastStepCreateMarkedViewController.m; sourceTree = SOURCE_ROOT; };
+		A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_opret_marked.png; sourceTree = "<group>"; };
+		A7AF9ADD18D792230066B4B2 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		A7D8812F175A83AB00CC363A /* App_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_57x57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +216,8 @@
 		62BC11231740FE8E0083FF05 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A7AF9ADD18D792230066B4B2 /* information.png */,
+				A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */,
 				624D916A1742C3E300044005 /* ic_i_naerheden.png */,
 				0BF43E57174FFCC60099A343 /* Default-568h@2x.png */,
 				0B9EF29F175374450021D414 /* btn.png */,
@@ -217,6 +238,9 @@
 				A73AEB94189DB1D100196695 /* menuNavi7.xib */,
 				0B5E122C174818B800BBD2F6 /* AboutApp.xib */,
 				0B5E12271748120200BBD2F6 /* AboutLoppeMarked.xib */,
+				A745266518A755000003D4A9 /* CreateMarkedXIB.xib */,
+				A745266718A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib */,
+				A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */,
 				624D911E17427E8300044005 /* DetailViewController.xib */,
 				624D911F17427E8300044005 /* MapViewController.xib */,
 				62BD45DF1741016200E73895 /* ViewController.xib */,
@@ -278,6 +302,12 @@
 				0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */,
 				0B5E1229174813E900BBD2F6 /* AboutLoppeMarkedViewController.h */,
 				0B5E122A174813E900BBD2F6 /* AboutLoppeMarkedViewController.m */,
+				A745266218A74CBA0003D4A9 /* OpretMarkedViewController.h */,
+				A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */,
+				A745266918A779180003D4A9 /* ConfirmCreateMarkedViewController.h */,
+				A745266A18A779180003D4A9 /* ConfirmCreateMarkedViewController.m */,
+				A745266E18A7881C0003D4A9 /* LastStepCreateMarkedViewController.h */,
+				A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */,
 				62BC11061740FE8E0083FF05 /* AFNetworking */,
 				624D910E1742509F00044005 /* Model */,
 				62BD45F71741257100E73895 /* Map */,
@@ -360,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AF9ADE18D792230066B4B2 /* information.png in Resources */,
 				62BC11371740FE8E0083FF05 /* ic_launcher.png in Resources */,
 				62BD45E01741016200E73895 /* ViewController.xib in Resources */,
 				624D912017427E8300044005 /* DetailViewController.xib in Resources */,
@@ -372,12 +403,16 @@
 				0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */,
 				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
 				0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */,
+				A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */,
 				0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */,
 				A73399AF18A2177F009CEA03 /* App_icon_120x120.png in Resources */,
 				0B9EF2A1175374450021D414 /* btn.png in Resources */,
 				0B9EF2A2175374450021D414 /* btn@2x.png in Resources */,
 				A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */,
 				A7198F931761146E0004617E /* action_all_114x114.png in Resources */,
+				A745266D18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib in Resources */,
+				A7AF9ADA18D78C940066B4B2 /* ic_opret_marked.png in Resources */,
+				A745266618A755000003D4A9 /* CreateMarkedXIB.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +433,9 @@
 				62BC11311740FE8E0083FF05 /* AFURLConnectionOperation.m in Sources */,
 				62BC11321740FE8E0083FF05 /* AFXMLRequestOperation.m in Sources */,
 				62BC11331740FE8E0083FF05 /* UIImageView+AFNetworking.m in Sources */,
+				A745267018A7881C0003D4A9 /* LastStepCreateMarkedViewController.m in Sources */,
 				62BC11341740FE8E0083FF05 /* AppDelegate.m in Sources */,
+				A745266418A74CBA0003D4A9 /* OpretMarkedViewController.m in Sources */,
 				62BC11391740FE8E0083FF05 /* main.m in Sources */,
 				62BC113A1740FE8E0083FF05 /* ViewController.m in Sources */,
 				62BD45EB174120E100E73895 /* ViewMarketMap.m in Sources */,
@@ -410,6 +447,7 @@
 				624D911A17427E1C00044005 /* CustomMapItem.m in Sources */,
 				624D91741742C56500044005 /* MenuNavigationViewController.m in Sources */,
 				0B5E122B174813E900BBD2F6 /* AboutLoppeMarkedViewController.m in Sources */,
+				A745266B18A779180003D4A9 /* ConfirmCreateMarkedViewController.m in Sources */,
 				0B5E12301748199900BBD2F6 /* AboutAppViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="aboutAppViewController" destination="116" id="117"/>
                 <outlet property="aboutLoppeMarkedViewController" destination="114" id="115"/>
+                <outlet property="opretMarkedViewController" destination="EDe-xF-Q7r" id="b7g-AJ-2Cq"/>
                 <outlet property="view" destination="2" id="99"/>
             </connections>
         </placeholder>
@@ -71,7 +72,7 @@
                     <rect key="frame" x="168" y="274" width="140" height="140"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" backgroundImage="ic_om_app.png">
+                    <state key="normal" image="ic_opret_marked.png" backgroundImage="ic_om_app.png">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -97,6 +98,16 @@
                         <action selector="nearBy:" destination="-1" eventType="touchUpInside" id="107"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ipr-gK-tw2">
+                    <rect key="frame" x="284" y="428" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="information.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="opretMarked:" destination="-1" eventType="touchUpInside" id="isx-MM-xJ3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -117,6 +128,14 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <nil key="simulatedDestinationMetrics"/>
         </viewController>
+        <viewController nibName="CreateMarkedXIB" hidesBottomBarWhenPushed="YES" id="EDe-xF-Q7r" customClass="OpretMarkedViewController">
+            <extendedEdge key="edgesForExtendedLayout"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <nil key="simulatedDestinationMetrics"/>
+        </viewController>
     </objects>
     <resources>
         <image name="ic_i_naerheden.png" width="140" height="140"/>
@@ -124,5 +143,7 @@
         <image name="ic_liste.png" width="140" height="140"/>
         <image name="ic_om_app.png" width="140" height="140"/>
         <image name="ic_om_markeder.png" width="140" height="140"/>
+        <image name="ic_opret_marked.png" width="140" height="140"/>
+        <image name="information.png" width="16" height="16"/>
     </resources>
 </document>

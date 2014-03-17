@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AboutLoppeMarkedViewController.h"
 #import "AboutAppViewController.h"
+#import "OpretMarkedViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface MenuNavigationViewController : UIViewController <CLLocationManagerDelegate>
@@ -23,11 +24,13 @@
 
 @property (nonatomic, strong) IBOutlet AboutLoppeMarkedViewController *aboutLoppeMarkedViewController;
 @property (nonatomic, strong) IBOutlet AboutAppViewController *aboutAppViewController;
+@property (nonatomic, strong) IBOutlet OpretMarkedViewController *opretMarkedViewController;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 
 - (IBAction)alleMarkeder:(id)sender;
 - (IBAction)nearBy:(id)sender;
 - (IBAction)omMarkeder:(id)sender;
 - (IBAction)omApp:(id)sender;
+- (IBAction)opretMarked:(id)sender;
 
 @end
