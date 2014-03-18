@@ -80,7 +80,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="omApp:" destination="-1" eventType="touchUpInside" id="109"/>
+                        <action selector="opretMarked:" destination="-1" eventType="touchUpInside" id="yic-No-AEn"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="52">
@@ -105,7 +105,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="opretMarked:" destination="-1" eventType="touchUpInside" id="isx-MM-xJ3"/>
+                        <action selector="omApp:" destination="-1" eventType="touchUpInside" id="eMH-FG-f9p"/>
                     </connections>
                 </button>
             </subviews>

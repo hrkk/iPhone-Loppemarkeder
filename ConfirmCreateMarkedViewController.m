@@ -122,7 +122,7 @@
     [request setHTTPBody:jsonRequestData];
     NSURLResponse *response = nil;
     NSError *error = nil;
-    NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 }
 
 
