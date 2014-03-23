@@ -41,7 +41,7 @@
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fornavn" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="5IW-Ki-Ncw">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fornavn" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="5IW-Ki-Ncw">
                             <rect key="frame" x="20" y="49" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,7 +50,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="8Ow-Y0-X9F"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Efternavn" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="ZR2-of-Akj">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Efternavn" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="ZR2-of-Akj">
                             <rect key="frame" x="20" y="87" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -59,7 +59,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="XZx-52-sBV"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail-adresse" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="PK2-30-4bt">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail-adresse" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="PK2-30-4bt">
                             <rect key="frame" x="20" y="125" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -68,7 +68,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="0TF-go-nI1"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Telefon nummer" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="ZTD-yY-gxi">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Telefon nummer" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="ZTD-yY-gxi">
                             <rect key="frame" x="20" y="163" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -84,7 +84,7 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Markedsnavn" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="dmU-G1-jU4">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Markedsnavn" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="dmU-G1-jU4">
                             <rect key="frame" x="20" y="230" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -93,7 +93,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="spU-9A-zCH"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vej" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="Ar9-SF-NmI">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vej" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Ar9-SF-NmI">
                             <rect key="frame" x="20" y="268" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,7 +102,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="G1r-p0-p1x"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Husnummer" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="h29-mq-4fZ">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Husnummer" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="h29-mq-4fZ">
                             <rect key="frame" x="20" y="306" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -111,7 +111,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="we2-1i-7YQ"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postnummer og by" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="ebv-LS-9hN">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postnummer og by" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="ebv-LS-9hN">
                             <rect key="frame" x="20" y="344" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -120,7 +120,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="697-Wa-3Ug"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Fra dato' fx 24-07-2014" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="xYG-gg-vQt">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Fra dato' fx 24-07-2014" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="xYG-gg-vQt">
                             <rect key="frame" x="20" y="382" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -129,7 +129,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="d9t-vm-gpO"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Til dato' fx 25-07-2014" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="dMw-k4-f1o">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Til dato' fx 25-07-2014" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="dMw-k4-f1o">
                             <rect key="frame" x="20" y="420" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,7 +138,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="KQ5-ed-ukg"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Evt. åbent tidsrum" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="NEf-DL-0qa">
+                        <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Evt. åbent tidsrum" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="NEf-DL-0qa">
                             <rect key="frame" x="20" y="458" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,7 +147,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="qSi-T3-pe7"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Markeds information" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="bUa-vy-zLx">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Markedsinformation" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="bUa-vy-zLx">
                             <rect key="frame" x="20" y="572" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -156,7 +156,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="RLL-t4-zRZ"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Regler" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="rO1-rZ-66X">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Regler" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="rO1-rZ-66X">
                             <rect key="frame" x="20" y="534" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -165,7 +165,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="Thy-WR-TAT"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Entre pris" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" id="RfG-fw-Wpg">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Entre pris" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="RfG-fw-Wpg">
                             <rect key="frame" x="20" y="496" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

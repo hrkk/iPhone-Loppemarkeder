@@ -58,7 +58,6 @@
                                                 forState:UIControlStateNormal];
     
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-    
 
 }
 
@@ -81,6 +80,7 @@
 
 - (IBAction)next:(id)sender
 {
+    /*
     NSLog(@"Gå videre til godkendelse");
     NSLog(@"Firstname %@",self.firstName.text);
     NSLog(@"Lastname %@",self.lastName.text);
@@ -96,6 +96,7 @@
     NSLog(@"entre %@",self.entre.text);
     NSLog(@"rules %@",self.rules.text);
     NSLog(@"markedInformation %@",self.markedInformation.text);
+    */
     MarketPlace *marketPlace = [[MarketPlace alloc] init];
     NSString *arrangoerName = [NSString stringWithFormat:@"%@ %@", self.firstName.text, self.lastName.text];
     self.confirmCreateMarkedViewController.arrangoerNavn = arrangoerName;
@@ -125,11 +126,13 @@
     // markedsinfo
     marketPlace.markedInformation =self.markedInformation.text;
     
-    NSLog(@"marketPlace.name %@",marketPlace.name);
+   // NSLog(@"marketPlace.name %@",marketPlace.name);
     
     self.confirmCreateMarkedViewController.marketplace = marketPlace;
     
     [self.navigationController pushViewController:self.confirmCreateMarkedViewController animated:YES];
+    
+    
     
 }
 

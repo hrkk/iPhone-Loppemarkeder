@@ -21,6 +21,15 @@
     IBOutlet UILabel *labelRegler;
     IBOutlet UILabel *labelMarkedsinformation;
     
+    IBOutlet UILabel *headingMarkedsinformation;
+    IBOutlet UILabel *headingRegler;
+    IBOutlet UILabel *headingEntre;
+    IBOutlet UILabel *headingDate;
+    IBOutlet UILabel *headingAddress;
+    IBOutlet UILabel *headingMarketName;
+    IBOutlet UILabel *headingPhone;
+    IBOutlet UILabel *headingEmail;
+    IBOutlet UILabel *headingArrangoerName;
 }
 @property (nonatomic, strong) IBOutlet LastStepCreateMarkedViewController *lastStepCreateMarkedViewController;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;

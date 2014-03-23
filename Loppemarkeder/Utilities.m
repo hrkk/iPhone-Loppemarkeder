@@ -48,9 +48,9 @@
  
 	NSArray *sortedArray = [self sortArrayByName:array];
 	
-	// Return first 100 – or all if there are less than 100 total
-    NSRange top100 = NSMakeRange( 0, ([sortedArray count] > 100 ? 100 : [sortedArray count]) );
-    return [[sortedArray subarrayWithRange:top100] mutableCopy];
+	// Return first 200 – or all if there are less than 200 total
+    NSRange top200 = NSMakeRange( 0, ([sortedArray count] > 200 ? 200 : [sortedArray count]) );
+    return [[sortedArray subarrayWithRange:top200] mutableCopy];
 }
 
 +(NSArray*)sortArrayByDistance:(NSArray*)nonSortedArr

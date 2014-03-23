@@ -57,7 +57,7 @@
     newFrame.size.height = expectedLabelSize.height;
     _addressLabel.frame = newFrame;
     
-    maximumLabelSize = CGSizeMake(296, FLT_MAX);
+    maximumLabelSize = CGSizeMake(293, FLT_MAX);
     
     //Datoheadling
     newFrame = _dateHeadline.frame;
