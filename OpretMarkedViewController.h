@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OpretMarkedViewController : UIViewController {
-    
+   
 }
 @property (strong, nonatomic) IBOutlet UITextField *firstName;
 @property (strong, nonatomic) IBOutlet UITextField *lastName;
@@ -30,6 +30,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *fromDate;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, strong) IBOutlet ConfirmCreateMarkedViewController *confirmCreateMarkedViewController;
+@property (nonatomic, strong) MarketPlace *marketPlace;
+
 - (IBAction)next:(id)sender;
 
 @end

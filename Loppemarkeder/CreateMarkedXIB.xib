@@ -47,6 +47,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             <connections>
+                                <action selector="setTestData:" destination="-1" eventType="editingDidEnd" id="vuv-ua-IK6"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="8Ow-Y0-X9F"/>
                             </connections>
                         </textField>
@@ -111,7 +112,7 @@
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="we2-1i-7YQ"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postnummer og by" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="ebv-LS-9hN">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postnummer" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="ebv-LS-9hN">
                             <rect key="frame" x="20" y="344" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,6 +127,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
+                                <action selector="setDate:" destination="-1" eventType="editingDidBegin" id="Btz-2E-UYu"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="d9t-vm-gpO"/>
                             </connections>
                         </textField>
@@ -135,6 +137,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
+                                <action selector="setTilDate:" destination="-1" eventType="editingDidBegin" id="PQu-Dy-lIo"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="KQ5-ed-ukg"/>
                             </connections>
                         </textField>

@@ -67,10 +67,93 @@
     // markedsinformation
     labelMarkedsinformation.text = self.marketplace.markedInformation;
     
-    [self adjustLabelsPosition];
-
     
+    // 1. Validere markeds data - kald til web service
+   
+    
+    
+    // 2. Find koordinater
+    [self getLocation];
+    
+    
+    [self adjustLabelsPosition];
 }
+
+// henter location
+-(void)getLocation
+{
+    NSMutableDictionary *placeDictionary = [[NSMutableDictionary alloc] init];
+    
+    NSString *street =  self.streetAndNumber;
+    //NSString *city = @"Kirke Hyllinge";
+    NSString *zip = self.zip;
+    
+    [placeDictionary setValue:street forKey:@"Street"];
+    // [self.placeDictionary setValue:city forKey:@"City"];
+    // [self.placeDictionary setValue:self.stateOutlet.text forKey:@"State"];
+    [placeDictionary setValue:zip forKey:@"ZIP"];
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressDictionary:placeDictionary completionHandler:^(NSArray *placemarks, NSError *error) {
+        if([placemarks count]) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            location = placemark.location;
+            CLLocationCoordinate2D coordinate = location.coordinate;
+            //[self.mapView setCenterCoordinate:coordinate animated:YES];
+            NSLog(@"coordinate %f", coordinate.latitude);
+            NSLog(@"coordinate %f", coordinate.longitude);
+            NSLog(@"debugDescription %@", placemark.description);
+            NSLog(@"ISOcountryCode %@", placemark.ISOcountryCode);
+            NSLog(@"locality %@", placemark.locality);
+            NSLog(@"postalCode %@", placemark.postalCode);
+            NSLog(@"administrativeArea %@", placemark.administrativeArea);
+            NSLog(@"country %@", placemark.country);
+            NSLog(@"name %@", placemark.name);
+            NSLog(@"subLocality %@", placemark.subLocality);
+            NSLog(@"%@", [[placemark addressDictionary] description]);
+            
+            
+            NSArray *adressArray = [[placemark addressDictionary] objectForKey:@"FormattedAddressLines"];
+            
+            if ([adressArray count] >=3) {
+                labelAddress.text = [NSString stringWithFormat:@"%@, %@, %@", [adressArray objectAtIndex:0], [adressArray objectAtIndex:1], [adressArray objectAtIndex:2]];
+            }
+            [self setWorking:YES];
+            //placemark.ISOcountryCode
+            [self adjustLabelsPosition];
+
+        } else {
+            NSLog(@"error");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen?" delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
+            [alert setTag:12];
+            // optional - add more buttons:
+            [alert addButtonWithTitle:@"Forsæt"];
+            [alert show];
+        }
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    NSLog(@"buttonIndex %ld", (long)buttonIndex);
+    if ([alertView tag] == 12) {
+        if (buttonIndex == 0) {
+            NSLog(@"alertView tag == 12, buttonIndex == 0, Cancel");
+            // do nothing
+            [self setWorking:NO];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        if (buttonIndex == 1) {
+            NSLog(@"alertView tag == 12, buttonIndex == 1, Yes");
+            // lav manuel oprettelse
+            
+            [self setWorking:YES];
+           
+        }
+    }
+}
+
+
 
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +166,13 @@
 {
    // NSLog(@"Godkend action!!");
    [NSThread detachNewThreadSelector:@selector(threadStartAnimating) toTarget:self withObject:nil];
-    NSString *json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView",self.marketplace.name, labelDate.text, self.marketplace.entreInfo, self.marketplace.markedRules, self.marketplace.markedInformation, self.marketplace.address1, self.arrangoerNavn, self.arrangoerEmail, self.arrangoerPhone];
+    NSString *json;
+    if(location == nil) {
+        NSLog(@"Manuel oprettelse!!");
+        json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView",self.marketplace.name, labelDate.text, self.marketplace.entreInfo, self.marketplace.markedRules, self.marketplace.markedInformation, self.marketplace.address1, self.arrangoerNavn, self.arrangoerEmail, self.arrangoerPhone];
+    } else {
+        NSLog(@"Autmatisk oprettelse!!");
+    }
     NSData *postData = [json dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
        //NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"class", json, nil];
     

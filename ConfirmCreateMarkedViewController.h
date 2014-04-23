@@ -30,6 +30,7 @@
     IBOutlet UILabel *headingPhone;
     IBOutlet UILabel *headingEmail;
     IBOutlet UILabel *headingArrangoerName;
+    CLLocation *location;
 }
 @property (nonatomic, strong) IBOutlet LastStepCreateMarkedViewController *lastStepCreateMarkedViewController;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
@@ -39,6 +40,9 @@
 @property (nonatomic,copy) NSString *arrangoerNavn;
 @property (nonatomic,copy) NSString *arrangoerEmail;
 @property (nonatomic,copy) NSString *arrangoerPhone;
+@property (nonatomic,copy) NSString *streetAndNumber;
+@property (nonatomic,copy) NSString *zip;
+@property (nonatomic, assign) BOOL working;
 - (IBAction)godkend:(id)sender;
 - (IBAction)tilbage:(id)sender;
 
