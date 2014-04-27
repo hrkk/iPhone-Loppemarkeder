@@ -7,6 +7,7 @@
 //
 
 #import "LastStepCreateMarkedViewController.h"
+#import "AppDataCache.h"
 
 @interface LastStepCreateMarkedViewController ()
 
@@ -29,6 +30,10 @@
 	// Do any additional setup after loading the view.
     self.title = @"Kvittering: 3/3";
     self.navigationItem.hidesBackButton = YES;
+    BOOL reload = [AppDataCache shared].reload;
+    if(reload) {
+        confimText.text = @"Tak for din oprettelse. Dit nye marked er tilføjet til listen. Kontakt info@markedsbooking.dk, hvis du har rettelser eller vil have slettet dit marked.";
+    }
 }
 
 - (void)didReceiveMemoryWarning

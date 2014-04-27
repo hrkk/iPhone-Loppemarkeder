@@ -7,6 +7,7 @@
 //
 
 #import "ConfirmCreateMarkedViewController.h"
+#import "AppDataCache.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
 
@@ -67,14 +68,8 @@
     // markedsinformation
     labelMarkedsinformation.text = self.marketplace.markedInformation;
     
-    
-    // 1. Validere markeds data - kald til web service
-   
-    
-    
     // 2. Find koordinater
     [self getLocation];
-    
     
     [self adjustLabelsPosition];
 }
@@ -124,6 +119,7 @@
 
         } else {
             NSLog(@"error");
+            location=nil;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen?" delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
             [alert setTag:12];
             // optional - add more buttons:
@@ -162,30 +158,63 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString*) replaceSpecielChars:(NSString *) candidate {
+    NSString *res;
+    res = [candidate stringByReplacingOccurrencesOfString:@"Ø" withString:@"::OE::"];
+    res = [res stringByReplacingOccurrencesOfString:@"Æ" withString:@"::AE::"];
+    res = [res stringByReplacingOccurrencesOfString:@"Å" withString:@"::AA::"];
+    res = [res stringByReplacingOccurrencesOfString:@"ø" withString:@"::oe::"];
+    res = [res stringByReplacingOccurrencesOfString:@"æ" withString:@"::ae::"];
+    res = [res stringByReplacingOccurrencesOfString:@"å" withString:@"::aa::"];
+    return res;
+}
 - (IBAction)godkend:(id)sender
 {
    // NSLog(@"Godkend action!!");
    [NSThread detachNewThreadSelector:@selector(threadStartAnimating) toTarget:self withObject:nil];
     NSString *json;
+    NSString *markedName = [self replaceSpecielChars: self.marketplace.name];
+    
+    NSString *additionalOpenTimePeriod = [self replaceSpecielChars: self.marketplace.dateXtraInfo];
+    
+    NSString *address= [self replaceSpecielChars: self.marketplace.address1];
+    
+    NSString *entreInfo =[self replaceSpecielChars: self.marketplace.entreInfo];
+    
+    NSString *markedRules=[self replaceSpecielChars: self.marketplace.markedRules];
+    
+    NSString *markedInformation=[self replaceSpecielChars: self.marketplace.markedInformation];
+    
+    NSString *organizerName=[self replaceSpecielChars: self.arrangoerNavn];
+    
     if(location == nil) {
         NSLog(@"Manuel oprettelse!!");
-        json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView",self.marketplace.name, labelDate.text, self.marketplace.entreInfo, self.marketplace.markedRules, self.marketplace.markedInformation, self.marketplace.address1, self.arrangoerNavn, self.arrangoerEmail, self.arrangoerPhone];
+        json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView",markedName, labelDate.text, entreInfo, markedRules, markedInformation, address, organizerName, self.arrangoerEmail, self.arrangoerPhone];
     } else {
         NSLog(@"Autmatisk oprettelse!!");
+        [AppDataCache shared].reload = YES;
+        CLLocationCoordinate2D coordinate = location.coordinate;
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        NSString *fromDateString = [dateFormat stringFromDate:self.marketplace.fromDate];
+        NSString *toDateString = [dateFormat stringFromDate:self.marketplace.toDate];
+        
+        json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\",latitude:\"%f\",longitude:\"%f\",fromDate:\"%@\",toDate:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView", markedName, additionalOpenTimePeriod, entreInfo, markedRules, markedInformation, address, organizerName, self.arrangoerEmail, self.arrangoerPhone, coordinate.latitude, coordinate.longitude, fromDateString, toDateString];
     }
     NSData *postData = [json dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
        //NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"class", json, nil];
     
    //     NSData *result = [NSJSONSerialization dataWithJSONObject:dict  options:NSJSONWritingPrettyPrinted error:&error];
         
-     //    NSLog(@"JSON request %@", json);
+         NSLog(@"JSON request %@", json);
         if(postData != nil) {
             NSLog(@"Call post!!!");
             [self.activityIndicatorView startAnimating];
             [self jsonPostRequest:postData];
             [self.activityIndicatorView stopAnimating];
         }
-      [self.navigationController pushViewController:self.lastStepCreateMarkedViewController animated:YES];
+        [self.navigationController pushViewController:self.lastStepCreateMarkedViewController animated:YES];
 }
 
 - (void) threadStartAnimating {
@@ -207,7 +236,7 @@
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [jsonRequestData length]] forHTTPHeaderField:@"Content-Length"];
     
     [request setHTTPBody:jsonRequestData];

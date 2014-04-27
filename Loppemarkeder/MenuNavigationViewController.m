@@ -29,6 +29,41 @@
 {
 	[super viewWillAppear:animated];
 	[self.navigationController setNavigationBarHidden:YES animated:NO];
+    BOOL reload = [AppDataCache shared].reload;
+    NSLog(@"%hhd",reload);
+    if(reload) {
+        [AppDataCache shared].reload = false;
+        [self loadFeed];
+    }
+}
+
+-(void)loadFeed
+{
+    // Setting Up Activity Indicator View
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+		NSLog(@"%@",JSON);
+		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
+		NSLog(@"%@",[AppDataCache shared].marketList);
+        [self.activityIndicatorView stopAnimating];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+    }];
+    
+    locationManager=[[CLLocationManager alloc] init];
+	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    [operation start];
 }
 
 - (void)viewDidLoad
@@ -60,34 +95,7 @@
                                                 forState:UIControlStateNormal];
     
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-        
-    // Setting Up Activity Indicator View
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicatorView.hidesWhenStopped = YES;
-    self.activityIndicatorView.center = self.view.center;
-    [self.view addSubview:self.activityIndicatorView];
-    [self.activityIndicatorView startAnimating];
-    
-    NSURL *url = [[NSURL alloc] initWithString:@"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		NSLog(@"%@",JSON);
-		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
-		NSLog(@"%@",[AppDataCache shared].marketList);
-        [self.activityIndicatorView stopAnimating];     
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-    }];
-    
-    locationManager=[[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
-    
-    [operation start];
-    
+    [self loadFeed];
 }
 
 -(void)locationManager:(CLLocationManager *)manager

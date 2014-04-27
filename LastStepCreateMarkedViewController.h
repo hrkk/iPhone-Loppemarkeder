@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LastStepCreateMarkedViewController : UIViewController {
+     IBOutlet UILabel *confimText;
     
 }
 

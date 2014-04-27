@@ -8,7 +8,7 @@
     [super viewDidLoad];
 	self.title = @"Om App";
     [_scroller setScrollEnabled:YES];
-    [_scroller setContentSize:(CGSizeMake(300, 920))];
+    [_scroller setContentSize:(CGSizeMake(300, 1100))];
 }
 
 

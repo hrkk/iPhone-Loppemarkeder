@@ -150,8 +150,6 @@
     }
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -289,13 +287,8 @@
         }
         [errMsg appendString:@"'Markedsinformation' er ikke korret udfyldt"];
     };
-
-
-
     
     // 1.b er zip ok
-    
-   
     if ([errMsg length] > 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Valideringsfejl!" message:errMsg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
@@ -306,19 +299,23 @@
         self.confirmCreateMarkedViewController.arrangoerNavn = arrangoerName;
         self.confirmCreateMarkedViewController.arrangoerEmail = self.emailAdr.text;
         self.confirmCreateMarkedViewController.arrangoerPhone = self.phoneNumber.text;
-    
-            marketPlace.name = self.markedName.text;
+        marketPlace.name = self.markedName.text;
         NSString *address = [NSString stringWithFormat:@"%@ %@, %@", self.address.text, self.houseNumber.text, self.postalCode.text];
         marketPlace.address1 = address;
+       
         self.confirmCreateMarkedViewController.streetAndNumber =[NSString stringWithFormat:@"%@ %@", self.address.text, self.houseNumber.text];
         self.confirmCreateMarkedViewController.zip =[NSString stringWithFormat:@"%@", self.postalCode.text];
-        // stringDate
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        marketPlace.fromDate = [dateFormat dateFromString:self.fromDate.text];
+        marketPlace.toDate = [dateFormat dateFromString:self.toDate.text];
+        // stringDate til manuel oprettelse
         if (self.toDate!= nil) {
             NSString *fromAndToDate = [NSString stringWithFormat:@"%@-%@", self.fromDate.text, self.toDate.text];
             self.confirmCreateMarkedViewController.stringDate=fromAndToDate;
-    } else {
-        self.confirmCreateMarkedViewController.stringDate=self.fromDate.text;
-    }
+        } else {
+            self.confirmCreateMarkedViewController.stringDate=self.fromDate.text;
+        }
     // addition
     marketPlace.dateXtraInfo =self.additionalOpenPeriode.text;
     
@@ -336,7 +333,7 @@
     self.confirmCreateMarkedViewController.marketplace = marketPlace;
     
     [self.navigationController pushViewController:self.confirmCreateMarkedViewController animated:YES];
-        }
+    }
     
 }
 - (BOOL) validateEmail: (NSString *) candidate {
