@@ -66,7 +66,7 @@
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="35">
                             <rect key="frame" x="20" y="189" width="280" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">AIPOPS er et enkeltmands mobiludviklingsfirma v/Thomas Sandvik, som tilbyder konsulentydelser indenfor mobiludvikling, og som i eget regi, samt i samarbejde med Dansk IT afholder kurser of foredrag om udvikling af mobile applkationer til Iphone og Ipad.</string>
+                            <string key="text">AIPOPS er et enkeltmands mobiludviklingsfirma v/Thomas Sandvik, som tilbyder konsulentydelser indenfor mobiludvikling, og som i eget regi, samt i samarbejde med Dansk IT afholder kurser of foredrag om udvikling af mobile applikationer til Iphone og Ipad.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -138,8 +138,8 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="22" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="56">
-                            <rect key="frame" x="19" y="472" width="280" height="320"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="56">
+                            <rect key="frame" x="19" y="472" width="280" height="400"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <mutableString key="text">Version 1.6 - Oprettelse af markeder er fuldautomatiseret. Det vil sige at et marked som oprettes fra app'en vil være tilgængeligeligt i loppemarkeds oversigten med det samme.  Version 1.5 - Ny menuknap tilføjet som giver mulighed for at oprette dine egne loppemarkeder fra app'en.  Version 1.4 - Opgradering til iOS 7.0  Version 1.3 - Bugfix således dagens markeder også bliver vist.   Version 1.2 - Bugfix i centering af kort samt liste sorteret ud fra afstand indeholder kun førstkommende marked.  Version 1.1 - Default sortering af markeds listen ændret til dato orden.  Version 1.0 - Inital app igansat.</mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

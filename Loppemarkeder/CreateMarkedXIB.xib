@@ -47,6 +47,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             <connections>
+                                <action selector="fjernDefaultTekst:" destination="-1" eventType="editingDidBegin" id="STB-RT-ZF8"/>
                                 <action selector="setTestData:" destination="-1" eventType="editingDidEnd" id="vuv-ua-IK6"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="8Ow-Y0-X9F"/>
                             </connections>
@@ -57,6 +58,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstEfternavn:" destination="-1" eventType="editingDidBegin" id="Nmk-BO-KIc"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="XZx-52-sBV"/>
                             </connections>
                         </textField>
@@ -66,6 +68,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             <connections>
+                                <action selector="fjernDefaultTekstEmail:" destination="-1" eventType="editingDidBegin" id="eIx-N9-nrw"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="0TF-go-nI1"/>
                             </connections>
                         </textField>
@@ -75,6 +78,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
+                                <action selector="fjernDefaultTekstTlfnr:" destination="-1" eventType="editingDidBegin" id="Rtc-wp-c6K"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="Xcc-no-OyB"/>
                             </connections>
                         </textField>
@@ -91,6 +95,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstMarkedsnavn:" destination="-1" eventType="editingDidBegin" id="RZJ-hZ-Khs"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="spU-9A-zCH"/>
                             </connections>
                         </textField>
@@ -100,6 +105,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstVej:" destination="-1" eventType="editingDidBegin" id="Ig8-kM-epM"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="G1r-p0-p1x"/>
                             </connections>
                         </textField>
@@ -109,6 +115,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
+                                <action selector="fjernDefaultTekstHusnummer:" destination="-1" eventType="editingDidBegin" id="0cg-xF-1fV"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="we2-1i-7YQ"/>
                             </connections>
                         </textField>
@@ -118,26 +125,27 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
+                                <action selector="fjernDefaultTekstPostnummer:" destination="-1" eventType="editingDidBegin" id="G9z-4S-GNY"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="697-Wa-3Ug"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Fra dato' fx 24-07-2014" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="xYG-gg-vQt">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Fra dato' fx 24-07-2014" borderStyle="roundedRect" minimumFontSize="17" id="xYG-gg-vQt">
                             <rect key="frame" x="20" y="382" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
-                                <action selector="setDate:" destination="-1" eventType="editingDidBegin" id="Btz-2E-UYu"/>
+                                <action selector="setDate:" destination="-1" eventType="editingDidBegin" id="zG5-0f-gmc"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="d9t-vm-gpO"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Til dato' fx 25-07-2014" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="dMw-k4-f1o">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Til dato' fx 25-07-2014" borderStyle="roundedRect" minimumFontSize="17" id="dMw-k4-f1o">
                             <rect key="frame" x="20" y="420" width="280" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             <connections>
-                                <action selector="setTilDate:" destination="-1" eventType="editingDidBegin" id="PQu-Dy-lIo"/>
+                                <action selector="setTilDate:" destination="-1" eventType="editingDidBegin" id="qLK-SN-WzS"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="KQ5-ed-ukg"/>
                             </connections>
                         </textField>
@@ -147,6 +155,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstExtraInfo:" destination="-1" eventType="editingDidBegin" id="wiW-GS-RM0"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="qSi-T3-pe7"/>
                             </connections>
                         </textField>
@@ -156,6 +165,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstMarkedsInfo:" destination="-1" eventType="editingDidBegin" id="Ijy-Lg-l96"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="RLL-t4-zRZ"/>
                             </connections>
                         </textField>
@@ -165,6 +175,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstRegler:" destination="-1" eventType="editingDidBegin" id="PMT-0R-B5r"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="Thy-WR-TAT"/>
                             </connections>
                         </textField>
@@ -174,6 +185,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="fjernDefaultTekstEntre:" destination="-1" eventType="editingDidBegin" id="tYs-9Q-B92"/>
                                 <action selector="textFieldFinishedWithKeyBoard:" destination="-1" eventType="editingDidEndOnExit" id="HPs-xI-uSp"/>
                             </connections>
                         </textField>

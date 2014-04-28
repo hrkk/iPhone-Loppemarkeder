@@ -83,6 +83,18 @@
 
         _fromDate.text = [NSString stringWithFormat:@"%@",formattedDateString];
     }
+    
+    if([_toDate isFirstResponder]){
+        UIDatePicker *picker = (UIDatePicker*)_toDate.inputView;
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        // change formatting format to the display format
+        [formatter setDateFormat:@"dd-MM-yyyy"];
+        NSString *formattedDateString = [formatter stringFromDate:picker.date];
+        
+        _toDate.text = [NSString stringWithFormat:@"%@",formattedDateString];
+    }
+
    // if([_editEndDate isFirstResponder]){
    //     UIDatePicker *picker = (UIDatePicker*)_editEndDate.inputView;
    //     _editEndDate.text = [NSString stringWithFormat:@"%@",picker.date];
@@ -123,6 +135,7 @@
     }
 }
 
+
 - (IBAction) setTestData:(id)sender {
     NSLog(@"setTestData");
     NSString *myString = _firstName.text;
@@ -150,13 +163,120 @@
     }
 }
 
+- (IBAction) fjernDefaultTekst:(id)sender {
+    NSString *candidate = self.firstName.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Fornavn" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.firstName.text=@"";
+    }
+}
+
+
+- (IBAction) fjernDefaultTekstEfternavn:(id)sender {
+    NSString *candidate = self.lastName.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Efternavn" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.lastName.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstEmail:(id)sender {
+    NSString *candidate = self.emailAdr.text;
+    NSRange rangeValue = [candidate rangeOfString:@"E-mail-adresse" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.emailAdr.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstTlfnr:(id)sender {
+    NSString *candidate = self.phoneNumber.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Telefon nummer" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.phoneNumber.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstMarkedsnavn:(id)sender {
+    NSString *candidate = self.markedName.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Markedsnavn" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.markedName.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstVej:(id)sender {
+    NSString *candidate = self.address.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Vej"];
+    
+    if (rangeValue.length > 0){
+        self.address.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstHusnummer:(id)sender {
+    NSString *candidate = self.houseNumber.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Husnummer" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.houseNumber.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstPostnummer:(id)sender {
+    NSString *candidate = self.postalCode.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Postnummer" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.postalCode.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstExtraInfo:(id)sender {
+    NSString *candidate = self.additionalOpenPeriode.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Evt. åbent tidsrum" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.additionalOpenPeriode.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstEntre:(id)sender {
+    NSString *candidate = self.entre.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Entre pris" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.entre.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstRegler:(id)sender {
+    NSString *candidate = self.rules.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Regler" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.rules.text=@"";
+    }
+}
+
+- (IBAction) fjernDefaultTekstMarkedsInfo:(id)sender {
+    NSString *candidate = self.markedInformation.text;
+    NSRange rangeValue = [candidate rangeOfString:@"Markedsinformation" options:NSCaseInsensitiveSearch];
+    
+    if (rangeValue.length > 0){
+        self.markedInformation.text=@"";
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -309,9 +429,10 @@
         [dateFormat setDateFormat:@"dd-MM-yyyy"];
         marketPlace.fromDate = [dateFormat dateFromString:self.fromDate.text];
         marketPlace.toDate = [dateFormat dateFromString:self.toDate.text];
+
         // stringDate til manuel oprettelse
         if (self.toDate!= nil) {
-            NSString *fromAndToDate = [NSString stringWithFormat:@"%@-%@", self.fromDate.text, self.toDate.text];
+            NSString *fromAndToDate = [NSString stringWithFormat:@"%@ til %@", self.fromDate.text, self.toDate.text];
             self.confirmCreateMarkedViewController.stringDate=fromAndToDate;
         } else {
             self.confirmCreateMarkedViewController.stringDate=self.fromDate.text;
