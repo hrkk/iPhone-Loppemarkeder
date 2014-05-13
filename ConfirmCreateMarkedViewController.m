@@ -120,7 +120,7 @@
         } else {
             NSLog(@"error");
             location=nil;
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen?" delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen? Hvis du forsætter vil oprettelsen gå til manuel behandling, og markedet tilføjes derfor IKKE med det samme." delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
             [alert setTag:12];
             // optional - add more buttons:
             [alert addButtonWithTitle:@"Forsæt"];

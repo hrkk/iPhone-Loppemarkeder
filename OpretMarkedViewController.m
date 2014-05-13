@@ -7,6 +7,7 @@
 //
 
 #import "OpretMarkedViewController.h"
+#import "AppDataCache.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
 
@@ -408,6 +409,26 @@
         [errMsg appendString:@"'Markedsinformation' er ikke korret udfyldt"];
     };
     
+    // 1.b validere at markedsnavn ikke er anvendt af andre markder
+    NSArray *marketList = [AppDataCache shared].marketList;
+    
+    
+    for (MarketPlace *eachMarked in marketList) {
+        NSLog(@"%@",eachMarked.name);
+        NSRange rangeValue = [eachMarked.name rangeOfString:self.markedName.text options:NSCaseInsensitiveSearch];
+        
+        if (rangeValue.length > 0){
+            [errMsg appendString:@"'Markedsnavn' er anvendt - vælg et andet"];
+            break;
+        }
+    }
+
+    // 1.c validere days
+    int days = [self dateDiffrenceFromDate:self.fromDate.text second:self.toDate.text];
+    if(days > 3) {
+         [errMsg appendString:@"Dato periode er for lang - max 3 dage"];
+    }
+    
     // 1.b er zip ok
     if ([errMsg length] > 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Valideringsfejl!" message:errMsg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -587,5 +608,21 @@
         return FALSE;
     }
     return TRUE;
+}
+
+-(int)dateDiffrenceFromDate:(NSString *)date1 second:(NSString *)date2 {
+    // Manage Date Formation same for both dates
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy"];
+    NSDate *startDate = [formatter dateFromString:date1];
+    NSDate *endDate = [formatter dateFromString:date2];
+    
+    
+    unsigned flags = NSDayCalendarUnit;
+    NSDateComponents *difference = [[NSCalendar currentCalendar] components:flags fromDate:startDate toDate:endDate options:0];
+    
+    int dayDiff = [difference day];
+    
+    return dayDiff;
 }
 @end
