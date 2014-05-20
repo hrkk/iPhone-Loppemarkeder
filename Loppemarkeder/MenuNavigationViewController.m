@@ -34,11 +34,15 @@
     if(reload) {
         [AppDataCache shared].reload = false;
         [self loadFeed];
+        
+        locationManager=[[CLLocationManager alloc] init];
+        locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+        locationManager.delegate = self;
+        [locationManager startUpdatingLocation];
     }
 }
 
--(void)loadFeed
-{
+-(void)loadFeed {
     // Setting Up Activity Indicator View
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicatorView.hidesWhenStopped = YES;
@@ -46,7 +50,7 @@
     [self.view addSubview:self.activityIndicatorView];
     [self.activityIndicatorView startAnimating];
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"];
+    NSURL *url = [[NSURL alloc] initWithString:FEED_URL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -58,11 +62,6 @@
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
     }];
-    
-    locationManager=[[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
     [operation start];
 }
 
@@ -95,7 +94,26 @@
                                                 forState:UIControlStateNormal];
     
 	self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
+    // adds info button
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [button addTarget:self
+               action:@selector(omApp)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"" forState:UIControlStateNormal];
+     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+          button.frame = CGRectMake(280, 6.0, 30.0, 60.0);
+     } else {
+         button.frame = CGRectMake(280, 6.0, 30.0, 30.0);
+     }
+    [button setTintColor:[UIColor blackColor]];
+    [self.view addSubview:button];
     [self loadFeed];
+}
+
+-(void)omApp {
+    [self.navigationController pushViewController:self.aboutAppViewController animated:YES];
 }
 
 -(void)locationManager:(CLLocationManager *)manager

@@ -48,8 +48,8 @@
  
 	NSArray *sortedArray = [self sortArrayByName:array];
 	
-	// Return first 200 – or all if there are less than 200 total
-    NSRange top200 = NSMakeRange( 0, ([sortedArray count] > 200 ? 200 : [sortedArray count]) );
+	// Return first 400 – or all if there are less than 400 total
+    NSRange top200 = NSMakeRange( 0, ([sortedArray count] > 400 ? 400 : [sortedArray count]) );
     return [[sortedArray subarrayWithRange:top200] mutableCopy];
 }
 
@@ -90,12 +90,16 @@
 
 +(NSArray*)sortArrayByName:(NSArray*)nonSortedArr
 {
+    // sørger for det er sorteret i dato orden først
+    nonSortedArr = [self sortArrayByDate: nonSortedArr];
+    
     NSMutableArray *arr  = [NSMutableArray arrayWithArray:nonSortedArr];
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [arr sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
     
+   
     nonSortedArr = [NSArray arrayWithArray:arr];
-    
+   
     return nonSortedArr;
     
     

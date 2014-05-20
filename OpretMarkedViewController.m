@@ -422,11 +422,40 @@
             break;
         }
     }
+    
+    // 1.c validere at fra og til dato er dagsdato og fremad
+    if (![self validateDateGEorEQToday:self.fromDate.text] ) {
+        if ([errMsg length] > 0) {
+            [errMsg appendString:@", "];
+        }
+        [errMsg appendString:@"'Fra dato' er ikke dagsdato eller i fremtiden"];
+    };
+    
+    if (![self validateDateGEorEQToday:self.toDate.text] ) {
+        if ([errMsg length] > 0) {
+            [errMsg appendString:@", "];
+        }
+        [errMsg appendString:@"'Til dato' er ikke dagsdato eller i fremtiden"];
+    };
+    
+    
 
-    // 1.c validere days
+    // 1.d validere days
     int days = [self dateDiffrenceFromDate:self.fromDate.text second:self.toDate.text];
-    if(days > 3) {
-         [errMsg appendString:@"Dato periode er for lang - max 3 dage"];
+    if(days > 7) {
+        if ([errMsg length] > 0) {
+            [errMsg appendString:@", "];
+        }
+        [errMsg appendString:@"Dato periode er for lang - max 7 sammenhængende dage"];
+    }
+    
+    // validere at toDate ikke er før fromDate
+    if(![self validateToDateIsEQorAfter]) {
+        if ([errMsg length] > 0) {
+            [errMsg appendString:@", "];
+        }
+        [errMsg appendString:@"'Til dato' er før 'Fra dato' "];
+        
     }
     
     // 1.b er zip ok
@@ -497,6 +526,79 @@
     }
       return TRUE;
     
+}
+
+- (BOOL) validateToDateIsEQorAfter {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-yyyy"];
+    NSDate *dateFromDate = [dateFormat dateFromString:self.fromDate.text];
+    NSDate *toFromDate  = [dateFormat dateFromString:self.toDate.text];
+    
+    NSComparisonResult result;
+    //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending
+    
+    result = [dateFromDate compare:toFromDate]; // comparing two dates
+    BOOL fromDateOk;
+    if(result==NSOrderedAscending) {
+        fromDateOk = TRUE;
+        NSLog(@"dateFromDate is less ok");
+    }
+    else if(result==NSOrderedDescending){
+        NSLog(@"toFromDate is less not ok");
+        fromDateOk = FALSE;
+    }
+    else {
+        NSLog(@"Both dates are same ok");
+        fromDateOk = TRUE;
+    }
+    return fromDateOk;
+}
+
+
+- (BOOL) validateDateGEorEQToday:(NSString *) candidate {
+    NSDate *today = [NSDate date]; // it will give you current date
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    NSString *fromDateString = candidate;
+    NSString *todayString = [dateFormat stringFromDate:today];
+    
+    NSString *fromDateOnlyDate = fromDateString;
+    NSString *todayOnlyDate = [todayString substringToIndex:10];
+    
+    NSDateFormatter *df= [[NSDateFormatter alloc] init];
+  
+    [df setDateFormat:@"dd-MM-yyyy"];
+    NSDate *dt1FromDate = [[NSDate alloc] init];
+    dt1FromDate=[df dateFromString:fromDateOnlyDate];
+    
+    [df setDateFormat:@"yyyy-MM-dd"];
+    NSDate *dt2ToDay = [[NSDate alloc] init];
+    dt2ToDay=[df dateFromString:todayOnlyDate];
+    
+    NSLog(@"dt1 is %@",dt1FromDate);
+    NSLog(@"dt2 is %@",dt2ToDay);
+
+    
+    NSComparisonResult result;
+    //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending
+    
+    result = [dt2ToDay compare:dt1FromDate]; // comparing two dates
+    BOOL fromDateOk;
+    if(result==NSOrderedAscending) {
+        fromDateOk = TRUE;
+        NSLog(@"today is less ok");
+    }
+    else if(result==NSOrderedDescending){
+        NSLog(@"newDate is less not ok");
+        fromDateOk = FALSE;
+    }
+    else {
+        NSLog(@"Both dates are same ok");
+        fromDateOk = TRUE;
+    }
+    return fromDateOk;
 }
 - (BOOL) validateNumber: (NSString *) candidate {
     NSNumberFormatter *integerNumberFormatter = [[NSNumberFormatter alloc] init];

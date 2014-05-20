@@ -120,11 +120,68 @@
         } else {
             NSLog(@"error");
             location=nil;
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen? Hvis du forsætter vil oprettelsen gå til manuel behandling, og markedet tilføjes derfor IKKE med det samme." delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
+            
+            NSDate *today = [NSDate date]; // it will give you current date
+            NSLog(@"the current date is %@",today);
+            
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+            NSString *fromDateString = [dateFormat stringFromDate:self.marketplace.fromDate];
+            NSString *todayString = [dateFormat stringFromDate:today];
+            NSLog(@"fromDateString is %@",fromDateString);
+            NSLog(@"todayString is %@",todayString);
+
+            NSString *fromDateOnlyDate = [fromDateString substringToIndex:10];
+            NSString *todayOnlyDate = [todayString substringToIndex:10];
+            NSLog(@"fromDateOnlyDate is %@",fromDateOnlyDate);
+            NSLog(@"todayOnlyDate is %@",todayOnlyDate);
+         
+            NSDateFormatter *df= [[NSDateFormatter alloc] init];
+            
+            [df setDateFormat:@"yyyy-MM-dd"];
+            
+            NSDate *dt1FromDate = [[NSDate alloc] init];
+            
+            NSDate *dt2ToDay = [[NSDate alloc] init];
+            
+            dt1FromDate=[df dateFromString:fromDateOnlyDate];
+            
+            dt2ToDay=[df dateFromString:todayOnlyDate];
+            
+            NSLog(@"dt1 is %@",dt1FromDate);
+            NSLog(@"dt2 is %@",dt2ToDay);
+            
+            NSComparisonResult result;
+            //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending
+            
+            result = [dt2ToDay compare:dt1FromDate]; // comparing two dates
+            BOOL fromDateOk;
+            if(result==NSOrderedAscending) {
+                fromDateOk = TRUE;
+                NSLog(@"today is less ok");
+            }
+            else if(result==NSOrderedDescending){
+                NSLog(@"newDate is less not ok");
+                 fromDateOk = FALSE;
+            }
+            else {
+                NSLog(@"Both dates are same not ok");
+                fromDateOk = FALSE;
+            }
+            if(!fromDateOk) {
+                NSLog(@"Show alert!!");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fra dato" message:@"'Fra dato' validerings fejl. Datoen skal være i fremtiden og mindst dagsdato + 1 dag." delegate:self cancelButtonTitle:@"Tilbage" otherButtonTitles:nil];
+                [alert setTag:13];
+                // optional - add more buttons:
+                [alert show];
+            } else {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Kan ikke finde koordinaterne til den valgte adresse" message:@"Gå tilbage og ret adressen? Hvis du forsætter vil oprettelsen gå til manuel behandling, og markedet tilføjes derfor IKKE med det samme." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert setTag:12];
             // optional - add more buttons:
             [alert addButtonWithTitle:@"Forsæt"];
             [alert show];
+            }
         }
     }];
 }
@@ -147,6 +204,16 @@
            
         }
     }
+    if ([alertView tag] == 13) {
+        if (buttonIndex == 0) {
+            NSLog(@"alertView tag == 13, buttonIndex == 0, Cancel");
+            // do nothing
+            [self setWorking:NO];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+    }
+
 }
 
 

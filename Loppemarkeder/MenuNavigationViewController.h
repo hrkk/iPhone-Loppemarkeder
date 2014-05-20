@@ -10,17 +10,16 @@
 #import "AboutLoppeMarkedViewController.h"
 #import "AboutAppViewController.h"
 #import "OpretMarkedViewController.h"
+#import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+
+#define FEED_URL           @"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"
 
 @interface MenuNavigationViewController : UIViewController <CLLocationManagerDelegate>
 {
     UIActivityIndicatorView *_activityIndicatorView;
     CLLocationManager *locationManager;
-	
-    
 }
-
-
 
 @property (nonatomic, strong) IBOutlet AboutLoppeMarkedViewController *aboutLoppeMarkedViewController;
 @property (nonatomic, strong) IBOutlet AboutAppViewController *aboutAppViewController;

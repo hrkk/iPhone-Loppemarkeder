@@ -10,6 +10,7 @@
 #import "MarketPlace.h"
 #import "AppDataCache.h"
 #import "DetailViewController.h"
+#import "MenuNavigationViewController.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
 
@@ -65,7 +66,42 @@
 	_sortByDatoButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByNameButton.titleLabel.textColor = [UIColor darkGrayColor];
     currentSort = @"sortByDato";
-	
+    
+    // adds refresh button
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(print_Message)];
+    
+    NSArray *actionButtonItems = @[shareItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+}
+
+-(void)print_Message {
+    NSLog(@"Eh up, someone just pressed the button!");
+   [self loadFeed];
+}
+
+
+-(void)loadFeed {
+    // Setting Up Activity Indicator View
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
+    
+    NSURL *url = [[NSURL alloc] initWithString:FEED_URL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+		NSLog(@"%@",JSON);
+		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
+		NSLog(@"%@",[AppDataCache shared].marketList);
+        [self.activityIndicatorView stopAnimating];
+        [self sorterBySelection];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+    }];
+    [operation start];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -98,7 +134,7 @@
     } else if ([@"sortByName" isEqualToString:currentSort]) {
         [AppDataCache shared].marketList = [Utilities sortArrayByName:[AppDataCache shared].marketList];
     } else if ([@"sortByAfstand" isEqualToString:currentSort]) {
-        [AppDataCache shared].marketList = [Utilities sortArrayByDistance:[AppDataCache shared].marketList];
+        [AppDataCache shared].marketList = [self unikkeForekomsterArray];
     }
 	[self.tableView reloadData];
     
@@ -189,8 +225,11 @@
 
 - (IBAction)sortByAfstand:(id)sender
 {
+    NSArray *allMarketList = [AppDataCache shared].marketList;
 	[AppDataCache shared].marketList = [self unikkeForekomsterArray];
 	[self.tableView reloadData];
+    // sætter listen igen med alle markederne
+    [AppDataCache shared].marketList = allMarketList;
 	
 	_sortByAfstandButton.titleLabel.textColor = [UIColor blackColor];
 	_sortByDatoButton.titleLabel.textColor = [UIColor darkGrayColor];

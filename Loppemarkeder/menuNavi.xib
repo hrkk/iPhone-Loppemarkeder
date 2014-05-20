@@ -98,16 +98,6 @@
                         <action selector="nearBy:" destination="-1" eventType="touchUpInside" id="107"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6nD-6o-Ajn">
-                    <rect key="frame" x="284" y="430" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="information.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="omApp:" destination="-1" eventType="touchUpInside" id="0sq-Od-TYO"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -143,6 +133,5 @@
         <image name="ic_liste.png" width="140" height="140"/>
         <image name="ic_om_markeder.png" width="140" height="140"/>
         <image name="ic_opret_marked.png" width="140" height="140"/>
-        <image name="information.png" width="16" height="16"/>
     </resources>
 </document>
