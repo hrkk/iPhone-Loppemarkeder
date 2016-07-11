@@ -21,6 +21,7 @@
 //@property (nonatomic, strong) IBOutlet UIView *buttonSubView;
 @property (nonatomic,copy) NSString *currentSort;
 
+@property (nonatomic,strong) NSArray *vcMarketList;
 - (IBAction)sortByDato:(id)sender;
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByAfstand:(id)sender;

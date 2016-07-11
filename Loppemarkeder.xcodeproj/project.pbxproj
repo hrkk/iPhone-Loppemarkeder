@@ -367,6 +367,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					8382D67B155AE229001541B2 = {
+						DevelopmentTeam = WKZKJFL933;
+					};
+				};
 			};
 			buildConfigurationList = 8382D676155AE229001541B2 /* Build configuration list for PBXProject "Loppemarkeder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -518,13 +523,15 @@
 		8382D69B155AE229001541B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kasper Odgaard (WKZKJFL933)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Loppemarkeder/Loppemarkeder-Prefix.pch";
 				INFOPLIST_FILE = Loppemarkeder/Loppemarkeder.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Loppemarkeder;
-				PROVISIONING_PROFILE = "DBA58788-473F-4921-867D-8BE03E7E1995";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,13 +539,15 @@
 		8382D69C155AE229001541B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kasper Odgaard (WKZKJFL933)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Loppemarkeder/Loppemarkeder-Prefix.pch";
 				INFOPLIST_FILE = Loppemarkeder/Loppemarkeder.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Loppemarkeder;
-				PROVISIONING_PROFILE = "DBA58788-473F-4921-867D-8BE03E7E1995";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

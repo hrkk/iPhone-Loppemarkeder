@@ -30,26 +30,31 @@
 	// Create an instance of CLLocation
 	
 	location=[locationManager location];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        // Use one or the other, not both. Depending on what you put in info.plist
+        [locationManager requestWhenInUseAuthorization];
+    }
+
     
 #if TARGET_IPHONE_SIMULATOR
 	location = [[CLLocation alloc] initWithLatitude:kSimulatorLat longitude:kSimulatorlong];
 	
 #endif
 	
-	NSLog(@"%f %f",location.coordinate.longitude, location.coordinate.latitude);
+//	NSLog(@"current location: %f %f",location.coordinate.longitude, location.coordinate.latitude);
 	
     // Iterate all and add distance from current location
 	for(NSDictionary *eachStation in allMarkets) {
 		MarketPlace *item = [[MarketPlace alloc] initWithDictionary:eachStation];
 		item.distance = [location distanceFromLocation:item.currentLocation];
 		[array addObject:item];
-		NSLog(@"%@",item);
+	//	NSLog(@"%f",item.distance);
 	}
  
 	NSArray *sortedArray = [self sortArrayByName:array];
 	
 	// Return first 400 – or all if there are less than 400 total
-    NSRange top200 = NSMakeRange( 0, ([sortedArray count] > 400 ? 400 : [sortedArray count]) );
+    NSRange top200 = NSMakeRange( 0, ([sortedArray count] > 600 ? 600 : [sortedArray count]) );
     return [[sortedArray subarrayWithRange:top200] mutableCopy];
 }
 
@@ -64,6 +69,7 @@
 	}];
 	
 	return sortedArray;
+    
 }
 
 +(NSArray*)sortArrayByDate:(NSArray*)nonSortedArr

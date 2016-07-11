@@ -19,6 +19,7 @@
 
 @synthesize tableView = _tableView, activityIndicatorView = _activityIndicatorView;
 @synthesize currentSort;
+@synthesize vcMarketList;
 
 - (void)viewDidLoad
 {
@@ -92,9 +93,9 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		NSLog(@"%@",JSON);
+		//NSLog(@"%@",JSON);
 		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
-		NSLog(@"%@",[AppDataCache shared].marketList);
+		//NSLog(@"%@",[AppDataCache shared].marketList);
         [self.activityIndicatorView stopAnimating];
         [self sorterBySelection];
         
@@ -152,7 +153,10 @@
 // Table View Data Source Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([AppDataCache shared].marketList && [AppDataCache shared].marketList.count)
+     if ([@"sortByAfstand" isEqualToString:currentSort] && vcMarketList.count) {
+         return vcMarketList.count;
+         
+     } else if ([AppDataCache shared].marketList && [AppDataCache shared].marketList.count)
 	{
         return [AppDataCache shared].marketList.count;
     }
@@ -171,9 +175,13 @@
 	{
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    
-    MarketPlace *marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
-	NSLog(@"%@",marketplace);
+    MarketPlace *marketplace = nil;
+      if ([@"sortByAfstand" isEqualToString:currentSort]) {
+           marketplace = [vcMarketList objectAtIndex:indexPath.row];
+      } else {
+          marketplace = [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+      }
+//	NSLog(@"%@",marketplace);
     
     cell.textLabel.text =marketplace.name;
     cell.detailTextLabel.text = marketplace.getFormattedDate;
@@ -264,7 +272,7 @@
                 if(antal == 1) {
                     if(![dict objectForKey:tmp.name]) {
                         [dict setValue:tmp forKey:tmp.name];
-                        NSLog(@"destinctDistanceArray adding %@ with distance %f",tmp.name, tmp.distance);
+                       // NSLog(@"destinctDistanceArray adding %@ with distance %f",tmp.name, tmp.distance);
                     }
                 }
                 
@@ -275,7 +283,9 @@
     // build a new list
     NSMutableArray *arrayOfVariables = [NSMutableArray arrayWithArray:[dict allValues]];
     
-    return [Utilities sortArrayByDistance:[NSArray arrayWithArray:arrayOfVariables]];
+     vcMarketList = [Utilities sortArrayByDistance:[NSArray arrayWithArray:arrayOfVariables]];
+    
+    return vcMarketList;
     
 }
 

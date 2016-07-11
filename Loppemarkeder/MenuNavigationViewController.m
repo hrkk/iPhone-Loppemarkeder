@@ -36,6 +36,10 @@
         [self loadFeed];
         
         locationManager=[[CLLocationManager alloc] init];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+            // Use one or the other, not both. Depending on what you put in info.plist
+            [locationManager requestWhenInUseAuthorization];
+        }
         locationManager.desiredAccuracy=kCLLocationAccuracyBest;
         locationManager.delegate = self;
         [locationManager startUpdatingLocation];
@@ -54,9 +58,9 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		NSLog(@"%@",JSON);
+	//	NSLog(@"%@",JSON);
 		[AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"markedItemInstanceList"]];
-		NSLog(@"%@",[AppDataCache shared].marketList);
+		//NSLog(@"%@",[AppDataCache shared].marketList);
         [self.activityIndicatorView stopAnimating];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {

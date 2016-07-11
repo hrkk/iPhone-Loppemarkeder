@@ -27,7 +27,10 @@
     }
 	navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 	
-    [self.window addSubview:navigationController.view];
+  //  [self.window addSubview:navigationController.view];
+    
+    [self.window setRootViewController:navigationController];
+    
     UINavigationBar *bar = [navigationController navigationBar];
     
     NSString *blue = @"FFCD05";

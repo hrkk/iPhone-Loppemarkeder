@@ -34,8 +34,13 @@ typedef enum AnnotationIndex : NSUInteger
 
 - (void)gotoLocation
 {
+    
 	locationManager=[[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        // Use one or the other, not both. Depending on what you put in info.plist
+        [locationManager requestWhenInUseAuthorization];
+    }
+    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     
@@ -65,7 +70,7 @@ typedef enum AnnotationIndex : NSUInteger
     // Show userLocation (Blue Circle)
 	self.mapView.showsUserLocation=YES;
 	
-    MKCoordinateRegion region = {{0,0},{.25,.25}};
+    MKCoordinateRegion region = {{0,0},{1.00,1.00}};
     region.center.latitude = location.coordinate.latitude;
     region.center.longitude = location.coordinate.longitude;
     [self.mapView setRegion:region animated:YES];

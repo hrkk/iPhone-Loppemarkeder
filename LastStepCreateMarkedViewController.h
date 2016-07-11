@@ -11,6 +11,7 @@
 @interface LastStepCreateMarkedViewController : UIViewController {
      IBOutlet UILabel *confimText;
     
+    IBOutlet UILabel *stadeText;
 }
 
 - (IBAction)afslut:(id)sender;
