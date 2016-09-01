@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment version="768" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="606"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.8" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.9" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11">
                             <rect key="frame" x="112" y="33" width="94" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,17 +109,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="56">
-                            <rect key="frame" x="20" y="447" width="280" height="385"/>
+                            <rect key="frame" x="20" y="484" width="280" height="385"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Version 1.6 - Oprettelse af markeder er fuldautomatiseret. Det vil sige at et marked som oprettes fra app'en vil være tilgængeligeligt i loppemarkeds oversigten med det samme.  Version 1.5 - Ny menuknap tilføjet som giver mulighed for at oprette dine egne loppemarkeder fra app'en.  Version 1.4 - Opgradering til iOS 7.0  Version 1.3 - Bugfix således dagens markeder også bliver vist.   Version 1.2 - Bugfix i centering af kort samt liste sorteret ud fra afstand indeholder kun førstkommende marked.  Version 1.1 - Default sortering af markeds listen ændret til dato orden.  Version 1.0 - Inital app igansat.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q2T-YQ-LHr">
-                            <rect key="frame" x="20" y="332" width="281" height="107"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q2T-YQ-LHr">
+                            <rect key="frame" x="20" y="332" width="281" height="141"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Version 1.8 - Opgradering til iOS 9.3, support for 600 markeder i listen, reklame for salg af stadepladser, bug i afstand  Version 1.7 - Forberinger til automatiske oprettelse og diverse smårettelser.</string>
+                            <string key="text">Version 1.9 - Facebook share tilføjet  Version 1.8 - Opgradering til iOS 9.3, support for 600 markeder i listen, reklame for salg af stadepladser, bug i afstand  Version 1.7 - Forberinger til automatiske oprettelse og diverse smårettelser.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>

@@ -73,6 +73,24 @@
     
     NSArray *actionButtonItems = @[shareItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
+
+    
+  
+    // App link fra FB til marked - ikke færdigt
+    /*
+    NSLog(@"linkMarkedID:%ld",[AppDataCache shared].linkMarketID);
+
+    if([AppDataCache shared].linkMarketID) {
+        for(MarketPlace *marked in [AppDataCache shared].marketList) {
+            if (marked.marketID == [AppDataCache shared].linkMarketID){
+                [AppDataCache shared].linkMarketID=-1;
+                MarketPlace *tmpMarket = marked;
+                self.detailViewController.marketplace = tmpMarket;
+                [self.navigationController pushViewController:self.detailViewController animated:NO];
+            }
+        }
+    }
+     */
 }
 
 -(void)print_Message {

@@ -5,6 +5,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "AboutLoppeMarkedViewController.h"
 
 @class MenuNavigationViewController;
 
@@ -13,6 +14,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) MenuNavigationViewController *viewController;
+
+@property (nonatomic, strong) IBOutlet AboutLoppeMarkedViewController *aboutLoppeMarkedViewController;
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 @end

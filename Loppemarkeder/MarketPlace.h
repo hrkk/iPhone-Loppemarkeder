@@ -42,4 +42,6 @@
 - (NSString*)getFormattedDateXtraInfo;
 -(CGFloat) getDistance;
 
+- (NSString*)linkDescription;
+
 @end

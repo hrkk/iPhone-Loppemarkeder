@@ -4,6 +4,7 @@
 
 @property (nonatomic,strong) NSArray *marketList;
 @property (nonatomic, assign) BOOL reload;
+@property (nonatomic,assign) NSInteger linkMarketID;
 
 + (AppDataCache *)shared;
 

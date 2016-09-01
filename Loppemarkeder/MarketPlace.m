@@ -108,4 +108,8 @@
     return [NSString stringWithFormat:@"<MarketPlace> name : %@, address1 : %@, fromDate : %@, toDate : %@, distance : %f", name, address1, fromDate, toDate, [self getDistance]];
 }
 
+- (NSString*)linkDescription {
+    return [NSString stringWithFormat:@"%@, adresse: %@, dato: %@", name, address1, [self getFormattedDate]];
+}
+
 @end

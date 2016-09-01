@@ -44,9 +44,12 @@
 //	NSLog(@"current location: %f %f",location.coordinate.longitude, location.coordinate.latitude);
 	
     // Iterate all and add distance from current location
+    NSInteger counter=1;
+    
 	for(NSDictionary *eachStation in allMarkets) {
 		MarketPlace *item = [[MarketPlace alloc] initWithDictionary:eachStation];
 		item.distance = [location distanceFromLocation:item.currentLocation];
+        item.marketID = counter++;
 		[array addObject:item];
 	//	NSLog(@"%f",item.distance);
 	}

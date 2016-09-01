@@ -4,8 +4,10 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDataCache.h"
 
 #import "MenuNavigationViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
 
@@ -70,6 +72,11 @@
     
    
     [self.window makeKeyAndVisible];
+    
+    // FB Track App Installs and App Opens
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
 }
 
@@ -103,14 +110,79 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
+//- (void)applicationDidBecomeActive:(UIApplication *)application
+//{
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//}
+
+// FB
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"url recieved: %@", url);
+    NSLog(@"query string: %@", [url query]);
+    NSLog(@"host: %@", [url host]);
+    NSLog(@"url path: %@", [url path]);
+    NSDictionary *dict = [self parseQueryString:[url query]];
+    NSLog(@"query dict: %@", dict);
+    return YES;
+}
+
+- (NSDictionary *)parseQueryString:(NSString *)query {
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:6];
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    
+    for (NSString *pair in pairs) {
+        NSArray *elements = [pair componentsSeparatedByString:@"="];
+        NSString *key = [[elements objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *val = [[elements objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        [dict setObject:val forKey:key];
+    }
+    return dict;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+   // NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+   // NSLog(@"URL scheme:%@", [url scheme]);
+   // NSLog(@"URL query: %@", [url query]);
+   // NSLog(@"url recieved: %@", url);
+    
+    // myApp://?mID=12
+    // NSDictionary *dict = [self parseQueryString:[url query]];
+    
+    // NSString  *mID = [dict objectForKey: @"mID"];
+    // NSLog(@"mID = %@",mID);
+    
+    /*
+    if(mID) {
+        NSInteger intValue=[mID integerValue];
+        NSLog(@"intValue =%ld",intValue);
+        [AppDataCache shared].linkMarketID = intValue;
+        NSInteger linkMarketID = [AppDataCache shared].linkMarketID;
+        NSLog(@"linkMarketID =%ld",linkMarketID);
+        ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
+     */
+    // FB Track App Installs and App Opens
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 @end
