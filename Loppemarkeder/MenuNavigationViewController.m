@@ -7,6 +7,7 @@
 //
 
 #import "MenuNavigationViewController.h"
+#import "SalgViewController.h"
 #import "ViewController.h"
 #import "AppDataCache.h"
 #import "AboutLoppeMarkedViewController.h"
@@ -162,6 +163,13 @@
 - (IBAction)opretMarked:(id)sender
 {
     [self.navigationController pushViewController:self.opretMarkedViewController animated:YES];
+    
+}
+
+- (IBAction)opretSalg:(id)sender
+{
+    NSLog(@"MenuNavigationViewController opretSalg");
+    [self.navigationController pushViewController:self.salgViewController animated:YES];
     
 }
 

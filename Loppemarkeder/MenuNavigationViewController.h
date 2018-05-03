@@ -10,6 +10,7 @@
 #import "AboutLoppeMarkedViewController.h"
 #import "AboutAppViewController.h"
 #import "OpretMarkedViewController.h"
+#import "SalgViewController.h"
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
@@ -27,11 +28,13 @@
 @property (nonatomic, strong) IBOutlet AboutAppViewController *aboutAppViewController;
 @property (nonatomic, strong) IBOutlet OpretMarkedViewController *opretMarkedViewController;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) IBOutlet SalgViewController *salgViewController;
 
 - (IBAction)alleMarkeder:(id)sender;
 - (IBAction)nearBy:(id)sender;
 - (IBAction)omMarkeder:(id)sender;
 - (IBAction)omApp:(id)sender;
 - (IBAction)opretMarked:(id)sender;
+- (IBAction)opretSalg:(id)sender;
 
 @end

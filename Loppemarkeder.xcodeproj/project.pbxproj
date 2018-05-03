@@ -63,6 +63,8 @@
 		A75E09A61D65749C003280B2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */; };
 		A7AF9ADA18D78C940066B4B2 /* ic_opret_marked.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */; };
 		A7AF9ADE18D792230066B4B2 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9ADD18D792230066B4B2 /* information.png */; };
+		A7D0F37E208C5A01008EF4BF /* Salg.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D0F37D208C5A01008EF4BF /* Salg.xib */; };
+		A7D0F381208C5A84008EF4BF /* SalgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D0F380208C5A84008EF4BF /* SalgViewController.m */; };
 		A7D6CA9D1D55B43800284768 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D6CA9C1D55B43800284768 /* Bolts.framework */; };
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 /* End PBXBuildFile section */
@@ -154,6 +156,9 @@
 		A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_opret_marked.png; sourceTree = "<group>"; };
 		A7AF9ADD18D792230066B4B2 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
+		A7D0F37D208C5A01008EF4BF /* Salg.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Salg.xib; path = Loppemarkeder/Salg.xib; sourceTree = SOURCE_ROOT; };
+		A7D0F37F208C5A84008EF4BF /* SalgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SalgViewController.h; path = Loppemarkeder/SalgViewController.h; sourceTree = SOURCE_ROOT; };
+		A7D0F380208C5A84008EF4BF /* SalgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SalgViewController.m; path = Loppemarkeder/SalgViewController.m; sourceTree = SOURCE_ROOT; };
 		A7D6CA9C1D55B43800284768 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A7D8812F175A83AB00CC363A /* App_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_57x57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +251,7 @@
 		62BD45EC1741215700E73895 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				A7D0F37D208C5A01008EF4BF /* Salg.xib */,
 				0BF43E58174FFCC60099A343 /* menuNavi.xib */,
 				A73AEB94189DB1D100196695 /* menuNavi7.xib */,
 				0B5E122C174818B800BBD2F6 /* AboutApp.xib */,
@@ -314,6 +320,8 @@
 		8382D686155AE229001541B2 /* Loppemarkeder */ = {
 			isa = PBXGroup;
 			children = (
+				A7D0F37F208C5A84008EF4BF /* SalgViewController.h */,
+				A7D0F380208C5A84008EF4BF /* SalgViewController.m */,
 				0B5E122E1748199900BBD2F6 /* AboutAppViewController.h */,
 				0B5E122F1748199900BBD2F6 /* AboutAppViewController.m */,
 				0B5E1229174813E900BBD2F6 /* AboutLoppeMarkedViewController.h */,
@@ -427,6 +435,7 @@
 				A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */,
 				0BF43E5A174FFCC60099A343 /* menuNavi.xib in Resources */,
 				A73399AF18A2177F009CEA03 /* App_icon_120x120.png in Resources */,
+				A7D0F37E208C5A01008EF4BF /* Salg.xib in Resources */,
 				0B9EF2A1175374450021D414 /* btn.png in Resources */,
 				0B9EF2A2175374450021D414 /* btn@2x.png in Resources */,
 				A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */,
@@ -444,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D0F381208C5A84008EF4BF /* SalgViewController.m in Sources */,
 				62BC112A1740FE8E0083FF05 /* AFHTTPClient.m in Sources */,
 				62BC112B1740FE8E0083FF05 /* AFHTTPRequestOperation.m in Sources */,
 				62BC112C1740FE8E0083FF05 /* AFImageRequestOperation.m in Sources */,
