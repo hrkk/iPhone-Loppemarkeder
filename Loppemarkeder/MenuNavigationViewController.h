@@ -13,7 +13,9 @@
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-#define FEED_URL           @"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"
+
+//#define FEED_URL           @"http://www.roninit.dk/LoppemarkederAdminApp/markedItem/listJSON2"
+#define FEED_URL           @"https://loppemarkeder-admin.herokuapp.com/mobile/markeds"
 
 @interface MenuNavigationViewController : UIViewController <CLLocationManagerDelegate>
 {

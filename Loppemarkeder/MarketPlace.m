@@ -19,7 +19,7 @@
 	if (self = [super init]) {
         
         NSDateFormatter *dateFormatx = [[NSDateFormatter alloc]init];
-        [dateFormatx setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        [dateFormatx setDateFormat:@"yyyy-MM-dd"];
 		self.address1 = [dict objectForKey:@"address"];
 		self.dateXtraInfo = [dict objectForKey:@"dateExtraInfo"];
 		self.entreInfo = [dict objectForKey:@"entreInfo"];

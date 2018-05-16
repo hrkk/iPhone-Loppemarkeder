@@ -263,11 +263,11 @@
         CLLocationCoordinate2D coordinate = location.coordinate;
         
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
         NSString *fromDateString = [dateFormat stringFromDate:self.marketplace.fromDate];
         NSString *toDateString = [dateFormat stringFromDate:self.marketplace.toDate];
         
-        json = [NSString stringWithFormat:@"{%@,name:\"%@\",additionalOpenTimePeriod:\"%@\",entreInfo:\"%@\",markedRules:\"%@\",markedInformation:\"%@\",address:\"%@\",organizerName:\"%@\",organizerEmail:\"%@\",organizerPhone:\"%@\",latitude:\"%f\",longitude:\"%f\",fromDate:\"%@\",toDate:\"%@\"}", @"class:dk.roninit.dk.MarkedItemView", markedName, additionalOpenTimePeriod, entreInfo, markedRules, markedInformation, address, organizerName, self.arrangoerEmail, self.arrangoerPhone, coordinate.latitude, coordinate.longitude, fromDateString, toDateString];
+        json = [NSString stringWithFormat:@"{\"name\":\"%@\",\"additionalOpenTimePeriod\":\"%@\",\"entreInfo\":\"%@\",\"markedRules\":\"%@\",\"markedInformation\":\"%@\",\"address\":\"%@\",\"organizerName\":\"%@\",\"organizerEmail\":\"%@\",\"organizerPhone\":\"%@\",\"latitude\":\"%f\",\"longitude\":\"%f\",\"fromDate\":\"%@\",\"toDate\":\"%@\"}", markedName, additionalOpenTimePeriod, entreInfo, markedRules, markedInformation, address, organizerName, self.arrangoerEmail, self.arrangoerPhone, coordinate.latitude, coordinate.longitude, fromDateString, toDateString];
     }
     NSData *postData = [json dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
        //NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"class", json, nil];
@@ -297,7 +297,7 @@
 
 - (void)jsonPostRequest:(NSData *)jsonRequestData {
     
-    NSURL *url = [NSURL URLWithString:@"http://roninit.dk/LoppemarkederAdminApp/markedItemRest/saveJSONIPhone"];
+    NSURL *url = [NSURL URLWithString:@"https://loppemarkeder-admin.herokuapp.com/mobile/markeds"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval: 60];
     
