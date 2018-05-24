@@ -139,7 +139,7 @@
 
 - (IBAction) setTestData:(id)sender {
     NSLog(@"setTestData");
-    NSString *myString = _firstName.text;
+    NSString *myString = _markedName.text;
     NSRange rangeValue = [myString rangeOfString:@"TEST" options:NSCaseInsensitiveSearch];
     
     if (rangeValue.length > 0){
@@ -310,6 +310,7 @@
     NSMutableString *errMsg = [[NSMutableString alloc] init];
     NSLog(@"errMsg %@", errMsg);
     
+    /*
     if (![self validateFornavn:self.firstName.text]) {
         if ([errMsg length] > 0) {
             [errMsg appendString:@", "];
@@ -337,6 +338,7 @@
         }
         [errMsg appendString:@"'Telefon nummer' er ikke korret udfyldt"];
     };
+     */
     
     if (![self validateMarkedsnavn:self.markedName.text]) {
         if ([errMsg length] > 0) {
