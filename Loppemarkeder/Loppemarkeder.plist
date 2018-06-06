@@ -58,6 +58,8 @@
 	<string>Loppemarkeder vil gerne bruge din lokation</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Du får den bedste oplevelse med Loppemarkeder, hvis du aktiverer GPS'en. Så kan vi nemlig vise dig loppemarkeder i nærheden.</string>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

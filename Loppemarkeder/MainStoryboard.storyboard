@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iU4-3U-XHI">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4096" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loppemarkeder-->
+        <scene sceneID="U8h-hB-P8R">
+            <objects>
+                <viewController id="rhL-YD-qym" customClass="MainMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T0e-Z6-hwk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOF-JC-Tfw">
+                                <rect key="frame" x="164" y="231" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="u8m-sN-fuq"/>
+                                    <constraint firstAttribute="width" constant="140" id="yIi-iG-KqG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="zlV-F4-eSZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="zxg-Qn-8rc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_opret_marked.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNJ-rr-M9n">
+                                <rect key="frame" x="16" y="231" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Q84-9H-NJa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="gZN-Gs-khN"/>
+                                    <constraint firstAttribute="width" constant="140" id="zTC-xI-PPU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="zvS-Qe-5we"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_om_markeder.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-Zz-3c7">
+                                <rect key="frame" x="164" y="83" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="doG-uw-iHr"/>
+                                    <constraint firstAttribute="width" constant="140" id="ezh-SF-3HE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_i_naerheden.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nK6-24-NdY" kind="show" id="Bby-9F-0tj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV5-iH-4gj">
+                                <rect key="frame" x="16" y="83" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="TKq-SA-Vfw"/>
+                                    <constraint firstAttribute="width" constant="140" id="ZAn-xC-cix"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_liste.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wVr-uh-kdj" kind="show" id="WWN-v3-nwk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-ek-BAx">
+                                <rect key="frame" x="16" y="379" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="SkJ-tZ-VWO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="aCJ-Fv-oVv"/>
+                                    <constraint firstAttribute="height" constant="140" id="d2s-EP-M8g"/>
+                                    <constraint firstAttribute="width" constant="140" id="rwP-uU-CYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_om_markeder.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onH-TG-2iS">
+                                <rect key="frame" x="164" y="379" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="HY4-1a-Bms"/>
+                                    <constraint firstAttribute="height" constant="140" id="aH5-ho-fNU"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="vrp-sl-ZVf"/>
+                                    <constraint firstAttribute="width" constant="140" id="zzS-Xf-d1S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="ic_om_markeder.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Atv-Zz-3c7" firstAttribute="leading" secondItem="xV5-iH-4gj" secondAttribute="trailing" constant="8" id="18T-CK-xdu"/>
+                            <constraint firstItem="onH-TG-2iS" firstAttribute="leading" secondItem="bB8-ek-BAx" secondAttribute="trailing" constant="8" id="CQm-wN-C0S"/>
+                            <constraint firstItem="AOF-JC-Tfw" firstAttribute="top" secondItem="Atv-Zz-3c7" secondAttribute="bottom" constant="8" id="Igs-2s-gia"/>
+                            <constraint firstItem="VNJ-rr-M9n" firstAttribute="top" secondItem="xV5-iH-4gj" secondAttribute="bottom" constant="8" id="KwK-1A-GYp"/>
+                            <constraint firstItem="xV5-iH-4gj" firstAttribute="leading" secondItem="akr-4z-uYs" secondAttribute="leading" constant="16" id="PVX-i1-vpg"/>
+                            <constraint firstItem="bB8-ek-BAx" firstAttribute="top" secondItem="VNJ-rr-M9n" secondAttribute="bottom" constant="8" id="RIo-6u-RVv"/>
+                            <constraint firstItem="Atv-Zz-3c7" firstAttribute="top" secondItem="akr-4z-uYs" secondAttribute="top" constant="19" id="TEL-8a-f4R"/>
+                            <constraint firstItem="xV5-iH-4gj" firstAttribute="top" secondItem="akr-4z-uYs" secondAttribute="top" constant="19" id="UdA-uA-PrV"/>
+                            <constraint firstItem="Atv-Zz-3c7" firstAttribute="leading" secondItem="xV5-iH-4gj" secondAttribute="trailing" constant="8" id="Um4-Zp-gbJ"/>
+                            <constraint firstItem="VNJ-rr-M9n" firstAttribute="leading" secondItem="akr-4z-uYs" secondAttribute="leading" constant="16" id="Uxj-P9-mXf"/>
+                            <constraint firstItem="AOF-JC-Tfw" firstAttribute="leading" secondItem="VNJ-rr-M9n" secondAttribute="trailing" constant="8" id="VdP-Rd-Dm3"/>
+                            <constraint firstItem="AOF-JC-Tfw" firstAttribute="leading" secondItem="VNJ-rr-M9n" secondAttribute="trailing" constant="8" id="ce3-QU-LoR"/>
+                            <constraint firstItem="akr-4z-uYs" firstAttribute="trailing" secondItem="Atv-Zz-3c7" secondAttribute="trailing" constant="16" id="ecR-yh-1Ag"/>
+                            <constraint firstItem="akr-4z-uYs" firstAttribute="trailing" secondItem="onH-TG-2iS" secondAttribute="trailing" constant="16" id="nNM-fk-Npc"/>
+                            <constraint firstItem="bB8-ek-BAx" firstAttribute="leading" secondItem="akr-4z-uYs" secondAttribute="leading" constant="16" id="tlD-6o-7em"/>
+                            <constraint firstItem="akr-4z-uYs" firstAttribute="trailing" secondItem="AOF-JC-Tfw" secondAttribute="trailing" constant="16" id="wOr-KS-IKD"/>
+                            <constraint firstItem="onH-TG-2iS" firstAttribute="leading" secondItem="bB8-ek-BAx" secondAttribute="trailing" constant="8" id="xKs-kC-B9n"/>
+                            <constraint firstItem="onH-TG-2iS" firstAttribute="top" secondItem="AOF-JC-Tfw" secondAttribute="bottom" constant="8" id="z6B-Kj-4NH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="akr-4z-uYs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Loppemarkeder" id="32X-lY-Qhc">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Zrh-vU-zwv">
+                            <view key="customView" contentMode="scaleToFill" id="jOE-Xn-WYC">
+                                <rect key="frame" x="16" y="0.0" width="290" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="t5Z-CM-be4">
+                                        <rect key="frame" x="8" y="6" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Loppemarkeder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fH-DA-9Mo">
+                                        <rect key="frame" x="76" y="12" width="138" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSG-d1-Yh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3120" y="61.267605633802816"/>
+        </scene>
+        <!--Alle markeder-->
+        <scene sceneID="fHT-y7-w78">
+            <objects>
+                <tableViewController id="wVr-uh-kdj" customClass="RecipeBookViewControllerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lF7-is-7zc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="wqN-HO-1hY" detailTextLabel="37B-GH-qfg" style="IBUITableViewCellStyleSubtitle" id="6Np-aQ-wam">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Np-aQ-wam" id="NIp-6W-7AH">
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wqN-HO-1hY">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="37B-GH-qfg">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wVr-uh-kdj" id="pMQ-GN-4hR"/>
+                            <outlet property="delegate" destination="wVr-uh-kdj" id="WGu-JY-L3M"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Alle markeder" id="Mw0-v6-T03"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tA5-Fh-wFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4089" y="-149"/>
+        </scene>
+        <!--Recipe Book View Controller Table View Controller-->
+        <scene sceneID="ImW-jo-vtv">
+            <objects>
+                <viewController id="nK6-24-NdY" customClass="RecipeBookViewControllerTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pPe-Ph-r1z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2SG-Kv-g7s"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8r-B0-zwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4017" y="757"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s3x-Ez-Tvk">
+            <objects>
+                <navigationController id="iU4-3U-XHI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QEE-iP-31l">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rhL-YD-qym" kind="relationship" relationship="rootViewController" id="YRH-Xb-bto"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHK-SU-rK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671" y="-663"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_i_naerheden.png" width="140" height="140"/>
+        <image name="ic_launcher.png" width="60" height="60"/>
+        <image name="ic_liste.png" width="140" height="140"/>
+        <image name="ic_om_markeder.png" width="140" height="140"/>
+        <image name="ic_opret_marked.png" width="140" height="140"/>
+    </resources>
+</document>

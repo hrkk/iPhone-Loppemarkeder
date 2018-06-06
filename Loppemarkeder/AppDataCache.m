@@ -12,6 +12,7 @@
     dispatch_once(&onceToken, ^{
         // Do any other initialisation stuff here
         sharedInstance = [AppDataCache new];
+        sharedInstance.reload = YES;
     });
     return sharedInstance;
 }
@@ -20,6 +21,7 @@
 	if( self = [super init] ){      
         _marketList = [[NSMutableArray alloc] init];
 	}
+    
 	return self;
 }
 @end
