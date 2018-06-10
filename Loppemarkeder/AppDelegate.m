@@ -19,23 +19,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-     
+    //UINavigationBar *bar = [self.navigationController navigationBar];
+    //[bar setTintColor: [UIColor blackColor]];
     
+  //  bar.tintColor = uicolorFromHex(0xffffff);
+  //  bar.barTintColor = uicolorFromHex(0x034517);
+  // [self setAppearance];
+    
+    navigationController.navigationBar.barTintColor = [UIColor greenColor];
     return YES;
 }
 
 #pragma mark - Utility methods
 
-//- (void)setAppearance
-//{
-//    NSString *blue = @"FFCD05";
-//    int b =0;
-//    sscanf([blue UTF8String],"%x",&b);
-//    UIColor* btnColor = UIColorFromRGB(b);
-//    
-//	
-//   	[navigationController.navigationBar setTintColor:btnColor];
-//}
+- (void)setAppearance
+{
+    NSString *blue = @"FFCD05";
+    int b =0;
+    sscanf([blue UTF8String],"%x",&b);
+    UIColor* btnColor = UIColorFromRGB(b);
+    
+	
+   	[navigationController.navigationBar setTintColor:btnColor];
+        [navigationController.navigationBar setBarTintColor:btnColor];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
