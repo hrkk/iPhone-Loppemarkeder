@@ -8,6 +8,7 @@
 #import "MarkedTableViewController.h"
 #import "AppDataCache.h"
 #import "MarketPlace.h"
+#import "Detail.h"
 
 @interface MarkedTableViewController ()
 
@@ -131,11 +132,14 @@
     if ([segue.identifier isEqualToString:@"showRemedy"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSLog(@"prepareForSegue  %@ indexPath: %ld section; %ld", segue.identifier, (long)indexPath.row, (long)indexPath.section);
-    }
- /*
+    
+ 
     UINavigationController *navigationController = segue.destinationViewController;
-    RemedyTableViewControllerExt *dest = (RemedyTableViewControllerExt * )navigationController;
-    RemedyItem *remedyItem;
+    Detail *dest = (Detail * )navigationController;
+    MarketPlace *marketplace =  [[AppDataCache shared].marketList objectAtIndex:indexPath.row];
+    dest.marketplace = marketplace;
+   // RemedyItem *remedyItem;
+    /*
     if(sender == self.searchDisplayController.searchResultsTableView) {
         remedyItem = [filteredRemedyList objectAtIndex:indexPath.row];
     } else {
@@ -143,6 +147,7 @@
     }
     dest.remedyItem = remedyItem;
   */
+    }
 }
 
 

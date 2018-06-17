@@ -66,6 +66,7 @@
 		A7AF9ADA18D78C940066B4B2 /* ic_opret_marked.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9AD918D78C940066B4B2 /* ic_opret_marked.png */; };
 		A7AF9ADE18D792230066B4B2 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF9ADD18D792230066B4B2 /* information.png */; };
 		A7C40B6B20CDB349001D8679 /* MarkedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C40B6A20CDB349001D8679 /* MarkedTableViewController.m */; };
+		A7C6ED2420D1A41700420CB7 /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C6ED2320D1A41700420CB7 /* Detail.m */; };
 		A7D6CA9D1D55B43800284768 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D6CA9C1D55B43800284768 /* Bolts.framework */; };
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 		A7D974F820C08FD3003A88EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D974F720C08FD3003A88EA /* ViewController.m */; };
@@ -163,6 +164,8 @@
 		A7AF9ADD18D792230066B4B2 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		A7C40B6920CDB349001D8679 /* MarkedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MarkedTableViewController.h; path = Loppemarkeder/MarkedTableViewController.h; sourceTree = SOURCE_ROOT; };
 		A7C40B6A20CDB349001D8679 /* MarkedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MarkedTableViewController.m; path = Loppemarkeder/MarkedTableViewController.m; sourceTree = SOURCE_ROOT; };
+		A7C6ED2220D1A41700420CB7 /* Detail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Detail.h; path = Loppemarkeder/Detail.h; sourceTree = SOURCE_ROOT; };
+		A7C6ED2320D1A41700420CB7 /* Detail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Detail.m; path = Loppemarkeder/Detail.m; sourceTree = SOURCE_ROOT; };
 		A7D6CA9C1D55B43800284768 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A7D8812F175A83AB00CC363A /* App_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_57x57.png; sourceTree = "<group>"; };
 		A7D974F620C08FD3003A88EA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Loppemarkeder/ViewController.h; sourceTree = SOURCE_ROOT; };
@@ -361,6 +364,8 @@
 				A7D974FA20C0922A003A88EA /* MainMenuViewController.m */,
 				A7C40B6920CDB349001D8679 /* MarkedTableViewController.h */,
 				A7C40B6A20CDB349001D8679 /* MarkedTableViewController.m */,
+				A7C6ED2220D1A41700420CB7 /* Detail.h */,
+				A7C6ED2320D1A41700420CB7 /* Detail.m */,
 			);
 			name = Loppemarkeder;
 			path = NetworkingIsFun;
@@ -487,6 +492,7 @@
 				62BD45F11741240E00E73895 /* MarketPlace.m in Sources */,
 				62FA971E1741309400ECD7E0 /* Utilities.m in Sources */,
 				624D910D1742469500044005 /* AppDataCache.m in Sources */,
+				A7C6ED2420D1A41700420CB7 /* Detail.m in Sources */,
 				A7C40B6B20CDB349001D8679 /* MarkedTableViewController.m in Sources */,
 				A7D974FB20C0922A003A88EA /* MainMenuViewController.m in Sources */,
 				624D911117427D0B00044005 /* DetailViewController.m in Sources */,
