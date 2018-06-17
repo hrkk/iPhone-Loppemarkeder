@@ -15,10 +15,10 @@
 
 @interface MainMenuViewController :  UIViewController <CLLocationManagerDelegate>
 {
-    UIActivityIndicatorView *_activityIndicatorView;
     CLLocationManager *locationManager;
+    IBOutlet UIActivityIndicatorView *activityIndi;
 }
 
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+//@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 
 @end

@@ -22,10 +22,6 @@
          [self loadFeed];
         
         locationManager=[[CLLocationManager alloc] init];
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-            // Use one or the other, not both. Depending on what you put in info.plist
-            [locationManager requestWhenInUseAuthorization];
-        }
         locationManager.desiredAccuracy=kCLLocationAccuracyBest;
         locationManager.delegate = self;
         [locationManager startUpdatingLocation];
@@ -33,13 +29,7 @@
 }
 
 -(void)loadFeed {
-    // Setting Up Activity Indicator View
-    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicatorView.hidesWhenStopped = YES;
-    self.activityIndicatorView.center = self.view.center;
-    [self.view addSubview:self.activityIndicatorView];
-    [self.activityIndicatorView startAnimating];
-    
+    [activityIndi startAnimating];
     NSURL *url = [[NSURL alloc] initWithString:FEED_URL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
@@ -47,7 +37,7 @@
         NSLog(@"%@",JSON);
         [AppDataCache shared].marketList = [Utilities loadFromJson:[JSON objectForKey:@"list"]];
         NSLog(@"%@",[AppDataCache shared].marketList);
-        [self.activityIndicatorView stopAnimating];
+        [activityIndi stopAnimating];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
