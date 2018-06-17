@@ -14,6 +14,7 @@
     CLLocation *location;
   //  float latitude, longitude;
 }
+@property (strong, nonatomic) IBOutlet UIButton *showRoute;
 @property (nonatomic, strong) MarketPlace *marketplace;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateHeadline;

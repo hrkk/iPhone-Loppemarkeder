@@ -227,6 +227,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="IBActionshowRouteidsenderNSLogshowRouteshowRoute:" destination="nPV-8P-Quv" eventType="touchUpInside" id="W0U-fh-O2i"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-8x-31Z">
                                 <rect key="frame" x="16" y="108" width="184" height="51"/>
@@ -321,6 +324,7 @@
                         <outlet property="marketInfo" destination="8ox-Ja-L1U" id="Z7O-PG-Glh"/>
                         <outlet property="rulesHeadline" destination="BcE-BD-3yd" id="WkV-fe-O9C"/>
                         <outlet property="rulesLabel" destination="Dqu-Dc-eSV" id="agh-F5-gAq"/>
+                        <outlet property="showRoute" destination="0Q6-aT-l5t" id="Yzm-Lk-6uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh8-h3-BnK" userLabel="First Responder" sceneMemberID="firstResponder"/>

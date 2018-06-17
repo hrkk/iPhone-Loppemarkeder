@@ -161,4 +161,17 @@
      */
 }
 
+- (IBAction)IBActionshowRouteidsenderNSLogshowRouteshowRoute:(id)sender {
+     NSLog(@"showRoute");
+    CLLocationCoordinate2D endingCoord = CLLocationCoordinate2DMake(_marketplace.currentLocation.coordinate.latitude,_marketplace.currentLocation.coordinate.longitude);
+    MKPlacemark *endLocation = [[MKPlacemark alloc] initWithCoordinate:endingCoord addressDictionary:nil];
+    MKMapItem *endingItem = [[MKMapItem alloc] initWithPlacemark:endLocation];
+    
+    NSMutableDictionary *launchOptions = [[NSMutableDictionary alloc] init];
+    [launchOptions setObject:MKLaunchOptionsDirectionsModeDriving forKey:MKLaunchOptionsDirectionsModeKey];
+    
+    [endingItem openInMapsWithLaunchOptions:launchOptions];
+}
+
+
 @end
