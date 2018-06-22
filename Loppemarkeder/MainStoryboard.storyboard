@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iU4-3U-XHI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iU4-3U-XHI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8A-vP-sQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="502"/>
+            <point key="canvasLocation" x="2316" y="61"/>
         </scene>
         <!--Loppemarkeder-->
         <scene sceneID="U8h-hB-P8R">
@@ -192,7 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="YQZ-ZM-euE">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="YQZ-ZM-euE">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -286,7 +286,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tA5-Fh-wFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4087.5" y="-150"/>
+            <point key="canvasLocation" x="4003" y="61"/>
         </scene>
         <!--Detail-->
         <scene sceneID="njK-s6-Q3h">
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh8-h3-BnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4989" y="-164"/>
+            <point key="canvasLocation" x="4766" y="61"/>
         </scene>
         <!--Recipe Book View Controller Table View Controller-->
         <scene sceneID="ImW-jo-vtv">
@@ -426,13 +426,24 @@
                     <view key="view" contentMode="scaleToFill" id="pPe-Ph-r1z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uJb-SD-5Wh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uJb-SD-5Wh" firstAttribute="bottom" secondItem="2SG-Kv-g7s" secondAttribute="bottom" id="9VW-0E-btL"/>
+                            <constraint firstItem="uJb-SD-5Wh" firstAttribute="leading" secondItem="pPe-Ph-r1z" secondAttribute="leading" id="ngV-k7-j9R"/>
+                            <constraint firstItem="uJb-SD-5Wh" firstAttribute="top" secondItem="2SG-Kv-g7s" secondAttribute="top" id="oV0-jg-DNL"/>
+                            <constraint firstAttribute="trailing" secondItem="uJb-SD-5Wh" secondAttribute="trailing" id="tLD-li-eLh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2SG-Kv-g7s"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8r-B0-zwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4017" y="757"/>
+            <point key="canvasLocation" x="3999.375" y="-620.07042253521126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s3x-Ez-Tvk">
