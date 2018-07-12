@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="3120" y="61.267605633802816"/>
         </scene>
-        <!--Opret marked-->
+        <!--Opret nyt marked: 1/3-->
         <scene sceneID="X90-JD-wCI">
             <objects>
-                <viewController title="Opret marked" id="FfU-qo-X66" sceneMemberID="viewController">
+                <viewController title="Opret nyt marked: 1/3" id="FfU-qo-X66" customClass="CreateMarkedSBViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xA8-xz-5hK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wu2-fL-Fff"/>
                                     <barButtonItem title="Næste" id="g7t-Jm-1O2">
                                         <connections>
-                                            <segue destination="tm8-Xw-Nss" kind="show" id="jIn-gU-E9f"/>
+                                            <segue destination="tm8-Xw-Nss" kind="show" identifier="showConfirmMarked" id="jIn-gU-E9f"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3XV-bs-Hu0"/>
@@ -236,21 +236,33 @@
                                                 <rect key="frame" x="8" y="87" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstMarkedsnavn:" destination="FfU-qo-X66" eventType="editingDidBegin" id="5VW-JK-YYF"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vej" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wn8-F4-SUq">
                                                 <rect key="frame" x="8" y="125" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="removeDefaultTextAddress:" destination="FfU-qo-X66" eventType="editingDidBegin" id="IRW-G1-OPc"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Husnummer" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BbD-1I-CZ9">
                                                 <rect key="frame" x="8" y="163" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstHusnummer:" destination="FfU-qo-X66" eventType="editingDidBegin" id="t6o-gS-Dyy"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postnummer" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JHK-ms-leP">
                                                 <rect key="frame" x="8" y="201" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstPostnummer:" destination="FfU-qo-X66" eventType="editingDidBegin" id="z7m-dW-NNe"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="'Fra dato' fx 24-07-2014" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2u-jC-Pld">
                                                 <rect key="frame" x="8" y="239" width="398" height="30"/>
@@ -266,21 +278,33 @@
                                                 <rect key="frame" x="8" y="315" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstExtraInfo:" destination="FfU-qo-X66" eventType="editingDidBegin" id="Ond-U6-cQa"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Regler" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-lq-M3Q">
                                                 <rect key="frame" x="8" y="391" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstRegler:" destination="FfU-qo-X66" eventType="editingDidBegin" id="Cdd-er-Ru8"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Entre pris" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-jK-Gl6">
                                                 <rect key="frame" x="8" y="353" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstEntre:" destination="FfU-qo-X66" eventType="editingDidBegin" id="tU3-fl-HTI"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Markedsinformation" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2ST-U6-XHA">
                                                 <rect key="frame" x="8" y="429" width="398" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="fjernDefaultTekstMarkedsInfo:" destination="FfU-qo-X66" eventType="editingDidBegin" id="bOs-Uo-oLv"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,15 +375,27 @@
                         <viewLayoutGuide key="safeArea" id="1cr-ht-Fqn"/>
                     </view>
                     <size key="freeformSize" width="414" height="700"/>
+                    <connections>
+                        <outlet property="additionalOpenPeriode" destination="sMd-Ez-UdA" id="XG8-J2-tPW"/>
+                        <outlet property="address" destination="Wn8-F4-SUq" id="4IE-Pn-dfj"/>
+                        <outlet property="entre" destination="Rxb-jK-Gl6" id="MCt-uy-iAw"/>
+                        <outlet property="fromDate" destination="X2u-jC-Pld" id="uYr-Dz-J6T"/>
+                        <outlet property="houseNumber" destination="BbD-1I-CZ9" id="FBa-Ae-sJg"/>
+                        <outlet property="markedInformation" destination="2ST-U6-XHA" id="Kya-b8-OLZ"/>
+                        <outlet property="markedName" destination="BIO-Nb-7Hi" id="Jlr-YA-4ZY"/>
+                        <outlet property="postalCode" destination="JHK-ms-leP" id="a1y-vZ-Voa"/>
+                        <outlet property="rules" destination="cZz-lq-M3Q" id="FUM-aU-fdT"/>
+                        <outlet property="toDate" destination="XHd-wC-kcd" id="HBY-KL-EVT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PC-xd-ztD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3526.4000000000001" y="823.15270935960598"/>
         </scene>
-        <!--Godkend marked-->
+        <!--Godkend: 2/3-->
         <scene sceneID="bWA-8a-05Q">
             <objects>
-                <viewController title="Godkend marked" id="tm8-Xw-Nss" sceneMemberID="viewController">
+                <viewController title="Godkend: 2/3" id="tm8-Xw-Nss" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MUM-DO-Si7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

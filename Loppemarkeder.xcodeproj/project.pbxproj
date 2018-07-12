@@ -52,12 +52,14 @@
 		A72D7E3820C0866B00D8017C /* RecipeBookViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D7E3720C0866B00D8017C /* RecipeBookViewControllerTableViewController.m */; };
 		A73399AF18A2177F009CEA03 /* App_icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = A73399AE18A2177F009CEA03 /* App_icon_120x120.png */; };
 		A73AEB95189DB1D100196695 /* menuNavi7.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AEB94189DB1D100196695 /* menuNavi7.xib */; };
+		A7400E4820F780AF00649F4E /* CreateMarkedSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400E4720F780AF00649F4E /* CreateMarkedSBViewController.m */; };
 		A745266418A74CBA0003D4A9 /* OpretMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */; };
 		A745266618A755000003D4A9 /* CreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266518A755000003D4A9 /* CreateMarkedXIB.xib */; };
 		A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266718A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib */; };
 		A745266B18A779180003D4A9 /* ConfirmCreateMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266A18A779180003D4A9 /* ConfirmCreateMarkedViewController.m */; };
 		A745266D18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */; };
 		A745267018A7881C0003D4A9 /* LastStepCreateMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */; };
+		A751094920F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */; };
 		A75E09A21D657428003280B2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A11D657428003280B2 /* FBSDKCoreKit.framework */; };
 		A75E09A41D65745E003280B2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A31D65745E003280B2 /* FBSDKLoginKit.framework */; };
 		A75E09A61D65749C003280B2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */; };
@@ -146,6 +148,8 @@
 		A72D7E3720C0866B00D8017C /* RecipeBookViewControllerTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RecipeBookViewControllerTableViewController.m; path = Loppemarkeder/RecipeBookViewControllerTableViewController.m; sourceTree = SOURCE_ROOT; };
 		A73399AE18A2177F009CEA03 /* App_icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App_icon_120x120.png; sourceTree = "<group>"; };
 		A73AEB94189DB1D100196695 /* menuNavi7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi7.xib; path = Loppemarkeder/menuNavi7.xib; sourceTree = SOURCE_ROOT; };
+		A7400E4620F780AF00649F4E /* CreateMarkedSBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CreateMarkedSBViewController.h; path = Loppemarkeder/CreateMarkedSBViewController.h; sourceTree = SOURCE_ROOT; };
+		A7400E4720F780AF00649F4E /* CreateMarkedSBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CreateMarkedSBViewController.m; path = Loppemarkeder/CreateMarkedSBViewController.m; sourceTree = SOURCE_ROOT; };
 		A745266218A74CBA0003D4A9 /* OpretMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpretMarkedViewController.h; sourceTree = SOURCE_ROOT; };
 		A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpretMarkedViewController.m; sourceTree = SOURCE_ROOT; };
 		A745266518A755000003D4A9 /* CreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateMarkedXIB.xib; path = Loppemarkeder/CreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
@@ -155,6 +159,8 @@
 		A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LastStepCreateMarkedXIB.xib; path = Loppemarkeder/LastStepCreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
 		A745266E18A7881C0003D4A9 /* LastStepCreateMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastStepCreateMarkedViewController.h; sourceTree = SOURCE_ROOT; };
 		A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastStepCreateMarkedViewController.m; sourceTree = SOURCE_ROOT; };
+		A751094720F7ED3F0043AEBD /* ConfirmMarkedSBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConfirmMarkedSBViewController.h; path = Loppemarkeder/ConfirmMarkedSBViewController.h; sourceTree = SOURCE_ROOT; };
+		A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ConfirmMarkedSBViewController.m; path = Loppemarkeder/ConfirmMarkedSBViewController.m; sourceTree = SOURCE_ROOT; };
 		A75E09A11D657428003280B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A75E09A31D65745E003280B2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -358,6 +364,8 @@
 				62BC11231740FE8E0083FF05 /* images */,
 				8382D687155AE229001541B2 /* Supporting Files */,
 				A75FB33620BC9FEE005E7960 /* MainStoryboard.storyboard */,
+				A751094720F7ED3F0043AEBD /* ConfirmMarkedSBViewController.h */,
+				A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */,
 				A72D7E3620C0866B00D8017C /* RecipeBookViewControllerTableViewController.h */,
 				A72D7E3720C0866B00D8017C /* RecipeBookViewControllerTableViewController.m */,
 				A7D974F920C0922A003A88EA /* MainMenuViewController.h */,
@@ -366,6 +374,8 @@
 				A7C40B6A20CDB349001D8679 /* MarkedTableViewController.m */,
 				A7C6ED2220D1A41700420CB7 /* Detail.h */,
 				A7C6ED2320D1A41700420CB7 /* Detail.m */,
+				A7400E4620F780AF00649F4E /* CreateMarkedSBViewController.h */,
+				A7400E4720F780AF00649F4E /* CreateMarkedSBViewController.m */,
 			);
 			name = Loppemarkeder;
 			path = NetworkingIsFun;
@@ -488,7 +498,9 @@
 				62BC11341740FE8E0083FF05 /* AppDelegate.m in Sources */,
 				A745266418A74CBA0003D4A9 /* OpretMarkedViewController.m in Sources */,
 				62BC11391740FE8E0083FF05 /* main.m in Sources */,
+				A751094920F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m in Sources */,
 				62BD45EB174120E100E73895 /* ViewMarketMap.m in Sources */,
+				A7400E4820F780AF00649F4E /* CreateMarkedSBViewController.m in Sources */,
 				62BD45F11741240E00E73895 /* MarketPlace.m in Sources */,
 				62FA971E1741309400ECD7E0 /* Utilities.m in Sources */,
 				624D910D1742469500044005 /* AppDataCache.m in Sources */,
