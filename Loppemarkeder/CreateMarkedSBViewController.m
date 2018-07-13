@@ -146,6 +146,11 @@
     // Pass the selected object to the new view controller.
      if ([segue.identifier isEqualToString:@"showConfirmMarked"]) {
          NSLog(@"prepareForSegue is equal to showConfirmMarked");
+         // set a different back button for the navigation controller
+         UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc]init];
+         myBackButton.title = @"Cancel";
+         
+         self.navigationItem.backBarButtonItem = myBackButton;
      }
 }
 
