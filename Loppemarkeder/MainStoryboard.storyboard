@@ -94,7 +94,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FfU-qo-X66" kind="show" id="iPn-Bz-Jfi"/>
+                                    <segue destination="h4n-Xk-7PL" kind="presentation" id="iPn-Bz-Jfi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNJ-rr-M9n">
@@ -201,7 +201,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wu2-fL-Fff"/>
                                     <barButtonItem title="Næste" id="g7t-Jm-1O2">
                                         <connections>
-                                            <segue destination="tm8-Xw-Nss" kind="show" identifier="showConfirmMarked" id="jIn-gU-E9f"/>
+                                            <segue destination="Wtl-X1-RPi" kind="show" identifier="showConfirmMarked" id="jIn-gU-E9f"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3XV-bs-Hu0"/>
@@ -374,6 +374,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1cr-ht-Fqn"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Opret" id="am8-6i-ELq">
+                        <barButtonItem key="leftBarButtonItem" title="Tilbage" id="E0M-Ra-wbG">
+                            <connections>
+                                <segue destination="iU4-3U-XHI" kind="show" id="gO0-EL-exM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
                         <outlet property="additionalOpenPeriode" destination="sMd-Ez-UdA" id="XG8-J2-tPW"/>
@@ -390,12 +397,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PC-xd-ztD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3526.4000000000001" y="823.15270935960598"/>
+            <point key="canvasLocation" x="4468.8000000000002" y="823.15270935960598"/>
         </scene>
-        <!--Godkend: 2/3-->
+        <!--Nyt marked godkend: 2/3-->
         <scene sceneID="bWA-8a-05Q">
             <objects>
-                <viewController title="Godkend: 2/3" id="tm8-Xw-Nss" customClass="ConfirmMarkedSBViewController" sceneMemberID="viewController">
+                <viewController title="Nyt marked godkend: 2/3" id="tm8-Xw-Nss" customClass="ConfirmMarkedSBViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MUM-DO-Si7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -408,7 +415,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Mwj-I3-Aob"/>
                                     <barButtonItem title="Godkend" id="yzJ-ko-1Y1">
                                         <connections>
-                                            <segue destination="o5z-DB-cVN" kind="show" id="xEx-2c-iWc"/>
+                                            <segue destination="iU4-3U-XHI" kind="show" id="flW-72-WGL"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MlI-S8-wML"/>
@@ -517,15 +524,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ysl-2o-C19"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Godkend" id="Shr-Gd-8Pe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="esj-6B-vIQ">
+                            <connections>
+                                <segue destination="h4n-Xk-7PL" kind="show" id="NSa-IL-3lM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJG-5m-HfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640.8000000000002" y="845.32019704433503"/>
+            <point key="canvasLocation" x="6564" y="845"/>
         </scene>
-        <!--Marked oprettet-->
+        <!--Nyt marked oprettet 3/3-->
         <scene sceneID="jho-1u-9ga">
             <objects>
-                <viewController title="Marked oprettet" id="o5z-DB-cVN" sceneMemberID="viewController">
+                <viewController title="Nyt marked oprettet 3/3" id="o5z-DB-cVN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Flm-Ar-EI3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,7 +550,7 @@
                                 <color key="backgroundColor" red="0.37871467089999999" green="1" blue="0.26093205850000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JG6-hb-UT1"/>
-                                    <barButtonItem title="Ok" id="1fQ-6x-AXm"/>
+                                    <barButtonItem title="Ok" width="795.66666666666663" id="1fQ-6x-AXm"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7NX-1j-oPH"/>
                                 </items>
                             </toolbar>
@@ -573,10 +587,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Chz-wt-yFD"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Afslut" id="P3v-pK-sjZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSv-HP-8wo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5320.8000000000002" y="839.40886699507394"/>
+            <point key="canvasLocation" x="8703.2000000000007" y="844.58128078817742"/>
         </scene>
         <!--Alle markeder-->
         <scene sceneID="fHT-y7-w78">
@@ -811,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh8-h3-BnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4766" y="61"/>
+            <point key="canvasLocation" x="5162" y="61"/>
         </scene>
         <!--Recipe Book View Controller Table View Controller-->
         <scene sceneID="ImW-jo-vtv">
@@ -856,6 +871,63 @@
             </objects>
             <point key="canvasLocation" x="2671" y="-663"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hNq-Vf-GCF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h4n-Xk-7PL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xK6-QZ-EGd">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FfU-qo-X66" kind="relationship" relationship="rootViewController" id="Doe-SN-Cul"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHO-gB-YOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3525.5999999999999" y="823.15270935960598"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J4K-bW-OoL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wtl-X1-RPi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bpA-di-CWJ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tm8-Xw-Nss" kind="relationship" relationship="rootViewController" id="USx-W4-pCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8f-tx-gL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5735" y="845"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rjt-Sj-ZsC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UAN-c5-nWl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vZ4-Om-itw">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o5z-DB-cVN" kind="relationship" relationship="rootViewController" id="Zow-Ik-YcF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tu3-df-wEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7760.8000000000002" y="844.58128078817742"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn.png" width="162" height="31"/>
@@ -864,4 +936,8 @@
         <image name="ic_om_markeder.png" width="140" height="140"/>
         <image name="ic_opret_marked.png" width="140" height="140"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NSa-IL-3lM"/>
+        <segue reference="flW-72-WGL"/>
+    </inferredMetricsTieBreakers>
 </document>
