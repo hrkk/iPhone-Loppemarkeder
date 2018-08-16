@@ -60,6 +60,7 @@
 		A745266D18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = A745266C18A785E80003D4A9 /* LastStepCreateMarkedXIB.xib */; };
 		A745267018A7881C0003D4A9 /* LastStepCreateMarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */; };
 		A751094920F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */; };
+		A753EEEE212005F20056CE2C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753EEED212005F20056CE2C /* CollectionViewController.swift */; };
 		A75E09A21D657428003280B2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A11D657428003280B2 /* FBSDKCoreKit.framework */; };
 		A75E09A41D65745E003280B2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A31D65745E003280B2 /* FBSDKLoginKit.framework */; };
 		A75E09A61D65749C003280B2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */; };
@@ -73,6 +74,7 @@
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 		A7D974F820C08FD3003A88EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D974F720C08FD3003A88EA /* ViewController.m */; };
 		A7D974FB20C0922A003A88EA /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D974FA20C0922A003A88EA /* MainMenuViewController.m */; };
+		A7DE57D92124C11A0056C1D6 /* grand-danois-1_1600x986.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,8 @@
 		A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastStepCreateMarkedViewController.m; sourceTree = SOURCE_ROOT; };
 		A751094720F7ED3F0043AEBD /* ConfirmMarkedSBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConfirmMarkedSBViewController.h; path = Loppemarkeder/ConfirmMarkedSBViewController.h; sourceTree = SOURCE_ROOT; };
 		A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ConfirmMarkedSBViewController.m; path = Loppemarkeder/ConfirmMarkedSBViewController.m; sourceTree = SOURCE_ROOT; };
+		A753EEE8212003D50056CE2C /* Loppemarkeder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Loppemarkeder-Bridging-Header.h"; sourceTree = "<group>"; };
+		A753EEED212005F20056CE2C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = Loppemarkeder/CollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		A75E09A11D657428003280B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A75E09A31D65745E003280B2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A75E09A51D65749C003280B2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		A7D974F720C08FD3003A88EA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Loppemarkeder/ViewController.m; sourceTree = SOURCE_ROOT; };
 		A7D974F920C0922A003A88EA /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = Loppemarkeder/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
 		A7D974FA20C0922A003A88EA /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = Loppemarkeder/MainMenuViewController.m; sourceTree = SOURCE_ROOT; };
+		A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grand-danois-1_1600x986.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +305,7 @@
 		8382D671155AE229001541B2 = {
 			isa = PBXGroup;
 			children = (
+				A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */,
 				A7AF3344209CE8590000AAC7 /* Assets.xcassets */,
 				A7198F921761146E0004617E /* action_all_114x114.png */,
 				A73399AE18A2177F009CEA03 /* App_icon_120x120.png */,
@@ -309,6 +315,7 @@
 				8382D686155AE229001541B2 /* Loppemarkeder */,
 				8382D67F155AE229001541B2 /* Frameworks */,
 				8382D67D155AE229001541B2 /* Products */,
+				A753EEE8212003D50056CE2C /* Loppemarkeder-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,6 +383,7 @@
 				A7C6ED2320D1A41700420CB7 /* Detail.m */,
 				A7400E4620F780AF00649F4E /* CreateMarkedSBViewController.h */,
 				A7400E4720F780AF00649F4E /* CreateMarkedSBViewController.m */,
+				A753EEED212005F20056CE2C /* CollectionViewController.swift */,
 			);
 			name = Loppemarkeder;
 			path = NetworkingIsFun;
@@ -422,6 +430,7 @@
 				TargetAttributes = {
 					8382D67B155AE229001541B2 = {
 						DevelopmentTeam = WKZKJFL933;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -459,6 +468,7 @@
 				624D91711742C3E300044005 /* ic_om_markeder.png in Resources */,
 				0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */,
 				A75FB33720BC9FEE005E7960 /* MainStoryboard.storyboard in Resources */,
+				A7DE57D92124C11A0056C1D6 /* grand-danois-1_1600x986.jpg in Resources */,
 				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
 				0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */,
 				A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */,
@@ -503,6 +513,7 @@
 				A7400E4820F780AF00649F4E /* CreateMarkedSBViewController.m in Sources */,
 				62BD45F11741240E00E73895 /* MarketPlace.m in Sources */,
 				62FA971E1741309400ECD7E0 /* Utilities.m in Sources */,
+				A753EEEE212005F20056CE2C /* CollectionViewController.swift in Sources */,
 				624D910D1742469500044005 /* AppDataCache.m in Sources */,
 				A7C6ED2420D1A41700420CB7 /* Detail.m in Sources */,
 				A7C40B6B20CDB349001D8679 /* MarkedTableViewController.m in Sources */,
@@ -585,6 +596,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -595,8 +607,12 @@
 				GCC_PREFIX_HEADER = "Loppemarkeder/Loppemarkeder-Prefix.pch";
 				INFOPLIST_FILE = Loppemarkeder/Loppemarkeder.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Loppemarkeder;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Loppemarkeder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -606,6 +622,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -616,8 +633,11 @@
 				GCC_PREFIX_HEADER = "Loppemarkeder/Loppemarkeder-Prefix.pch";
 				INFOPLIST_FILE = Loppemarkeder/Loppemarkeder.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Loppemarkeder;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Loppemarkeder-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

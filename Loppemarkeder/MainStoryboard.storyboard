@@ -153,6 +153,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Bhd-TX-1vs" kind="show" id="2Bw-5N-eHV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onH-TG-2iS">
                                 <rect key="frame" x="164" y="379" width="140" height="140"/>
@@ -871,6 +874,53 @@
             </objects>
             <point key="canvasLocation" x="2671" y="-663"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="oSh-fN-Bf7">
+            <objects>
+                <collectionViewController id="Bhd-TX-1vs" customClass="CollectionViewController" customModule="Loppemarkeder" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rnh-32-J2T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XXm-kQ-GYu">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="oif-mn-nkU">
+                                <rect key="frame" x="87.666666666666671" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiU-z4-C8L">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
+                                            <color key="backgroundColor" red="1" green="0.80018650130000002" blue="0.017113156429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.37871467089999999" green="1" blue="0.26093205850000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MiU-z4-C8L" secondAttribute="trailing" id="4b2-lR-bQp"/>
+                                    <constraint firstItem="MiU-z4-C8L" firstAttribute="top" secondItem="oif-mn-nkU" secondAttribute="top" id="e4b-8P-YhE"/>
+                                    <constraint firstItem="MiU-z4-C8L" firstAttribute="leading" secondItem="oif-mn-nkU" secondAttribute="leading" id="kZU-MN-ZQ7"/>
+                                    <constraint firstAttribute="bottom" secondItem="MiU-z4-C8L" secondAttribute="bottom" constant="40" id="oxr-rE-eOc"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Bhd-TX-1vs" id="nce-Xc-KvQ"/>
+                            <outlet property="delegate" destination="Bhd-TX-1vs" id="X9b-Ad-WdI"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMx-mL-0OY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.8" y="930.29556650246309"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hNq-Vf-GCF">
             <objects>
@@ -937,7 +987,7 @@
         <image name="ic_opret_marked.png" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NSa-IL-3lM"/>
+        <segue reference="iPn-Bz-Jfi"/>
         <segue reference="flW-72-WGL"/>
     </inferredMetricsTieBreakers>
 </document>
