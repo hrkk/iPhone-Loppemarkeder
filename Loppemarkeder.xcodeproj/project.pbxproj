@@ -74,7 +74,6 @@
 		A7D88130175A83AB00CC363A /* App_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8812F175A83AB00CC363A /* App_icon_57x57.png */; };
 		A7D974F820C08FD3003A88EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D974F720C08FD3003A88EA /* ViewController.m */; };
 		A7D974FB20C0922A003A88EA /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D974FA20C0922A003A88EA /* MainMenuViewController.m */; };
-		A7DE57D92124C11A0056C1D6 /* grand-danois-1_1600x986.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +151,7 @@
 		A73AEB94189DB1D100196695 /* menuNavi7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menuNavi7.xib; path = Loppemarkeder/menuNavi7.xib; sourceTree = SOURCE_ROOT; };
 		A7400E4620F780AF00649F4E /* CreateMarkedSBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CreateMarkedSBViewController.h; path = Loppemarkeder/CreateMarkedSBViewController.h; sourceTree = SOURCE_ROOT; };
 		A7400E4720F780AF00649F4E /* CreateMarkedSBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CreateMarkedSBViewController.m; path = Loppemarkeder/CreateMarkedSBViewController.m; sourceTree = SOURCE_ROOT; };
+		A7423D4F21260A40005337B9 /* Loppemarkeder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Loppemarkeder-Bridging-Header.h"; sourceTree = "<group>"; };
 		A745266218A74CBA0003D4A9 /* OpretMarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpretMarkedViewController.h; sourceTree = SOURCE_ROOT; };
 		A745266318A74CBA0003D4A9 /* OpretMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpretMarkedViewController.m; sourceTree = SOURCE_ROOT; };
 		A745266518A755000003D4A9 /* CreateMarkedXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateMarkedXIB.xib; path = Loppemarkeder/CreateMarkedXIB.xib; sourceTree = SOURCE_ROOT; };
@@ -163,7 +163,6 @@
 		A745266F18A7881C0003D4A9 /* LastStepCreateMarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastStepCreateMarkedViewController.m; sourceTree = SOURCE_ROOT; };
 		A751094720F7ED3F0043AEBD /* ConfirmMarkedSBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConfirmMarkedSBViewController.h; path = Loppemarkeder/ConfirmMarkedSBViewController.h; sourceTree = SOURCE_ROOT; };
 		A751094820F7ED3F0043AEBD /* ConfirmMarkedSBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ConfirmMarkedSBViewController.m; path = Loppemarkeder/ConfirmMarkedSBViewController.m; sourceTree = SOURCE_ROOT; };
-		A753EEE8212003D50056CE2C /* Loppemarkeder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Loppemarkeder-Bridging-Header.h"; sourceTree = "<group>"; };
 		A753EEED212005F20056CE2C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = Loppemarkeder/CollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		A75E09A11D657428003280B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A75E09A31D65745E003280B2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -182,7 +181,6 @@
 		A7D974F720C08FD3003A88EA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Loppemarkeder/ViewController.m; sourceTree = SOURCE_ROOT; };
 		A7D974F920C0922A003A88EA /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = Loppemarkeder/MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
 		A7D974FA20C0922A003A88EA /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = Loppemarkeder/MainMenuViewController.m; sourceTree = SOURCE_ROOT; };
-		A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grand-danois-1_1600x986.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +303,6 @@
 		8382D671155AE229001541B2 = {
 			isa = PBXGroup;
 			children = (
-				A7DE57D82124C11A0056C1D6 /* grand-danois-1_1600x986.jpg */,
 				A7AF3344209CE8590000AAC7 /* Assets.xcassets */,
 				A7198F921761146E0004617E /* action_all_114x114.png */,
 				A73399AE18A2177F009CEA03 /* App_icon_120x120.png */,
@@ -315,7 +312,7 @@
 				8382D686155AE229001541B2 /* Loppemarkeder */,
 				8382D67F155AE229001541B2 /* Frameworks */,
 				8382D67D155AE229001541B2 /* Products */,
-				A753EEE8212003D50056CE2C /* Loppemarkeder-Bridging-Header.h */,
+				A7423D4F21260A40005337B9 /* Loppemarkeder-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,7 +465,6 @@
 				624D91711742C3E300044005 /* ic_om_markeder.png in Resources */,
 				0B5E12281748120200BBD2F6 /* AboutLoppeMarked.xib in Resources */,
 				A75FB33720BC9FEE005E7960 /* MainStoryboard.storyboard in Resources */,
-				A7DE57D92124C11A0056C1D6 /* grand-danois-1_1600x986.jpg in Resources */,
 				0B5E122D174818B900BBD2F6 /* AboutApp.xib in Resources */,
 				0BF43E59174FFCC60099A343 /* Default-568h@2x.png in Resources */,
 				A745266818A778A20003D4A9 /* ConfirmCreateMarkedXIB.xib in Resources */,
