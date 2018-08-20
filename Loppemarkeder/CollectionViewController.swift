@@ -26,7 +26,7 @@ class CollectionViewController: UICollectionViewController {
      //   self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        let width = (view.frame.size.width - 20) / 3
+        let width = (view.frame.size.width - 20) / 2
         let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
     }
@@ -68,8 +68,21 @@ class CollectionViewController: UICollectionViewController {
         }
         
         if let imageView = cell.viewWithTag(200) as? UIImageView {
-            let imageToShow: UIImage = UIImage(named: "grand-danois")!
-            let imageToShowResized = self.resizeImage(image: imageToShow, targetSize: CGSize(width:200.0, height:200.0))
+            var imageToShow: UIImage? = UIImage(named: "juice")!
+            
+            if indexPath.row == 0 {
+                 imageToShow = UIImage(named: "grand-danois")!
+            }
+            if indexPath.row == 1 {
+                imageToShow = UIImage(named: "juice")!
+            }
+            if indexPath.row == 2 {
+                imageToShow = UIImage(named: "kaiser")!
+            }
+            if indexPath.row == 3 {
+                imageToShow = UIImage(named: "lillepige")!
+            } 
+            let imageToShowResized = self.resizeImage(image: imageToShow!, targetSize: CGSize(width:200.0, height:200.0))
             imageView.image = imageToShowResized
          }
         return cell
